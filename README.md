@@ -17,6 +17,10 @@
 
 - İşaretli konuma Yürüyerek  ya da Araç ile ne kadar zamanda ulaşabileceğinizi görebilirsiniz.
 
+## Test Kullanıcısı
+Kullanıcı Adı : test@test.com
+Şifre: test
+
 ## Selam yollayın
 
 Unutmayın ki; konumu işaretleyecek olan da oraya mama ve su götürecek olan da bizleriz. Sizin gibi iyi kalpli insanların olduğunu bilmek ve küçükte olsa bizim böyle bir oluşuma  vesile olabilmemiz tarif edilemez bir mululuk.
