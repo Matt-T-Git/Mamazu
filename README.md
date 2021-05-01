@@ -28,5 +28,5 @@ Unutmayın ki; konumu işaretleyecek olan da oraya mama ve su götürecek olan d
 İstek, öneri veya bir selam yollamak için
 mamazuapp@gmail.com mail adresinden bize ulaşabilirsiniz.
 
-##Lisans
+## Lisans
 Code is released under Apache License Version 2.0
