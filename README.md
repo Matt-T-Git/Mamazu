@@ -3,7 +3,7 @@
 
 [![Mamazu open source app](/resources/GHCover.jpg)](https://www.mamazuapp.com/)
 
-<a href='https://apps.apple.com/tr/app/mamazu/id1242834976#?platform=iphone'><img alt='Get AlphaWallet Open Source Wallet on Apple Store' src='/resources/download-app-store-button.svg' height="60"/></a>
+<a href='https://apps.apple.com/tr/app/mamazu/id1242834976#?platform=iphone'><img alt='Mamazu on Apple Store' src='/resources/download-app-store-button.svg' height="60"/></a>
 
 ## Özellikler
 
@@ -27,3 +27,6 @@ Unutmayın ki; konumu işaretleyecek olan da oraya mama ve su götürecek olan d
 
 İstek, öneri veya bir selam yollamak için
 mamazuapp@gmail.com mail adresinden bize ulaşabilirsiniz.
+
+##Lisans
+Code is released under Apache License Version 2.0
