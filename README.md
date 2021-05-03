@@ -1,32 +1,32 @@
 
-## Mamazu - Sokakta yaşayan hayvanların yaşam şartlarını biraz olsun iyileştirebilmeyi amaçlayan bir projedir.
+## Mamazu - A project aiming to improve the living conditions of stray animals
 
 [![Mamazu open source app](/resources/GHCover.jpg)](https://www.mamazuapp.com/)
 
 <a href='https://apps.apple.com/tr/app/mamazu/id1242834976#?platform=iphone'><img alt='Mamazu on Apple Store' src='/resources/download-app-store-button.svg' height="60"/></a>
 
-## Özellikler
+## Features
 
-- Mamazu kaybolan dostlarımızı bulmak için size yardımcı olmaya çalışıyor. Kaybolan dostumuzun bilgilerini sisteme girerek yakınlardaki kullanıcıların haberdar olmasını sağlayabilirsiniz.
+- Mamazu is trying to help you to find your missing friends. By adding the information of our disappeared friend into the system, you can ensure that nearby users are notified.
 
-- Mamazu ile yardıma ihtiyacı olduğunu düşündüğünüz sokak hayvanlarının yaşadığı konumu işaretleyip daha sonra kullanıcıların o lokasyona yardımlarını ulaştırmasını sağlayabilirsiniz.
+- With Mamazu, you can mark the location of stray animals that you think need help, and then let users deliver their help to that location.
 
-- Bulunduğunuz konum, kayıt ekranında otomatik işaretlenecektir. Sizin kullanıcıları detaylı olarak bilgilendirmeniz yeterlidir.
+- Your location will be automatically marked on the registration screen. It is enough for you to inform the users in detail.
 
-- Konum hakkında ne kadar detaylı bilgi yazabilirseniz, yardıma gidecek olan kullanıcılar  lokasyona eksiksiz ulaşmış olurlar.
+- The more detailed information you can write about the location, the users who will go to help will reach the location completely.
 
-- İşaretli konuma Yürüyerek  ya da Araç ile ne kadar zamanda ulaşabileceğinizi görebilirsiniz.
+- You can see how long you can reach the marked location by Walk or Vehicle.
 
-## Test Kullanıcısı
-Kullanıcı Adı : test@test.com
-Şifre: test
+## Test User
+Username : test@test.com
+Password: test
 
-## Selam yollayın
+## Say hi
 
-Unutmayın ki; konumu işaretleyecek olan da oraya mama ve su götürecek olan da bizleriz. Sizin gibi iyi kalpli insanların olduğunu bilmek ve küçükte olsa bizim böyle bir oluşuma  vesile olabilmemiz tarif edilemez bir mululuk.
+Do not forget that; We are the ones who will mark the locations and bring food and water there. It is indescribable to know that there are good-hearted people like you and that we could be instrumental in such a formation even if it was small.
 
-İstek, öneri veya bir selam yollamak için
-mamazuapp@gmail.com mail adresinden bize ulaşabilirsiniz.
+To send a request, suggestion or a greeting
+You can reach us at mamazuapp@gmail.com.
 
 ## Lisans
 Code is released under Apache License Version 2.0
