@@ -20,13 +20,13 @@ struct SideBar: View {
                 NavigationLink(destination: AddMamazuView()) {
                     HStack{
                         Image("LocationIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                        Text("Ekle").foregroundColor(.mamazuTextColor).fontWeight(.bold)
+                        Text(LocalizedString.add).foregroundColor(.mamazuTextColor).fontWeight(.bold)
                     }
                 }
                 NavigationLink(destination: ProfileView()) {
                     HStack{
                         Image("ProfileIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                        Text("Profil").foregroundColor(.mamazuTextColor).fontWeight(.bold)
+                        Text(LocalizedString.profile).foregroundColor(.mamazuTextColor).fontWeight(.bold)
                     }
                 }
             }

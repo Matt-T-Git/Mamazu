@@ -8,6 +8,8 @@
 
 /* Common */
 "ok" = "Tamam";
+"add" = "Ekle";
+"profile" = "Profil"
 "email_placeholder" = "Email Adresiniz";
 "password_placeholder" = "Şifreniz";
 "loading" = "Yükleniyor...";

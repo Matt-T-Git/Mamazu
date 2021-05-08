@@ -39,8 +39,8 @@ struct WelcomeTextView: View {
 struct WelcomeTextView_Previews: PreviewProvider {
     static var previews: some View {
         //[Color.mamazuPastelRed, Color.mamazuRadicalRed]
-        WelcomeTextView(welcomeText: "Tekrar Hoşgeldiniz",
-                        infotext: "Devam etmek için ütfen giriş yapın",
+        WelcomeTextView(welcomeText: LocalizedString.Login.title,
+                        infotext: LocalizedString.Login.subtitle,
                         colors: [Color.mamazuNeonCarrot, Color.mamazuWildStrawberry])
     }
 }

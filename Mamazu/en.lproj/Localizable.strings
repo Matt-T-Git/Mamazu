@@ -8,6 +8,8 @@
 
 /* Common */
 "ok" = "OK";
+"add" = "Add";
+"profile" = "Profile"
 "email_placeholder" = "Your email address";
 "password_placeholder" = "Your password";
 "loading" = "Loading...";

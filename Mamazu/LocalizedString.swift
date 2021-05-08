@@ -9,6 +9,8 @@ import Foundation
 
 struct LocalizedString {
     static let ok = NSLocalizedString("ok", comment: "")
+    static let add = NSLocalizedString("add", comment: "")
+    static let profile = NSLocalizedString("profile", comment: "")
     static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")
     static let passwordPlaceholder = NSLocalizedString("password_placeholder", comment: "")
     static let loading = NSLocalizedString("loading", comment: "")
