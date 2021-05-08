@@ -29,7 +29,7 @@ struct EmptyMamazu: View {
                     .frame(width: size.width - 120, height: 55, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .shadow(color: Color.mamazuDarkPink.opacity(0.7), radius: 20, x: 0, y: isAtMaxScale ? 5 : 20)
                 
-                Text("Yeni Kayıt Ekle")
+                Text(LocalizedString.Profile.addNewEntry)
                     .foregroundColor(.white)
                     .font(.system(size: 16, weight: .medium, design: .rounded))
             }

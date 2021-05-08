@@ -56,10 +56,10 @@ class LostViewModel: ObservableObject {
         self.lostService.setFound(postId: id) { (success) in
             if success {
                 self.isError = true
-                self.errorMessage = "🥰 Bildiriminiz başarı ile kaydedildi. Birdaha ayrılmamanız dileği ile 🥰"
+                self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
             }else {
                 self.isError = true
-                self.errorMessage = "Bir Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyin."
+                self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
             }
         }
     }

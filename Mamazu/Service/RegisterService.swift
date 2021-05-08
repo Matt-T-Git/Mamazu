@@ -11,14 +11,14 @@ import Alamofire
 struct RegisterService {
     func registerUser(name: String, email: String, password: String, profileImg: UIImage, completion: @escaping (Result<RegisteModel, APIError>) -> ()) {
         if name.isEmpty == true || email.isEmpty == true || password.isEmpty == true{
-            completion(.failure(.errorWithMessage("E-Mail ve Şifre Alanları Boş Bırakılamaz")))
+            completion(.failure(.errorWithMessage(LocalizedString.Errors.emailAndPasswordBlank)))
             return
         }else if email.isValidEmail() == false {
-            completion(.failure(.errorWithMessage("Lütfen geçerli bir E-Mail adresi giriniz.")))
+            completion(.failure(.errorWithMessage(LocalizedString.Errors.invalidEmail)))
             return
         }
         if profileImg.size == .zero {
-            completion(.failure(.errorWithMessage("Lütfen Resim Ekleyin...")))
+            completion(.failure(.errorWithMessage(LocalizedString.Errors.noImage)))
             return
         }
         //Parameters
@@ -48,7 +48,7 @@ struct RegisterService {
                     return
                 }
                 if json.error == true {
-                    completion(.failure(.errorWithMessage(json.message ?? "Bir Hata Oluştu")))
+                    completion(.failure(.errorWithMessage(json.message ?? LocalizedString.Errors.somethingWentWrong)))
                     return
                 }
                 completion(.success(json))

@@ -66,8 +66,24 @@
 "home_are_you_sure_found" = "Are you sure you want to set the found notification?";
 "home_yes_found" = "Yes, Found!";
 
+/* Profile */
+"profile_lost" = "Lost";
+"profile_are_you_sure_logout" = "Are you sure you want to log out?";
+"profile_logout" = "Log out";
+"profile_not_shared_help_points" = "You have not \nshared any help points !!!";
+"profile_never_reported_loss" = "You have never reported a loss.";
+"profile_add_new_entry" = "Add New Entry";
+
 /* Tutorial */
-"tutorial_title" = "We would like to briefly inform you!!!";
+"tutorial_title" = "A bit of Information";
+
+/* Errors */
+"notification_save_success" = "🥰 Your notification has been saved successfully. 🥰";
+"something_went_wrong_try_again" = "Something went wrong. Please try again later.";
+"something_went_wrong" = "something went wrong";
+"email_password_blank" = "E-Mail and Password Fields Cannot Be Blank";
+"invalid_email" = "Please enter a valid e-mail address.";
+"no_image" = "Please add an image.";
 
 /* Warning */
 "warning_mamazu" = "

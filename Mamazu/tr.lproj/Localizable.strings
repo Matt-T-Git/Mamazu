@@ -66,8 +66,24 @@
 "home_are_you_sure_found" = "Bulundu bildirimi ypmak istediğinize emin misiniz?";
 "home_yes_found" = "Evet Bulundu!";
 
+/* Profile */
+"profile_lost" = "Kayıp";
+"profile_are_you_sure_logout" = "Çıkış yapmak istediğinize emin misiniz?";
+"profile_logout" = "Çıkış Yap";
+"profile_not_shared_help_points" = "Hiç yardım noktası \npaylaşmamışsınız!!!";
+"profile_never_reported_loss" = "Hiç kayıp bildiriminde bulunmamışsınız.";
+"profile_add_new_entry" = "Yeni Kayıt Ekle";
+
 /* Tutorial */
 "tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";
+
+/* Errors */
+"notification_save_success" = "🥰 Bildiriminiz başarı ile kaydedildi. Birdaha ayrılmamanız dileği ile 🥰";
+"something_went_wrong_try_again" = "Bir Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyin.";
+"something_went_wrong" = "Bir Hata Oluştu";
+"email_password_blank" = "E-Mail ve Şifre Alanları Boş Bırakılamaz";
+"invalid_email" = "Lütfen geçerli bir E-Mail adresi giriniz.";
+"no_image" = "Lütfen Resim Ekleyin...";
 
 /* Warning */
 "warning_mamazu" = "

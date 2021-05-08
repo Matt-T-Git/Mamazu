@@ -71,8 +71,26 @@ struct LocalizedString {
         static let yesFound = NSLocalizedString("home_yes_found", comment: "")
     }
 
+    struct Profile {
+        static let lost = NSLocalizedString("profile_lost", comment: "")
+        static let areYouSureLogout = NSLocalizedString("profile_are_you_sure_logout", comment: "")
+        static let logout = NSLocalizedString("profile_logout", comment: "")
+        static let notSharedHelpPoints =  NSLocalizedString("profile_not_shared_help_points", comment: "")
+        static let neverReportedLoss = NSLocalizedString("profile_never_reported_loss", comment: "")
+        static let addNewEntry = NSLocalizedString("profile_add_new_entry", comment: "")
+    }
+
     struct Tutorial {
         static let title = NSLocalizedString("tutorial_title", comment: "")
+    }
+
+    struct Errors {
+        static let notificationSuccessfullySaved = NSLocalizedString("notification_save_success", comment: "")
+        static let somethingWentWrongTryAgain = NSLocalizedString("something_went_wrong_try_again", comment: "")
+        static let somethingWentWrong = NSLocalizedString("something_went_wrong", comment: "")
+        static let emailAndPasswordBlank = NSLocalizedString("email_password_blank", comment: "")
+        static let invalidEmail = NSLocalizedString("invalid_email", comment: "")
+        static let noImage = NSLocalizedString("no_image", comment: "")
     }
 
     struct Warning {
