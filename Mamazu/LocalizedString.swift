@@ -11,12 +11,17 @@ struct LocalizedString {
     static let ok = NSLocalizedString("ok", comment: "")
     static let add = NSLocalizedString("add", comment: "")
     static let profile = NSLocalizedString("profile", comment: "")
+    static let settings = NSLocalizedString("settings", comment: "")
     static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")
     static let passwordPlaceholder = NSLocalizedString("password_placeholder", comment: "")
     static let loading = NSLocalizedString("loading", comment: "")
     static let useCamera = NSLocalizedString("use_camera", comment: "")
     static let selectFromGallery = NSLocalizedString("select_from_gallery", comment: "")
     static let mapLocationChosen = NSLocalizedString("map_location_chosen", comment: "")
+    static let locationDisabledMessage = NSLocalizedString("location_disabled_message", comment: "")
+    static let welcome = NSLocalizedString("welcome", comment: "")
+    static let minute = NSLocalizedString("minute", comment: "")
+    static let hour = NSLocalizedString("hour", comment: "")
 
     struct Login {
         static let title = NSLocalizedString("login_title", comment: "")
@@ -51,6 +56,21 @@ struct LocalizedString {
         static let locationPlaceholder  = NSLocalizedString("location_placeholder", comment: "")
     }
 
+    struct Home {
+        static let lostTitle = NSLocalizedString("home_lost_title", comment: "")
+        static let noMissingReports = NSLocalizedString("home_no_missing_reports", comment: "")
+        static let noHelpPoints = NSLocalizedString("home_no_help_points", comment: "")
+        static let helpPoints = NSLocalizedString("home_help_points", comment: "")
+        static let gender = NSLocalizedString("home_gender", comment: "")
+        static let breed = NSLocalizedString("home_breed", comment: "")
+        static let age = NSLocalizedString("home_age", comment: "")
+        static let under1Year = NSLocalizedString("home_under_one_year", comment: "")
+        static let yearsOfAge = NSLocalizedString("home_years_of_age", comment: "")
+        static let found = NSLocalizedString("home_found", comment: "")
+        static let areYouSureFound = NSLocalizedString("home_are_you_sure_found", comment: "")
+        static let yesFound = NSLocalizedString("home_yes_found", comment: "")
+    }
+
     struct Tutorial {
         static let title = NSLocalizedString("tutorial_title", comment: "")
     }
@@ -59,5 +79,4 @@ struct LocalizedString {
         static let mamazuString = NSLocalizedString("warning_mamazu", comment: "")
         static let lostString = NSLocalizedString("warning_lost", comment: "")
     }
-
 }

@@ -35,7 +35,7 @@ struct ProfileHeaderView: View {
                         .cornerRadius(27)
                         .border(Color.mamazuCardGradientLeft, width: userViewModel.isFetched ? 1 : 0, cornerRadius: 27)
                     VStack(alignment: .leading) {
-                        Text("Hoşgeldin").font(.system(size: 13, weight: .regular)).foregroundColor(.mamazuTextColor)
+                        Text(LocalizedString.welcome).font(.system(size: 13, weight: .regular)).foregroundColor(.mamazuTextColor)
                         Text(userViewModel.userName).font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor).lineLimit(1).minimumScaleFactor(0.5)
                         Text(city).font(.system(size: 12, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
                         

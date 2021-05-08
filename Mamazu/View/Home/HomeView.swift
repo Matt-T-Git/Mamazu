@@ -38,7 +38,7 @@ struct HomeView: View {
                         .padding(.horizontal, 20)
                     
                     //MARK:- Lost Title
-                    GradientText(text: "Kayıp İlanları", colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight],
+                    GradientText(text: LocalizedString.Home.lostTitle, colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight],
                                  font: .system(size: 18, weight: .bold, design: .rounded))
                         .padding(.horizontal, 23)
                         .frame(width: size.width, height: 28, alignment: .leading)
@@ -50,7 +50,7 @@ struct HomeView: View {
                             VStack {
                                 LottieView(name: "warning")
                                     .frame(width: size.width, height: 120)
-                                Text("Yakınlarınızda hiç kayıp bildirimi yok.")
+                                Text(LocalizedString.Home.noMissingReports)
                                     .font(.caption)
                                     .foregroundColor(.mamazuTextColor)
                                     .padding(.top, -10)
@@ -86,7 +86,7 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, maxHeight: 280)
                     
                     //MARK:- Mamazu Title
-                    GradientText(text: "Yardım Noktaları", colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight],
+                    GradientText(text: LocalizedString.Home.helpPoints, colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight],
                                  font: .system(size: 18, weight: .bold, design: .rounded))
                         .padding(.horizontal, 23)
                         .frame(width: size.width, height: 28, alignment: .leading)
@@ -98,7 +98,7 @@ struct HomeView: View {
                         VStack {
                             LottieView(name: "warning")
                                 .frame(width: size.width, height: 120)
-                            Text("Yakınlarınızda hiç yardım lokasyonu yok.")
+                            Text(LocalizedString.Home.noHelpPoints)
                                 .font(.caption)
                                 .foregroundColor(.mamazuTextColor)
                                 .padding(.top, -10)
@@ -152,12 +152,12 @@ struct HomeView: View {
                     }
                 }else if isChanged == .denied || isChanged == .restricted {
                     self.isPermissionError.toggle()
-                    self.errorMessage = "Size yakın yardım noktalarını listeleyebilmemiz için konum servislerini kullanmamıza izin vermelisiniz."
+                    self.errorMessage = LocalizedString.locationDisabledMessage
                 }
             })
             .alert(isPresented: $isPermissionError, content: {
                 Alert(title: Text("Mamazu"), message: Text(errorMessage),
-                      primaryButton: .default(Text("Ayarlar"), action: {
+                      primaryButton: .default(Text(LocalizedString.settings), action: {
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.open(url, options: [:], completionHandler: nil)
                         }

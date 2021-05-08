@@ -9,13 +9,18 @@
 /* Common */
 "ok" = "OK";
 "add" = "Add";
-"profile" = "Profile"
+"profile" = "Profile";
+"settings" = "Settings";
 "email_placeholder" = "Your email address";
 "password_placeholder" = "Your password";
 "loading" = "Loading...";
 "use_camera" = "Use Camera";
 "select_from_gallery" = "Select From Fallery";
 "map_location_chosen" = "Location Chosen.";
+"location_disabled_message" = "You must allow the app to use location services so that we can list help points near you.";
+"welcome" = "Welcome";
+"minute" = "MINUTE";
+"hour" = "HOUR";
 
 /* Login */
 "login_title" = "Welcome back!";
@@ -46,6 +51,20 @@
 "add_missing_listing" = "Add Missing Listing";
 "add_mamazu_placeholder" = "Detailed description! \nPlease share information with us in this area. E.g. how much help is needed";
 "location_placeholder" = "Location Name";
+
+/* Home */
+"home_lost_title" = "Missing Ads";
+"home_no_missing_reports" = "There are no missing reports in your vicinity.";
+"home_no_help_points" = "There are no help locations near you.";
+"home_help_points" = "Help Points";
+"home_gender" = "GENDER";
+"home_breed" = "BREED";
+"home_age" = "AGE";
+"home_under_one_year" = "Under 1 Year";
+"home_years_of_age" = "Years of age";
+"home_found" = "FOUND";
+"home_are_you_sure_found" = "Are you sure you want to set the found notification?";
+"home_yes_found" = "Yes, Found!";
 
 /* Tutorial */
 "tutorial_title" = "We would like to briefly inform you!!!";

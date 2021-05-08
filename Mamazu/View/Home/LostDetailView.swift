@@ -94,18 +94,18 @@ struct LostDetailView: View {
                 //MARK:- Pet Detai Stack
                 HStack {
                     VStack(alignment: .leading, spacing: 8){
-                        Text("CİNSİ").font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
+                        Text(LocalizedString.Home.gender).font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
                         Text(lostData.petBreed).font(.system(size: 13, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
                     }
                     Spacer()
                     VStack(alignment: .leading, spacing: 8){
-                        Text("CİNSİYETİ ").font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
+                        Text(LocalizedString.Home.breed).font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
                         Text(lostData.petGender).font(.system(size: 13, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
                     }
                     Spacer()
                     VStack(alignment: .leading, spacing: 8){
-                        Text("YAŞI").font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
-                        Text(lostData.petAge == "1 Yaşından Küçük" ? lostData.petAge : "\(lostData.petAge) Yaşında")
+                        Text(LocalizedString.Home.age).font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
+                        Text(lostData.petAge == LocalizedString.Home.under1Year ? lostData.petAge : "\(lostData.petAge) \(LocalizedString.Home.yearsOfAge)")
                             .font(.system(size: 13, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
                     }
                 }
@@ -120,7 +120,7 @@ struct LostDetailView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
                                                  startPoint: .topLeading, endPoint: .bottomTrailing))
                             .clipShape(RoundedRectangle(cornerRadius: 15, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                        Text("BULUNDU").font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+                        Text(LocalizedString.Home.found).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
                     }
                     .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
                     .height(52)
@@ -131,8 +131,8 @@ struct LostDetailView: View {
                     .actionSheet(isPresented: $isShowingSheet) {
                         ActionSheet(
                             title: Text("Mamazu"),
-                            message: Text("Bulundu bildirimi ypmak istediğinize emin misiniz ?"),
-                            buttons: [.default(Text("Evet Bulundu!"), action: {
+                            message: Text(LocalizedString.Home.areYouSureFound),
+                            buttons: [.default(Text(LocalizedString.Home.yesFound), action: {
                                 lostViewModel.id = lostData.id
                                 lostViewModel.found()
                             }),
@@ -140,7 +140,7 @@ struct LostDetailView: View {
                         )
                     }
                     .alert(isPresented: $lostViewModel.isError, content: {
-                        Alert(title: Text("Mamazu"), message: Text(lostViewModel.errorMessage), dismissButton: .default(Text("Tamam")))
+                        Alert(title: Text("Mamazu"), message: Text(lostViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok.uppercased())))
                     })
                     Divider().padding(.top, 10)
                 }

@@ -9,13 +9,18 @@
 /* Common */
 "ok" = "Tamam";
 "add" = "Ekle";
-"profile" = "Profil"
+"profile" = "Profil";
+"settings" = "Ayarlar";
 "email_placeholder" = "Email Adresiniz";
 "password_placeholder" = "Şifreniz";
 "loading" = "Yükleniyor...";
 "use_camera" = "Kamerayı Kullan";
 "select_from_gallery" = "Galeriden Seç";
 "map_location_chosen" = "Lokasyon Seçildi.";
+"location_disabled_message" = "Size yakın yardım noktalarını listeleyebilmemiz için konum servislerini kullanmamıza izin vermelisiniz.";
+"welcome" = "Hoşgeldin";
+"minute" = "DAKIKA";
+"hour" = "SAAT";
 
 /* Login */
 "login_title" = "Tekrar Hoşgeldiniz!";
@@ -46,6 +51,20 @@
 "add_missing_listing" = "Kayıp İlanı Ekle";
 "add_mamazu_placeholder" = "Detaylı açıklama! \nLütfen ne kadar yardıma ihtiyaç olduğu gibi bilgileri bu alanda bizimle paylaşınız.";
 "location_placeholder" = "Lokasyon Başlığı";
+
+/* Home */
+"home_lost_title" = "Kayıp İlanları";
+"home_no_missing_reports" = "Yakınlarınızda hiç kayıp bildirimi yok.";
+"home_no_help_points" = "Yakınlarınızda hiç yardım lokasyonu yok.";
+"home_help_points" = "Yardım Noktaları";
+"home_gender" = "CİNSİ";
+"home_breed" = "CİNSİYETİ";
+"home_age" = "YAŞI";
+"home_under_one_year" = "1 Yaşından Küçük";
+"home_years_of_age" = "Yaşında";
+"home_found" = "BULUNDU";
+"home_are_you_sure_found" = "Bulundu bildirimi ypmak istediğinize emin misiniz?";
+"home_yes_found" = "Evet Bulundu!";
 
 /* Tutorial */
 "tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";
