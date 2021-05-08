@@ -12,6 +12,8 @@ struct LocalizedString {
     static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")
     static let passwordPlaceholder = NSLocalizedString("password_placeholder", comment: "")
     static let loading = NSLocalizedString("loading", comment: "")
+    static let useCamera = NSLocalizedString("use_camera", comment: "")
+    static let selectFromGallery = NSLocalizedString("select_from_gallery", comment: "")
 
     struct Login {
         static let title = NSLocalizedString("login_title", comment: "")
@@ -28,6 +30,18 @@ struct LocalizedString {
         static let registerButtonTitle = NSLocalizedString("register_button_title", comment: "")
         static let alreadyMember = NSLocalizedString("register_already_member", comment: "")
         static let login = NSLocalizedString("register_login", comment: "")
+    }
+
+    struct AddLocation {
+        static let lostPetDescriptionPlaceholder = NSLocalizedString("lost_pet_description_placeholder", comment: "")
+        static let galleryDescription = NSLocalizedString("gallery_description", comment: "")
+        static let animalNamePlaceholder = NSLocalizedString("animal_name_placeholder", comment: "")
+        static let genderPlaceholder = NSLocalizedString("gender_placeholder", comment: "")
+        static let agePlaceholder = NSLocalizedString("age_placeholder", comment: "")
+        static let breedPlaceholder = NSLocalizedString("breed_placeholder", comment: "")
+        static let saveLocationButtonTitle = NSLocalizedString("save_location_button_title", comment: "")
+        static let selectLocation = NSLocalizedString("select_location", comment: "")
+        static let locationSelected = NSLocalizedString("location_selected", comment: "")
     }
 
 }

@@ -11,6 +11,8 @@
 "email_placeholder" = "Email Adresiniz";
 "password_placeholder" = "Şifreniz";
 "loading" = "Yükleniyor...";
+"use_camera" = "Kamerayı Kullan";
+"select_from_gallery" = "Galeriden Seç";
 
 /* Login */
 "login_title" = "Tekrar Hoşgeldiniz!";
@@ -26,3 +28,14 @@
 "register_button_title" = "KAYIT OL";
 "register_already_member" = "Zaten üye misiniz?";
 "register_login" = "GİRİŞ YAPIN.";
+
+/* Add Location */
+"lost_pet_description_placeholder" = "Detaylı açıklama! \nNe kadar detay verebilirseniz size yardımcı olabilme şansımız o kadar artacaktır..";
+"gallery_description" = "Ekleyeceğiniz fotoğrafı kameranızı kullanarak çekebilir ya da galeriden seçebilirsiniz.";
+"animal_name_placeholder" = "Dostumuzun Adı";
+"gender_placeholder" = "Cinsi";
+"age_placeholder" = "Yaşı";
+"breed_placeholder" = "Cinsiyeti";
+"save_location_button_title" = "KONUMU KAYDET";
+"select_location" = "LÜTFEN KONUM SEÇİN";
+"location_selected" = "KONUMUNUZ SEÇİLDİ";

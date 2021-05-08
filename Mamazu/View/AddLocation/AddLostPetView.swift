@@ -31,7 +31,7 @@ struct AddLostPetView: View {
     @State var isLostMapViewShow: Bool = false
     
     var body: some View {
-        let descriptionPlaceholder = "Detaylı açıklama! \nNe kadar detay verebilirseniz size yardımcı olabilme şansımız o kadar artacaktır.."
+        let descriptionPlaceholder = LocalizedString.AddLocation.lostPetDescriptionPlaceholder
         let borderColor = Color.mamazuLostCardGradientRight.opacity(0.5)
         
         ZStack {
@@ -53,12 +53,12 @@ struct AddLostPetView: View {
                         .actionSheet(isPresented: $showingSheet) {
                             ActionSheet(
                                 title: Text("Mamazu"),
-                                message: Text("Ekleyeceğiniz fotoğrafı kameranızı kullanarak çekebilir ya da galeriden seçebilirsiniz."),
-                                buttons: [.default(Text("Kamerayı Kullan"), action: {
+                                message: Text(LocalizedString.AddLocation.galleryDescription),
+                                buttons: [.default(Text(LocalizedString.useCamera), action: {
                                     self.sourceType = .camera
                                     self.isShowPicker.toggle()
                                 }),
-                                .default(Text("Galeriden Seç"), action: {
+                                .default(Text(LocalizedString.selectFromGallery), action: {
                                     self.sourceType = .photoLibrary
                                     self.isShowPicker.toggle()
                                 }),
@@ -74,23 +74,23 @@ struct AddLostPetView: View {
                     
                     VStack(spacing: 20) {
                         MamazuTextField(bindingText: $viewModel.petName,
-                                        placeholder: "Dostumuzun Adı",
+                                        placeholder: LocalizedString.AddLocation.animalNamePlaceholder,
                                         borderColor: borderColor,
                                         image: "doc.append.fill")
                         
                         MamazuTextField(bindingText: $viewModel.petBreed,
-                                        placeholder: "Cinsi",
+                                        placeholder: LocalizedString.AddLocation.breedPlaceholder,
                                         borderColor: borderColor,
                                         image: "sun.max.fill")
                         
                         MamazuPicker(selectedText: $viewModel.petAge,
-                                     placeholder: "Yaşı", borderColor:
-                                        borderColor,
+                                     placeholder: LocalizedString.AddLocation.agePlaceholder,
+                                     borderColor: borderColor,
                                      list: viewModel.petAgeArray,
                                      image: "infinity.circle")
                         
                         MamazuPicker(selectedText: $viewModel.petGender,
-                                     placeholder: "Cinsiyeti",
+                                     placeholder: LocalizedString.AddLocation.genderPlaceholder,
                                      borderColor: borderColor,
                                      list: viewModel.petGenderArray,
                                      image: "mustache.fill")
@@ -110,7 +110,7 @@ struct AddLostPetView: View {
                                                    center: .topLeading, startRadius: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/, endRadius: 150).opacity(0.5)
                                     RadialGradient(gradient: Gradient(colors: [.mamazuLostCardGradientRight, Color.mamazuCardGradientLeft.opacity(0)]),
                                                    center: .bottomTrailing, startRadius: 40, endRadius: 200).opacity(0.5)
-                                    Text(isLocationSelected ? "KONUMUNUZ SEÇİLDİ" : "LÜTFEN KONUM SEÇİN")
+                                    Text(isLocationSelected ? LocalizedString.AddLocation.locationSelected : LocalizedString.AddLocation.selectLocation)
                                         .font(.system(size: 20, weight: .heavy, design: .rounded))
                                         .foregroundColor(Color.init(.sRGB, white: 0.9, opacity: 1))
                                 }
@@ -130,7 +130,7 @@ struct AddLostPetView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                                      startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                            Text("KONUMU KAYDET").font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
                         .height(52)
@@ -143,7 +143,7 @@ struct AddLostPetView: View {
                             viewModel.addLostPet()
                         }
                         .alert(isPresented: $viewModel.isError, content: {
-                            Alert(title: Text("Mamazu"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("Tamam")))
+                            Alert(title: Text("Mamazu"), message: Text(viewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
                         })
                         
                         

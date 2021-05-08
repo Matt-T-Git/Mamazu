@@ -11,6 +11,8 @@
 "email_placeholder" = "Your email address";
 "password_placeholder" = "Your password";
 "loading" = "Loading...";
+"use_camera" = "Use Camera";
+"select_from_gallery" = "Select From Fallery";
 
 /* Login */
 "login_title" = "Welcome back!";
@@ -26,3 +28,14 @@
 "register_button_title" = "Register";
 "register_already_member" = "Already a member?";
 "register_login" = "LOGIN.";
+
+/* Add Location */
+"lost_pet_description_placeholder" = "Detailed description! \nThe more details you can provide, the greater our chance of helping you..";
+"gallery_description" = "You can add the photo you will use with your camera or choose from the gallery.";
+"animal_name_placeholder" = "Our Friend's Name";
+"gender_placeholder" = "Gender";
+"age_placeholder" = "Age";
+"breed_placeholder" = "Breed";
+"save_location_button_title" = "SAVE LOCATION";
+"select_location" = "PLEASE SELECT LOCATION";
+"location_selected" = "LOCATION SELECTED";
