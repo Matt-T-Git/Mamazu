@@ -10,6 +10,7 @@
 "ok" = "Tamam";
 "email_placeholder" = "Email Adresiniz";
 "password_placeholder" = "Şifreniz";
+"loading" = "Yükleniyor...";
 
 /* Login */
 "login_title" = "Tekrar Hoşgeldiniz!";

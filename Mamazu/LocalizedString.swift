@@ -11,6 +11,7 @@ struct LocalizedString {
     static let ok = NSLocalizedString("ok", comment: "")
     static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")
     static let passwordPlaceholder = NSLocalizedString("password_placeholder", comment: "")
+    static let loading = NSLocalizedString("loading", comment: "")
 
     struct Login {
         static let title = NSLocalizedString("login_title", comment: "")

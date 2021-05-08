@@ -10,6 +10,7 @@
 "ok" = "OK";
 "email_placeholder" = "Your email address";
 "password_placeholder" = "Your password";
+"loading" = "Loading...";
 
 /* Login */
 "login_title" = "Welcome back!";

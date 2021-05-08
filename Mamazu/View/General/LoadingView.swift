@@ -24,7 +24,7 @@ struct LoadingView: View {
                 VStack {
                     LottieView(name: animationName)
                         .frame(width: 180, height: 180)
-                    Text("Yükleniyor...")
+                    Text(LocalizedString.loading)
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(Color.mamazuTextColor)
                         .padding(.bottom, UIDevice.current.iPhones_5_5s_5c_SE ? 55 : 15)
