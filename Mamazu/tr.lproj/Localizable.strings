@@ -41,6 +41,8 @@
 "location_selected" = "KONUMUNUZ SEÇİLDİ";
 "add_help_location" = "Yardım Lokasyonu Ekle";
 "add_missing_listing" = "Kayıp İlanı Ekle";
+"add_mamazu_placeholder" = "Detaylı açıklama! \nLütfen ne kadar yardıma ihtiyaç olduğu gibi bilgileri bu alanda bizimle paylaşınız.";
+"location_placeholder" = "Lokasyon Başlığı";
 
 /* Tutorial */
 "tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";

@@ -44,6 +44,8 @@ struct LocalizedString {
         static let locationSelected = NSLocalizedString("location_selected", comment: "")
         static let addHelpLocation = NSLocalizedString("add_help_location", comment: "")
         static let addMissingListing = NSLocalizedString("add_missing_listing", comment: "")
+        static let addMamazuPlaceholder = NSLocalizedString("add_mamazu_placeholder", comment: "")
+        static let locationPlaceholder  = NSLocalizedString("location_placeholder", comment: "")
     }
 
     struct Tutorial {

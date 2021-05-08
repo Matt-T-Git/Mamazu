@@ -41,6 +41,8 @@
 "location_selected" = "LOCATION SELECTED";
 "add_help_location" = "Add Help Location";
 "add_missing_listing" = "Add Missing Listing";
+"add_mamazu_placeholder" = "Detailed description! \nPlease share information with us in this area. E.g. how much help is needed";
+"location_placeholder" = "Location Name";
 
 /* Tutorial */
 "tutorial_title" = "We would like to briefly inform you!!!";
