@@ -85,6 +85,23 @@
 "invalid_email" = "Lütfen geçerli bir E-Mail adresi giriniz.";
 "no_image" = "Lütfen Resim Ekleyin...";
 
+/* General */
+"general_incorrect_date" = "Tarih Hatalı";
+"general_now" = "Şimdi";
+"general_added_seconds_ago" = "Saniye Önce Eklendi";
+"general_added_a_minute_ago" = "Bir Dakika Önce Eklendi";
+"general_added_minutes_ago" = "Dakika Önce Eklendi";
+"general_added_one_hour_ago" = "1 Saat Önce Eklendi";
+"general_added_hours_ago" = "Saat Önce Eklendi";
+"general_added_yesterday" = "Dün Eklendi";
+"general_added_days_ago" = "Gün Önce Eklendi";
+"general_added_last_week" = "Geçen Hafta Eklendi";
+"general_added_weeks_ago" = "Hafta Önce Eklendi";
+"general_added_last_month" = "Geçen Ay Eklendi";
+"general_added_months_ago" = "Ay Önce Eklendi";
+"general_added_last_year" = "Geçen Yıl Eklendi";
+"general_added_years_ago" = "Yıl Önce Eklendi";
+
 /* Warning */
 "warning_mamazu" = "
 - Yardım noktası bildirimi yapmak için lütfen tüm alanları doldurun.\n

@@ -8,6 +8,7 @@
 import Foundation
 
 struct LocalizedString {
+
     static let ok = NSLocalizedString("ok", comment: "")
     static let add = NSLocalizedString("add", comment: "")
     static let profile = NSLocalizedString("profile", comment: "")
@@ -91,6 +92,24 @@ struct LocalizedString {
         static let emailAndPasswordBlank = NSLocalizedString("email_password_blank", comment: "")
         static let invalidEmail = NSLocalizedString("invalid_email", comment: "")
         static let noImage = NSLocalizedString("no_image", comment: "")
+    }
+
+    struct General {
+        static let incorrectDate = NSLocalizedString("general_incorrect_date", comment: "")
+        static let now = NSLocalizedString("general_now", comment: "")
+        static let addedSecondsAgo = NSLocalizedString("general_added_seconds_ago", comment: "")
+        static let addedAMinuteAgo = NSLocalizedString("general_added_a_minute_ago", comment: "")
+        static let addedMinutesAgo = NSLocalizedString("general_added_minutes_ago", comment: "")
+        static let addedOneHourAgo = NSLocalizedString("general_added_one_hour_ago", comment: "")
+        static let addedHoursAgo = NSLocalizedString("general_added_hours_ago", comment: "")
+        static let addedYesterday = NSLocalizedString("general_added_yesterday", comment: "")
+        static let addedDaysAgo = NSLocalizedString("general_added_days_ago", comment: "")
+        static let addedLastWeek = NSLocalizedString("general_added_last_week", comment: "")
+        static let addedWeeksAgo = NSLocalizedString("general_added_weeks_ago", comment: "")
+        static let addedLastMonth = NSLocalizedString("general_added_last_month", comment: "")
+        static let addedMonthsAgo = NSLocalizedString("general_added_months_ago", comment: "")
+        static let addedLastYear = NSLocalizedString("general_added_last_year", comment: "")
+        static let addedYearsAgo = NSLocalizedString("general_added_years_ago", comment: "")
     }
 
     struct Warning {

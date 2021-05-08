@@ -70,7 +70,7 @@
 "profile_lost" = "Lost";
 "profile_are_you_sure_logout" = "Are you sure you want to log out?";
 "profile_logout" = "Log out";
-"profile_not_shared_help_points" = "You have not \nshared any help points !!!";
+"profile_not_shared_help_points" = "You have not shared any help points";
 "profile_never_reported_loss" = "You have never reported a loss.";
 "profile_add_new_entry" = "Add New Entry";
 
@@ -84,6 +84,23 @@
 "email_password_blank" = "E-Mail and Password Fields Cannot Be Blank";
 "invalid_email" = "Please enter a valid e-mail address.";
 "no_image" = "Please add an image.";
+
+/* General */
+"general_incorrect_date" = "Date Incorrect";
+"general_now" = "Now";
+"general_added_seconds_ago" = "Added seconds ago";
+"general_added_a_minute_ago" = "Added a minute ago";
+"general_added_minutes_ago" = "Added minutes ago";
+"general_added_one_hour_ago" = "Added 1 hour ago";
+"general_added_hours_ago" = "Added hours ago";
+"general_added_yesterday" = "Added yesterday";
+"general_added_days_ago" = "Added days ago";
+"general_added_last_week" = "Added last week";
+"general_added_weeks_ago" = "Added weeks ago";
+"general_added_last_month" = "Added last month";
+"general_added_months_ago" = "Added months ago";
+"general_added_last_year" = "Added last year";
+"general_added_years_ago" = "Added years ago";
 
 /* Warning */
 "warning_mamazu" = "
