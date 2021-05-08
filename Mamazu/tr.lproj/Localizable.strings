@@ -39,6 +39,8 @@
 "save_location_button_title" = "KONUMU KAYDET";
 "select_location" = "LÜTFEN KONUM SEÇİN";
 "location_selected" = "KONUMUNUZ SEÇİLDİ";
+"add_help_location" = "Yardım Lokasyonu Ekle";
+"add_missing_listing" = "Kayıp İlanı Ekle";
 
 /* Tutorial */
 "tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";

@@ -39,6 +39,8 @@
 "save_location_button_title" = "SAVE LOCATION";
 "select_location" = "PLEASE SELECT LOCATION";
 "location_selected" = "LOCATION SELECTED";
+"add_help_location" = "Add Help Location";
+"add_missing_listing" = "Add Missing Listing";
 
 /* Tutorial */
 "tutorial_title" = "We would like to briefly inform you!!!";
@@ -46,7 +48,7 @@
 /* Warning */
 "warning_mamazu" = "
 - Please fill in all fields to report a help point.\n
-- Adding photos is very important for our agents who will go to help that point. You can take instant photos using your camera without exiting the program.\n
+- Adding photos is very important for our agents who will go to the help point. You can take instant photos using your camera without exiting the program.\n
 - The more detailed information you can provide in the description section, the more assistance we can deliver.\n
 - When recording, your location will be recorded automatically, you don't need to do anything else.";
 
