@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Mamazu
+
+  Created by Mathew Thomas on 08/05/2021.
+  
+*/
+
+"ok" = "OK";
+"login_welcome_back" = "Welcome back!";
+"login_sign_in_continue" = "Sign in to continue.";
+"login_email_placeholder" = "Your email address";
+"login_password_placeholder" = "Your password";
+"login_login_string" = "LOGIN";
+"login_not_member_yet" = "Not a member yet?";
+"login_register" = "REGISTER.";

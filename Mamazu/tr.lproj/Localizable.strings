@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Mamazu
+
+  Created by Mathew Thomas on 08/05/2021.
+  
+*/
+
+"ok" = "Tamam";
+"login_welcome_back" = "Tekrar Hoşgeldiniz!";
+"login_sign_in_continue" = "Devam etmek için giriş yapın.";
+"login_email_placeholder" = "Email Adresiniz";
+"login_password_placeholder" = "Şifreniz";
+"login_login_string" = "GİRİŞ YAP";
+"login_not_member_yet" = "Henüz üye değil misiniz?";
+"login_register" = "KAYIT OLUN.";
