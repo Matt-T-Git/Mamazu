@@ -176,7 +176,7 @@ struct AddLostPetView: View {
                 self.presentationMode.wrappedValue.dismiss()
             })
             
-            TutorialView(warningText: .Lost, isShowing: $isTutorialShowing)
+            TutorialView(warningText: WarningView().Lost, isShowing: $isTutorialShowing)
             
             LoadingView(isShowing: $viewModel.isLoading, animationName: "cat")
                 .frame(maxWidth: size.width, maxHeight: size.height)

@@ -39,3 +39,18 @@
 "save_location_button_title" = "KONUMU KAYDET";
 "select_location" = "LÜTFEN KONUM SEÇİN";
 "location_selected" = "KONUMUNUZ SEÇİLDİ";
+
+/* Tutorial */
+"tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";
+
+/* Warning */
+"warning_mamazu" = "
+- Yardım noktası bildirimi yapmak için lütfen tüm alanları doldurun.\n
+- Fotoğraf eklemeniz o noktaya yardımcı olmak için gidecek kullanıcılarımız için çok önemli. Programdan çıkmadan kameranızı kullanarak anlık fotoğraf çekebilirsiniz.\n
+- Detaylı açıklama kısmında ne kadar detaylı bilgi verebilirseniz yardımlar o kadar eksiksiz ulaşmış olur.\n
+- Kaydı yaparken bulunduğunuz konum otomatik olarak kaydedilecek başka bir işlem yapmanıza gerek yok.";
+
+"warning_lost" = "
+- Kayıp bildirimi yaparken verdiğiniz bilgilerin eksiksiz olması dostumuzun bulunması için çok önemli.\n
+- Size yardımcı olabilmemiz için detaylı açıklama kısmını lütfen dikkatlice doldurun.\n
+- Kayıp konumunu seçmek için haritaya dokunarak büyük ekrana geçiş yapın. Dostunumuzun kaybolduğu konumu bulduktan sonra parmağınızı bir saniye kadar haritanın üzerinde bekletin ve pinin eklenmesini sağlayın. Pin eklendikten sonra seçme işleminiz tamamlanmış olacaktır.";

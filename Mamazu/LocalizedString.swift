@@ -44,4 +44,13 @@ struct LocalizedString {
         static let locationSelected = NSLocalizedString("location_selected", comment: "")
     }
 
+    struct Tutorial {
+        static let title = NSLocalizedString("tutorial_title", comment: "")
+    }
+
+    struct Warning {
+        static let mamazuString = NSLocalizedString("warning_mamazu", comment: "")
+        static let lostString = NSLocalizedString("warning_lost", comment: "")
+    }
+
 }

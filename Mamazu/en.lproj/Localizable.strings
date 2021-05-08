@@ -39,3 +39,18 @@
 "save_location_button_title" = "SAVE LOCATION";
 "select_location" = "PLEASE SELECT LOCATION";
 "location_selected" = "LOCATION SELECTED";
+
+/* Tutorial */
+"tutorial_title" = "We would like to briefly inform you!!!";
+
+/* Warning */
+"warning_mamazu" = "
+- Please fill in all fields to report a help point.\n
+- Adding photos is very important for our agents who will go to help that point. You can take instant photos using your camera without exiting the program.\n
+- The more detailed information you can provide in the description section, the more assistance we can deliver.\n
+- When recording, your location will be recorded automatically, you don't need to do anything else.";
+
+"warning_lost" = "
+- It is very important to find our friend that the information you provide while reporting a loss is complete and accurate.\n
+- Please fill in the description carefully so that we can help assist you.\n
+- Switch to the big screen by tapping the map to select the lost location. After finding the location where our friend disappeared, put your finger on the map for a second and add the pin. After the pin is added, your selection process is completed.";

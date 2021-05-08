@@ -135,7 +135,7 @@ struct AddMamazuLocationView: View {
                 self.presentationMode.wrappedValue.dismiss()
             })
             
-            TutorialView(warningText: .Mamazu, isShowing: $isTutorialShowing)
+            TutorialView(warningText: WarningView().Mamazu, isShowing: $isTutorialShowing)
             
             LoadingView(isShowing: $viewModel.isLoading, animationName: "cat")
                 .frame(maxWidth: size.width, maxHeight: size.height)
