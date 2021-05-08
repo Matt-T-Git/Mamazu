@@ -13,6 +13,7 @@
 "loading" = "Yükleniyor...";
 "use_camera" = "Kamerayı Kullan";
 "select_from_gallery" = "Galeriden Seç";
+"map_location_chosen" = "Lokasyon Seçildi.";
 
 /* Login */
 "login_title" = "Tekrar Hoşgeldiniz!";

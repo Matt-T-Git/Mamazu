@@ -13,6 +13,7 @@
 "loading" = "Loading...";
 "use_camera" = "Use Camera";
 "select_from_gallery" = "Select From Fallery";
+"map_location_chosen" = "Location Chosen.";
 
 /* Login */
 "login_title" = "Welcome back!";

@@ -14,6 +14,7 @@ struct LocalizedString {
     static let loading = NSLocalizedString("loading", comment: "")
     static let useCamera = NSLocalizedString("use_camera", comment: "")
     static let selectFromGallery = NSLocalizedString("select_from_gallery", comment: "")
+    static let mapLocationChosen = NSLocalizedString("map_location_chosen", comment: "")
 
     struct Login {
         static let title = NSLocalizedString("login_title", comment: "")
