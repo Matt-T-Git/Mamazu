@@ -6,11 +6,22 @@
   
 */
 
+/* Common */
 "ok" = "Tamam";
-"login_welcome_back" = "Tekrar Hoşgeldiniz!";
-"login_sign_in_continue" = "Devam etmek için giriş yapın.";
-"login_email_placeholder" = "Email Adresiniz";
-"login_password_placeholder" = "Şifreniz";
-"login_login_string" = "GİRİŞ YAP";
+"email_placeholder" = "Email Adresiniz";
+"password_placeholder" = "Şifreniz";
+
+/* Login */
+"login_title" = "Tekrar Hoşgeldiniz!";
+"login_subtitle" = "Devam etmek için giriş yapın.";
+"login_button_title" = "GİRİŞ YAP";
 "login_not_member_yet" = "Henüz üye değil misiniz?";
 "login_register" = "KAYIT OLUN.";
+
+/* Register */
+"register_title" = "Aramıza Hoşgeldiniz!";
+"register_subtitle" = "Devam etmek için formu doldurun.";
+"register_name_placeholder" = "Adınız ve Soyadınız";
+"register_button_title" = "KAYIT OL";
+"register_already_member" = "Zaten üye misiniz?";
+"register_login" = "GİRİŞ YAPIN.";

@@ -25,8 +25,8 @@ struct LoginView: View {
                     //MARK:- Login Stack
                     VStack(alignment: .center, spacing: 4) {
                         //MARK:- Graident welcome view
-                        WelcomeTextView(welcomeText: LocalizedString.Login.welcomeBack,
-                                        infotext: LocalizedString.Login.signInContinue,
+                        WelcomeTextView(welcomeText: LocalizedString.Login.title,
+                                        infotext: LocalizedString.Login.subtitle,
                                         colors: [Color.mamazuNeonCarrot, Color.mamazuWildStrawberry])
                         //MARK:- Logo View
                         LogoView(width: 220, height: 175, padding: .bottom, paddingSize: 30)
@@ -34,7 +34,7 @@ struct LoginView: View {
                         //MARK:- Textfields
                         VStack(alignment: .leading, spacing: 25) {
                             MamazuTextField(bindingText: $loginViewModel.email,
-                                            placeholder: LocalizedString.Login.emailPlaceholder,
+                                            placeholder: LocalizedString.emailPlaceholder,
                                             borderColor: Color.mamazuDarkPink.opacity(0.5),
                                             image: "envelope.badge")
                                 .textContentType(.emailAddress)
@@ -42,7 +42,7 @@ struct LoginView: View {
                                 .autocapitalization(.none)
                             
                             MamazuTextField(bindingText: $loginViewModel.password,
-                                            placeholder: LocalizedString.Login.passwordPlaceholder,
+                                            placeholder: LocalizedString.passwordPlaceholder,
                                             borderColor: Color.mamazuDarkPink.opacity(0.5),
                                             image: "lock.circle",
                                             isPassword: true)
@@ -64,7 +64,7 @@ struct LoginView: View {
                             loginViewModel.loginUser()
                             print(loginViewModel.isLoading)
                         }, label: {
-                            Text(LocalizedString.Login.loginString)
+                            Text(LocalizedString.Login.loginButtonTitle)
                                 .frame(maxWidth: size.width - 50)
                                 .frame(height: 55)
                                 .foregroundColor(.white)

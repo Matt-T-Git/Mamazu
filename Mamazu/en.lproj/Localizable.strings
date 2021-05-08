@@ -6,11 +6,22 @@
   
 */
 
+/* Common */
 "ok" = "OK";
-"login_welcome_back" = "Welcome back!";
-"login_sign_in_continue" = "Sign in to continue.";
-"login_email_placeholder" = "Your email address";
-"login_password_placeholder" = "Your password";
-"login_login_string" = "LOGIN";
+"email_placeholder" = "Your email address";
+"password_placeholder" = "Your password";
+
+/* Login */
+"login_title" = "Welcome back!";
+"login_subtitle" = "Sign in to continue.";
+"login_button_title" = "LOGIN";
 "login_not_member_yet" = "Not a member yet?";
 "login_register" = "REGISTER.";
+
+/* Register */
+"register_title" = "Welcome aboard!";
+"register_subtitle" = "Fill out the form to continue.";
+"register_name_placeholder" = "Name and Surname";
+"register_button_title" = "Register";
+"register_already_member" = "Already a member?";
+"register_login" = "LOGIN.";

@@ -9,15 +9,24 @@ import Foundation
 
 struct LocalizedString {
     static let ok = NSLocalizedString("ok", comment: "")
+    static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")
+    static let passwordPlaceholder = NSLocalizedString("password_placeholder", comment: "")
 
     struct Login {
-        static let welcomeBack = NSLocalizedString("login_welcome_back", comment: "")
-        static let signInContinue = NSLocalizedString("login_sign_in_continue", comment: "")
-        static let emailPlaceholder = NSLocalizedString("login_email_placeholder", comment: "")
-        static let passwordPlaceholder = NSLocalizedString("login_password_placeholder", comment: "")
-        static let loginString = NSLocalizedString("login_login_string", comment: "")
+        static let title = NSLocalizedString("login_title", comment: "")
+        static let subtitle = NSLocalizedString("login_subtitle", comment: "")
+        static let loginButtonTitle = NSLocalizedString("login_button_title", comment: "")
         static let notMember = NSLocalizedString("login_not_member_yet", comment: "")
         static let register = NSLocalizedString("login_register", comment: "")
+    }
+
+    struct Register {
+        static let title = NSLocalizedString("register_title", comment: "")
+        static let subtitle = NSLocalizedString("register_subtitle", comment: "")
+        static let namePlaceholder = NSLocalizedString("register_name_placeholder", comment: "")
+        static let registerButtonTitle = NSLocalizedString("register_button_title", comment: "")
+        static let alreadyMember = NSLocalizedString("register_already_member", comment: "")
+        static let login = NSLocalizedString("register_login", comment: "")
     }
 
 }
