@@ -33,7 +33,6 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let month = components.month, month >= 2 {
-
         return String(format: LocalizedString.General.addedMonthsAgo, month)
     }
     
