@@ -25,58 +25,58 @@ public func timeAgoSince(_ date: Date) -> String {
     let components = (calendar as NSCalendar).components(unitFlags, from: date, to: now, options: [])
     
     if let year = components.year, year >= 2 {
-        return "\(year) Yıl Önce Eklendi"
+        return "\(year) \(LocalizedString.General.addedYearsAgo)"
     }
     
     if let year = components.year, year >= 1 {
-        return "Geçen Yıl Eklendi"
+        return LocalizedString.General.addedLastYear
     }
     
     if let month = components.month, month >= 2 {
-        return "\(month) Ay Önce Eklendi"
+        return "\(month) \(LocalizedString.General.addedMonthsAgo)"
     }
     
     if let month = components.month, month >= 1 {
-        return "Geçen Ay Eklendi"
+        return LocalizedString.General.addedLastMonth
     }
     
     if let week = components.weekOfYear, week >= 2 {
-        return "\(week) Hafta Önce Eklendi"
+        return "\(week) \(LocalizedString.General.addedWeeksAgo)"
     }
     
     if let week = components.weekOfYear, week >= 1 {
-        return "Geçen Hafta Eklendi"
+        return LocalizedString.General.addedLastWeek
     }
     
     if let day = components.day, day >= 2 {
-        return "\(day) Gün Önce Eklendi"
+        return "\(day) \(LocalizedString.General.addedDaysAgo)"
     }
     
     if let day = components.day, day >= 1 {
-        return "Dün Eklendi"
+        return LocalizedString.General.addedYesterday
     }
     
     if let hour = components.hour, hour >= 2 {
-        return "\(hour) Saat Önce Eklendi"
+        return "\(hour) \(LocalizedString.General.addedHoursAgo)"
     }
     
     if let hour = components.hour, hour >= 1 {
-        return "1 Saat Önce Eklendi"
+        return LocalizedString.General.addedOneHourAgo
     }
     
     if let minute = components.minute, minute >= 2 {
-        return "\(minute) Dakika Önce Eklendi"
+        return "\(minute) \(LocalizedString.General.addedMinutesAgo)"
     }
     
     if let minute = components.minute, minute >= 1 {
-        return "Bir Dakika Önce Eklendi"
+        return LocalizedString.General.addedAMinuteAgo
     }
     
     if let second = components.second, second >= 3 {
-        return "\(second) Saniye Önce Eklendi"
+        return "\(second) \(LocalizedString.General.addedSecondsAgo)"
     }
     
-    return "Şimdi"
+    return LocalizedString.General.now
     
 }
 
@@ -87,7 +87,7 @@ public func timeAgoFrom(_ dateString: String) -> String {
         return formatter
     }
     
-    guard let date = dateFormatter.date(from: dateString) else { return "Tarih Hatalı" }
+    guard let date = dateFormatter.date(from: dateString) else { return LocalizedString.General.incorrectDate }
     return timeAgoSince(date)
 }
 

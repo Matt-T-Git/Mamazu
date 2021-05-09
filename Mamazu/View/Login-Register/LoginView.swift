@@ -25,8 +25,8 @@ struct LoginView: View {
                     //MARK:- Login Stack
                     VStack(alignment: .center, spacing: 4) {
                         //MARK:- Graident welcome view
-                        WelcomeTextView(welcomeText: "Tekrar Hoşgeldiniz!",
-                                        infotext: "Devam etmek için giriş yapın.",
+                        WelcomeTextView(welcomeText: LocalizedString.Login.title,
+                                        infotext: LocalizedString.Login.subtitle,
                                         colors: [Color.mamazuNeonCarrot, Color.mamazuWildStrawberry])
                         //MARK:- Logo View
                         LogoView(width: 220, height: 175, padding: .bottom, paddingSize: 30)
@@ -34,7 +34,7 @@ struct LoginView: View {
                         //MARK:- Textfields
                         VStack(alignment: .leading, spacing: 25) {
                             MamazuTextField(bindingText: $loginViewModel.email,
-                                            placeholder: "Email Adresiniz",
+                                            placeholder: LocalizedString.emailPlaceholder,
                                             borderColor: Color.mamazuDarkPink.opacity(0.5),
                                             image: "envelope.badge")
                                 .textContentType(.emailAddress)
@@ -42,7 +42,7 @@ struct LoginView: View {
                                 .autocapitalization(.none)
                             
                             MamazuTextField(bindingText: $loginViewModel.password,
-                                            placeholder: "Şifreniz",
+                                            placeholder: LocalizedString.passwordPlaceholder,
                                             borderColor: Color.mamazuDarkPink.opacity(0.5),
                                             image: "lock.circle",
                                             isPassword: true)
@@ -64,7 +64,7 @@ struct LoginView: View {
                             loginViewModel.loginUser()
                             print(loginViewModel.isLoading)
                         }, label: {
-                            Text("GİRİŞ YAP")
+                            Text(LocalizedString.Login.loginButtonTitle)
                                 .frame(maxWidth: size.width - 50)
                                 .frame(height: 55)
                                 .foregroundColor(.white)
@@ -72,7 +72,7 @@ struct LoginView: View {
                                 .cornerRadius(15, style: .continuous)
                         })
                         .alert(isPresented: $loginViewModel.isLoginError, content: {
-                            Alert(title: Text("Mamazu"), message: Text(loginViewModel.errorMessage), dismissButton: .default(Text("Tamam")))
+                            Alert(title: Text("Mamazu"), message: Text(loginViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
                         })
                         .fullScreenCover(isPresented: $loginViewModel.isLoggedIn, content: {
                             if UIDevice.current.iPad {
@@ -90,9 +90,9 @@ struct LoginView: View {
                         //MARK:- Go to register button
                         NavigationLink(destination: RegisterView(isLoggedIn: $loginViewModel.isLoggedIn)) {
                             HStack {
-                                Text("Henüz üye değil misiniz?")
+                                Text(LocalizedString.Login.notMember)
                                     .font(.system(size: 14, weight: .regular))
-                                Text("KAYIT OLUN.")
+                                Text(LocalizedString.Login.register)
                                     .font(.system(size: 14, weight: .heavy))
                             }
                         }

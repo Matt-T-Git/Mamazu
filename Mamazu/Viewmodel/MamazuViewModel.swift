@@ -33,6 +33,7 @@ class MamazuViewModel: ObservableObject {
                 switch response {
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self?.isLoading = false
                 case .success(let result):
                     self?.mamazu = result.results
                     self?.isLoading = false

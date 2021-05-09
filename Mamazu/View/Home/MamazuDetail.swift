@@ -180,7 +180,7 @@ struct MamazuDetail: View {
                         let formattedTime = route.expectedTravelTime.formattedTime
                         withAnimation {
                             self.walkDistance = formattedTime
-                            self.walkDistanceMectic = formattedTime.hasPrefix("0") ? "DAKIKA" : "SAAT"
+                            self.walkDistanceMectic = formattedTime.hasPrefix("0") ? LocalizedString.minute : LocalizedString.hour
                         }
                         
                     }
@@ -191,7 +191,7 @@ struct MamazuDetail: View {
                         let formattedTime = route.expectedTravelTime.formattedTime
                         withAnimation {
                             self.carDistance = formattedTime
-                            self.carDistanceMectic = formattedTime.hasPrefix("0") ? "DAKIKA" : "SAAT"
+                            self.carDistanceMectic = formattedTime.hasPrefix("0") ? LocalizedString.minute : LocalizedString.hour
                         }
                     }
                 }

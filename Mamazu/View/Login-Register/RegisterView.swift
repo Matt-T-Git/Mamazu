@@ -27,8 +27,8 @@ struct RegisterView: View {
         ScrollView(.vertical) {
             ZStack {
                 VStack {
-                    WelcomeTextView(welcomeText: "Aramıza Hoşgeldiniz!",
-                                    infotext: "Devam etmek için formu doldurun.",
+                    WelcomeTextView(welcomeText: LocalizedString.Register.title,
+                                    infotext: LocalizedString.Register.subtitle,
                                     colors: [Color.mamazuBrightTurquoise, Color.mamazuJava])
                     Image(uiImage: selectedImage)
                         .resizable()
@@ -47,20 +47,20 @@ struct RegisterView: View {
                     //Text Inputs
                     VStack(alignment: .leading, spacing: 25) {
                         MamazuTextField(bindingText: $registerViewModel.name,
-                                        placeholder: "Adınız ve Soyadınız",
+                                        placeholder: LocalizedString.Register.namePlaceholder,
                                         borderColor: Color.mamazuDarkPink.opacity(0.5),
                                         image: "person.fill")
                             .textContentType(.name)
                             .autocapitalization(.words)
                         MamazuTextField(bindingText: $registerViewModel.email,
-                                        placeholder: "Email Adresiniz",
+                                        placeholder: LocalizedString.emailPlaceholder,
                                         borderColor: Color.mamazuDarkPink.opacity(0.5),
                                         image: "envelope.badge")
                             .textContentType(.emailAddress)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                         MamazuTextField(bindingText: $registerViewModel.password,
-                                        placeholder: "Şifreniz",
+                                        placeholder: LocalizedString.passwordPlaceholder,
                                         borderColor: Color.mamazuDarkPink.opacity(0.5),
                                         image: "lock.fill",
                                         isPassword: true)
@@ -74,7 +74,7 @@ struct RegisterView: View {
                         registerViewModel.image = selectedImage
                         registerViewModel.registerUser()
                     }, label: {
-                        Text("KAYIT OL")
+                        Text(LocalizedString.Register.registerButtonTitle)
                             .frame(maxWidth: size.width - 50)
                             .frame(height: 55)
                             .foregroundColor(.white)
@@ -88,7 +88,7 @@ struct RegisterView: View {
                     .alert(isPresented: $registerViewModel.isRegisterError, content: {
                         Alert(title: Text("Mamazu"),
                               message: Text(registerViewModel.errorMessage),
-                              dismissButton: .default(Text("Tamam")))
+                              dismissButton: .default(Text(LocalizedString.ok)))
                     })
                     
                     .background(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
@@ -102,9 +102,9 @@ struct RegisterView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
                         HStack {
-                            Text("Zaten üye misiniz?")
+                            Text(LocalizedString.Register.alreadyMember)
                                 .font(.system(size: 14, weight: .regular))
-                            Text("GİRİŞ YAPIN.")
+                            Text(LocalizedString.Register.login)
                                 .font(.system(size: 14, weight: .heavy))
                         }
                     })

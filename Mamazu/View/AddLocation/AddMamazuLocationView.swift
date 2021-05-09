@@ -28,7 +28,7 @@ struct AddMamazuLocationView: View {
     @State var longitude = 0.0
     
     var body: some View {
-        let descriptionPlaceholder = "Detaylı açıklama! \nLütfen ne kadar yardıma ihtiyaç olduğu gibi bilgileri bu alanda bizimle paylaşınız."
+        let descriptionPlaceholder = LocalizedString.AddLocation.addMamazuPlaceholder
         ZStack(alignment: .top) {
             ScrollView {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15, content: {
@@ -48,12 +48,12 @@ struct AddMamazuLocationView: View {
                         .actionSheet(isPresented: $showingSheet) {
                             ActionSheet(
                                 title: Text("Mamazu"),
-                                message: Text("Ekleyeceğiniz fotoğrafı kameranızı kullanarak çekebilir ya da galeriden seçebilirsiniz."),
-                                buttons: [.default(Text("Kamerayı Kullan"), action: {
+                                message: Text(LocalizedString.AddLocation.galleryDescription),
+                                buttons: [.default(Text(LocalizedString.useCamera), action: {
                                     self.sourceType = .camera
                                     self.isShowPicker.toggle()
                                 }),
-                                .default(Text("Galeriden Seç"), action: {
+                                .default(Text(LocalizedString.selectFromGallery), action: {
                                     self.sourceType = .photoLibrary
                                     self.isShowPicker.toggle()
                                 }),
@@ -69,11 +69,10 @@ struct AddMamazuLocationView: View {
                     
                     VStack(spacing: 20) {
                         MamazuTextField(bindingText: $viewModel.title,
-                                        placeholder: "Lokasyon Başlığı",
+                                        placeholder: LocalizedString.AddLocation.locationPlaceholder,
                                         borderColor: .mamazuCardGradientLeft,
                                         image: "location.fill")
-                        
-                        
+
                         MamazuTextEditor(bindingText: $viewModel.description,
                                          borderColor: .mamazuCardGradientLeft,
                                          image: "message.fill",
@@ -94,7 +93,7 @@ struct AddMamazuLocationView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
                                                                   startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                            Text("KONUMU KAYDET").font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
                         .height(52)
@@ -105,10 +104,8 @@ struct AddMamazuLocationView: View {
                             viewModel.addMamazu()
                         }
                         .alert(isPresented: $viewModel.isError, content: {
-                            Alert(title: Text("Mamazu"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("Tamam")))
+                            Alert(title: Text("Mamazu"), message: Text(viewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
                         })
-                        
-                       
                     }
                     .onChange(of: locationManager.lastLocation, perform: { _ in
                         self.latitude = locationManager.lastLocation?.coordinate.latitude ?? 0
@@ -135,7 +132,7 @@ struct AddMamazuLocationView: View {
                 self.presentationMode.wrappedValue.dismiss()
             })
             
-            TutorialView(warningText: .Mamazu, isShowing: $isTutorialShowing)
+            TutorialView(warningText: WarningView().Mamazu, isShowing: $isTutorialShowing)
             
             LoadingView(isShowing: $viewModel.isLoading, animationName: "cat")
                 .frame(maxWidth: size.width, maxHeight: size.height)

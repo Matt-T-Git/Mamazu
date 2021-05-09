@@ -1,0 +1,114 @@
+/* 
+  Localizable.strings
+  Mamazu
+  Turkish (TR) Strings
+  Created by Mathew Thomas on 08/05/2021.
+*/
+
+/* Common */
+"ok" = "Tamam";
+"add" = "Ekle";
+"profile" = "Profil";
+"settings" = "Ayarlar";
+"email_placeholder" = "Email Adresiniz";
+"password_placeholder" = "Şifreniz";
+"loading" = "Yükleniyor...";
+"use_camera" = "Kamerayı Kullan";
+"select_from_gallery" = "Galeriden Seç";
+"map_location_chosen" = "Lokasyon Seçildi.";
+"location_disabled_message" = "Size yakın yardım noktalarını listeleyebilmemiz için konum servislerini kullanmamıza izin vermelisiniz.";
+"welcome" = "Hoşgeldin";
+"minute" = "DAKIKA";
+"hour" = "SAAT";
+
+/* Login */
+"login_title" = "Tekrar Hoşgeldiniz!";
+"login_subtitle" = "Devam etmek için giriş yapın.";
+"login_button_title" = "GİRİŞ YAP";
+"login_not_member_yet" = "Henüz üye değil misiniz?";
+"login_register" = "KAYIT OLUN.";
+
+/* Register */
+"register_title" = "Aramıza Hoşgeldiniz!";
+"register_subtitle" = "Devam etmek için formu doldurun.";
+"register_name_placeholder" = "Adınız ve Soyadınız";
+"register_button_title" = "KAYIT OL";
+"register_already_member" = "Zaten üye misiniz?";
+"register_login" = "GİRİŞ YAPIN.";
+
+/* Add Location */
+"lost_pet_description_placeholder" = "Detaylı açıklama! \nNe kadar detay verebilirseniz size yardımcı olabilme şansımız o kadar artacaktır..";
+"gallery_description" = "Ekleyeceğiniz fotoğrafı kameranızı kullanarak çekebilir ya da galeriden seçebilirsiniz.";
+"animal_name_placeholder" = "Dostumuzun Adı";
+"gender_placeholder" = "Cinsi";
+"age_placeholder" = "Yaşı";
+"breed_placeholder" = "Cinsiyeti";
+"save_location_button_title" = "KONUMU KAYDET";
+"select_location" = "LÜTFEN KONUM SEÇİN";
+"location_selected" = "KONUMUNUZ SEÇİLDİ";
+"add_help_location" = "Yardım Lokasyonu Ekle";
+"add_missing_listing" = "Kayıp İlanı Ekle";
+"add_mamazu_placeholder" = "Detaylı açıklama! \nLütfen ne kadar yardıma ihtiyaç olduğu gibi bilgileri bu alanda bizimle paylaşınız.";
+"location_placeholder" = "Lokasyon Başlığı";
+
+/* Home */
+"home_lost_title" = "Kayıp İlanları";
+"home_no_missing_reports" = "Yakınlarınızda hiç kayıp bildirimi yok.";
+"home_no_help_points" = "Yakınlarınızda hiç yardım lokasyonu yok.";
+"home_help_points" = "Yardım Noktaları";
+"home_gender" = "CİNSİ";
+"home_breed" = "CİNSİYETİ";
+"home_age" = "YAŞI";
+"home_under_one_year" = "1 Yaşından Küçük";
+"home_years_of_age" = "Yaşında";
+"home_found" = "BULUNDU";
+"home_are_you_sure_found" = "Bulundu bildirimi ypmak istediğinize emin misiniz?";
+"home_yes_found" = "Evet Bulundu!";
+
+/* Profile */
+"profile_lost" = "Kayıp";
+"profile_are_you_sure_logout" = "Çıkış yapmak istediğinize emin misiniz?";
+"profile_logout" = "Çıkış Yap";
+"profile_not_shared_help_points" = "Hiç yardım noktası \npaylaşmamışsınız!!!";
+"profile_never_reported_loss" = "Hiç kayıp bildiriminde bulunmamışsınız.";
+"profile_add_new_entry" = "Yeni Kayıt Ekle";
+
+/* Tutorial */
+"tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";
+
+/* Errors */
+"notification_save_success" = "🥰 Bildiriminiz başarı ile kaydedildi. Birdaha ayrılmamanız dileği ile 🥰";
+"something_went_wrong_try_again" = "Bir Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyin.";
+"something_went_wrong" = "Bir Hata Oluştu";
+"email_password_blank" = "E-Mail ve Şifre Alanları Boş Bırakılamaz";
+"invalid_email" = "Lütfen geçerli bir E-Mail adresi giriniz.";
+"no_image" = "Lütfen Resim Ekleyin...";
+
+/* General */
+"general_incorrect_date" = "Tarih Hatalı";
+"general_now" = "Şimdi";
+"general_added_seconds_ago" = "Saniye Önce Eklendi";
+"general_added_a_minute_ago" = "Bir Dakika Önce Eklendi";
+"general_added_minutes_ago" = "Dakika Önce Eklendi";
+"general_added_one_hour_ago" = "1 Saat Önce Eklendi";
+"general_added_hours_ago" = "Saat Önce Eklendi";
+"general_added_yesterday" = "Dün Eklendi";
+"general_added_days_ago" = "Gün Önce Eklendi";
+"general_added_last_week" = "Geçen Hafta Eklendi";
+"general_added_weeks_ago" = "Hafta Önce Eklendi";
+"general_added_last_month" = "Geçen Ay Eklendi";
+"general_added_months_ago" = "Ay Önce Eklendi";
+"general_added_last_year" = "Geçen Yıl Eklendi";
+"general_added_years_ago" = "Yıl Önce Eklendi";
+
+/* Warning */
+"warning_mamazu" = "
+- Yardım noktası bildirimi yapmak için lütfen tüm alanları doldurun.\n
+- Fotoğraf eklemeniz o noktaya yardımcı olmak için gidecek kullanıcılarımız için çok önemli. Programdan çıkmadan kameranızı kullanarak anlık fotoğraf çekebilirsiniz.\n
+- Detaylı açıklama kısmında ne kadar detaylı bilgi verebilirseniz yardımlar o kadar eksiksiz ulaşmış olur.\n
+- Kaydı yaparken bulunduğunuz konum otomatik olarak kaydedilecek başka bir işlem yapmanıza gerek yok.";
+
+"warning_lost" = "
+- Kayıp bildirimi yaparken verdiğiniz bilgilerin eksiksiz olması dostumuzun bulunması için çok önemli.\n
+- Size yardımcı olabilmemiz için detaylı açıklama kısmını lütfen dikkatlice doldurun.\n
+- Kayıp konumunu seçmek için haritaya dokunarak büyük ekrana geçiş yapın. Dostunumuzun kaybolduğu konumu bulduktan sonra parmağınızı bir saniye kadar haritanın üzerinde bekletin ve pinin eklenmesini sağlayın. Pin eklendikten sonra seçme işleminiz tamamlanmış olacaktır.";

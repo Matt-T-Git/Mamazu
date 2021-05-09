@@ -26,7 +26,7 @@ struct AddMamazuView: View {
                         .scaledToFill()
                         .frame(maxWidth: 185, maxHeight: 150)
                     Spacer()
-                    LocationCardView(image: "AddMamazuBackground", title: "Yardım Lokasyonu Ekle",
+                    LocationCardView(image: "AddMamazuBackground", title: LocalizedString.AddLocation.addHelpLocation,
                                      gradient: [.mamazuCardGradientLeft, .mamazuCardGradientRight])
                         .onTapGesture {
                             showMamazuLocation.toggle()
@@ -36,7 +36,7 @@ struct AddMamazuView: View {
                         })
                     
                     Spacer()
-                    LocationCardView(image: "AddLostLocationBackground", title: "Kayıp İlanı Ekle",
+                    LocationCardView(image: "AddLostLocationBackground", title: LocalizedString.AddLocation.addMissingListing,
                                      gradient: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientLeft])
                         .onTapGesture {
                             showLostLocation.toggle()

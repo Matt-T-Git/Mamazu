@@ -1,0 +1,114 @@
+/* 
+  Localizable.strings
+  Mamazu
+  English (EN) Strings
+  Created by Mathew Thomas on 08/05/2021.
+*/
+
+/* Common */
+"ok" = "OK";
+"add" = "Add";
+"profile" = "Profile";
+"settings" = "Settings";
+"email_placeholder" = "Your email address";
+"password_placeholder" = "Your password";
+"loading" = "Loading...";
+"use_camera" = "Use Camera";
+"select_from_gallery" = "Select From Fallery";
+"map_location_chosen" = "Location Chosen.";
+"location_disabled_message" = "You must allow the app to use location services so that we can list help points near you.";
+"welcome" = "Welcome";
+"minute" = "MINUTE";
+"hour" = "HOUR";
+
+/* Login */
+"login_title" = "Welcome back!";
+"login_subtitle" = "Sign in to continue.";
+"login_button_title" = "LOGIN";
+"login_not_member_yet" = "Not a member yet?";
+"login_register" = "REGISTER.";
+
+/* Register */
+"register_title" = "Welcome aboard!";
+"register_subtitle" = "Fill out the form to continue.";
+"register_name_placeholder" = "Name and Surname";
+"register_button_title" = "Register";
+"register_already_member" = "Already a member?";
+"register_login" = "LOGIN.";
+
+/* Add Location */
+"lost_pet_description_placeholder" = "Detailed description! \nThe more details you can provide, the greater our chance of helping you..";
+"gallery_description" = "You can add the photo you will use with your camera or choose from the gallery.";
+"animal_name_placeholder" = "Our Friend's Name";
+"gender_placeholder" = "Gender";
+"age_placeholder" = "Age";
+"breed_placeholder" = "Breed";
+"save_location_button_title" = "SAVE LOCATION";
+"select_location" = "PLEASE SELECT LOCATION";
+"location_selected" = "LOCATION SELECTED";
+"add_help_location" = "Add Help Location";
+"add_missing_listing" = "Add Missing Listing";
+"add_mamazu_placeholder" = "Detailed description! \nPlease share information with us in this area. E.g. how much help is needed";
+"location_placeholder" = "Location Name";
+
+/* Home */
+"home_lost_title" = "Missing Ads";
+"home_no_missing_reports" = "There are no missing reports in your vicinity.";
+"home_no_help_points" = "There are no help locations near you.";
+"home_help_points" = "Help Points";
+"home_gender" = "GENDER";
+"home_breed" = "BREED";
+"home_age" = "AGE";
+"home_under_one_year" = "Under 1 Year";
+"home_years_of_age" = "Years of age";
+"home_found" = "FOUND";
+"home_are_you_sure_found" = "Are you sure you want to set the found notification?";
+"home_yes_found" = "Yes, Found!";
+
+/* Profile */
+"profile_lost" = "Lost";
+"profile_are_you_sure_logout" = "Are you sure you want to log out?";
+"profile_logout" = "Log out";
+"profile_not_shared_help_points" = "You have not shared any help points";
+"profile_never_reported_loss" = "You have never reported a loss.";
+"profile_add_new_entry" = "Add New Entry";
+
+/* Tutorial */
+"tutorial_title" = "A bit of Information";
+
+/* Errors */
+"notification_save_success" = "🥰 Your notification has been saved successfully. 🥰";
+"something_went_wrong_try_again" = "Something went wrong. Please try again later.";
+"something_went_wrong" = "something went wrong";
+"email_password_blank" = "E-Mail and Password Fields Cannot Be Blank";
+"invalid_email" = "Please enter a valid e-mail address.";
+"no_image" = "Please add an image.";
+
+/* General */
+"general_incorrect_date" = "Date Incorrect";
+"general_now" = "Now";
+"general_added_seconds_ago" = "Added seconds ago";
+"general_added_a_minute_ago" = "Added a minute ago";
+"general_added_minutes_ago" = "Added minutes ago";
+"general_added_one_hour_ago" = "Added 1 hour ago";
+"general_added_hours_ago" = "Added hours ago";
+"general_added_yesterday" = "Added yesterday";
+"general_added_days_ago" = "Added days ago";
+"general_added_last_week" = "Added last week";
+"general_added_weeks_ago" = "Added weeks ago";
+"general_added_last_month" = "Added last month";
+"general_added_months_ago" = "Added months ago";
+"general_added_last_year" = "Added last year";
+"general_added_years_ago" = "Added years ago";
+
+/* Warning */
+"warning_mamazu" = "
+- Please fill in all fields to report a help point.\n
+- Adding photos is very important for our agents who will go to the help point. You can take instant photos using your camera without exiting the program.\n
+- The more detailed information you can provide in the description section, the more assistance we can deliver.\n
+- When recording, your location will be recorded automatically, you don't need to do anything else.";
+
+"warning_lost" = "
+- It is very important to find our friend that the information you provide while reporting a loss is complete and accurate.\n
+- Please fill in the description carefully so that we can help assist you.\n
+- Switch to the big screen by tapping the map to select the lost location. After finding the location where our friend disappeared, put your finger on the map for a second and add the pin. After the pin is added, your selection process is completed.";

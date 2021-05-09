@@ -16,7 +16,7 @@ struct ChooseLocationMapView: UIViewRepresentable {
     
     @State var locations = [CLLocationCoordinate2D]()
     @StateObject var manager = LocationManager()
-    var title: String = "Lokasyon Seçildi."
+    var title: String = LocalizedString.mapLocationChosen
     
     @Environment(\.presentationMode) var presentationMode
     

@@ -74,7 +74,7 @@ struct ProfileView: View {
                 .overlay(
                     Picker(selection: $selectedView, label: Text("")) {
                         Text("Mamazu").tag(0)
-                        Text("Kayıp").tag(1)
+                        Text(LocalizedString.Profile.lost).tag(1)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 45)
@@ -101,8 +101,8 @@ struct ProfileView: View {
             .actionSheet(isPresented: $isShowingSheet) {
                 ActionSheet(
                     title: Text("Mamazu"),
-                    message: Text("Çıkış yapmak istediğinize emin misiniz ?"),
-                    buttons: [.default(Text("Çıkış Yap"), action: {
+                    message: Text(LocalizedString.Profile.areYouSureLogout),
+                    buttons: [.default(Text(LocalizedString.Profile.logout), action: {
                         UserDefaults.standard.setIsLoggedIn(value: false)
                         UserDefaults.standard.resetUserToken()
                         self.isLogout.toggle()
@@ -119,7 +119,7 @@ struct ProfileView: View {
                             if mamazuViewModel.mamazu.isEmpty {
                                 EmptyMamazu(closure: {
                                     self.addMamazuLocation.toggle()
-                                }, title: "Hiç yardım noktası \npaylaşmamışsınız!!!"
+                                }, title: LocalizedString.Profile.notSharedHelpPoints
                                 )
                                 .sheet(isPresented: $addMamazuLocation, onDismiss: { mamazuViewModel.fetchCurrentUsersMamazuLocations() }) { AddMamazuLocationView() }
                                 .padding(.top, 50)
@@ -157,7 +157,7 @@ struct ProfileView: View {
                             if lostViewModel.lost.isEmpty {
                                 EmptyMamazu(closure: {
                                     self.addLostPetLocation.toggle()
-                                }, title: "Hiç kayıp bildiriminde bulunmamışsınız."
+                                }, title: LocalizedString.Profile.neverReportedLoss
                                 )
                                 .sheet(isPresented: $addLostPetLocation, onDismiss: { lostViewModel.fetchCurrentUsersLostLocations() }) { AddLostPetView() }
                                 .padding(.top, 50)

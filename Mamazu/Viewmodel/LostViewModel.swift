@@ -24,7 +24,7 @@ class LostViewModel: ObservableObject {
     func getLostData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
             let parameters = ["latitude": self.locationService.lastLocation?.coordinate.latitude, "longitude": self.self.locationService.lastLocation?.coordinate.longitude]
-            self.lostService.fetchDataWithParameters(params: parameters, urlString: LOST_LOCATION_URL) { [weak self] (response: Result<Lost, APIError>) in
+            self.lostService.fetchDataWithParameters(params: parameters as NetworkService.params, urlString: LOST_LOCATION_URL) { [weak self] (response: Result<Lost, APIError>) in
                 switch response {
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -56,10 +56,10 @@ class LostViewModel: ObservableObject {
         self.lostService.setFound(postId: id) { (success) in
             if success {
                 self.isError = true
-                self.errorMessage = "🥰 Bildiriminiz başarı ile kaydedildi. Birdaha ayrılmamanız dileği ile 🥰"
+                self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
             }else {
                 self.isError = true
-                self.errorMessage = "Bir Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyin."
+                self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
             }
         }
     }

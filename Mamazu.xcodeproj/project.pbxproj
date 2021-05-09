@@ -77,6 +77,8 @@
 		B4D3A53125F7495700E53458 /* AddMamazuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A53025F7495700E53458 /* AddMamazuView.swift */; };
 		B4D3A53D25F798F100E53458 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A53C25F798F100E53458 /* ProfileHeaderView.swift */; };
 		B4DCFDD6260333B700A2EE82 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DCFDD5260333B700A2EE82 /* LocationManager.swift */; };
+		D53207002646CD0E005D387A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D53207022646CD0E005D387A /* Localizable.strings */; };
+		D53207052646CE7C005D387A /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53207042646CE7C005D387A /* LocalizedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,9 @@
 		B4D3A53025F7495700E53458 /* AddMamazuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMamazuView.swift; sourceTree = "<group>"; };
 		B4D3A53C25F798F100E53458 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		B4DCFDD5260333B700A2EE82 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D53207012646CD0E005D387A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D53207032646CD28005D387A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D53207042646CE7C005D387A /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +234,8 @@
 				B483ADBE25E3F3370005CFB6 /* View */,
 				B483ADAD25E3F2DD0005CFB6 /* MamazuApp.swift */,
 				B483ADB125E3F2DF0005CFB6 /* Assets.xcassets */,
+				D53207042646CE7C005D387A /* LocalizedString.swift */,
+				D53207022646CD0E005D387A /* Localizable.strings */,
 				B483ADB625E3F2DF0005CFB6 /* Info.plist */,
 				B483ADB325E3F2DF0005CFB6 /* Preview Content */,
 			);
@@ -392,7 +399,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					B483ADA925E3F2DD0005CFB6 = {
 						CreatedOnToolsVersion = 12.4;
@@ -406,6 +413,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = B483ADA125E3F2DD0005CFB6;
 			packageReferences = (
@@ -430,6 +438,7 @@
 			files = (
 				B4644C9526207B1600DE2081 /* 404.json in Resources */,
 				B483ADB525E3F2DF0005CFB6 /* Preview Assets.xcassets in Resources */,
+				D53207002646CD0E005D387A /* Localizable.strings in Resources */,
 				B42FF8B825ED2C88008DF195 /* Dog2.json in Resources */,
 				B4644C9B2620864100DE2081 /* warning.json in Resources */,
 				B42FF8BA25ED2C88008DF195 /* Dog1.json in Resources */,
@@ -486,6 +495,7 @@
 				B4D3A53D25F798F100E53458 /* ProfileHeaderView.swift in Sources */,
 				B4D3A52825F656E300E53458 /* RegisterViewModel.swift in Sources */,
 				B4B3489F260B418E00220B2F /* TextFieldWithInput.swift in Sources */,
+				D53207052646CE7C005D387A /* LocalizedString.swift in Sources */,
 				B47FA9B32604791100D8B92E /* TabView.swift in Sources */,
 				B4D3A51E25F63EB000E53458 /* RegisterModel.swift in Sources */,
 				B47FA9B926049A6F00D8B92E /* MamazuDetail.swift in Sources */,
@@ -509,11 +519,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D53207022646CD0E005D387A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D53207012646CD0E005D387A /* en */,
+				D53207032646CD28005D387A /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		B483ADB725E3F2DF0005CFB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -575,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
