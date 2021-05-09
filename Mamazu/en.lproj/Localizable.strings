@@ -14,7 +14,7 @@
 "password_placeholder" = "Your password";
 "loading" = "Loading...";
 "use_camera" = "Use Camera";
-"select_from_gallery" = "Select From Fallery";
+"select_from_gallery" = "Select From Gallery";
 "map_location_chosen" = "Location Chosen.";
 "location_disabled_message" = "You must allow the app to use location services so that we can list help points near you.";
 "welcome" = "Welcome";
@@ -70,36 +70,36 @@
 "profile_are_you_sure_logout" = "Are you sure you want to log out?";
 "profile_logout" = "Log out";
 "profile_not_shared_help_points" = "You have not shared any help points";
-"profile_never_reported_loss" = "You have never reported a loss.";
+"profile_never_reported_loss" = "You have never reported a loss";
 "profile_add_new_entry" = "Add New Entry";
 
 /* Tutorial */
 "tutorial_title" = "A bit of Information";
 
 /* Errors */
-"notification_save_success" = "🥰 Your notification has been saved successfully. 🥰";
-"something_went_wrong_try_again" = "Something went wrong. Please try again later.";
-"something_went_wrong" = "something went wrong";
-"email_password_blank" = "E-Mail and Password Fields Cannot Be Blank";
-"invalid_email" = "Please enter a valid e-mail address.";
-"no_image" = "Please add an image.";
+"error_notification_save_success" = "🥰 Your notification has been saved successfully. 🥰";
+"error_something_went_wrong_try_again" = "Something went wrong. Please try again later.";
+"error_something_went_wrong" = "Something went wrong";
+"error_email_password_blank" = "E-Mail and Password Fields Cannot Be Blank";
+"error_invalid_email" = "Please enter a valid e-mail address.";
+"error_no_image" = "Please add an image.";
 
 /* General */
 "general_incorrect_date" = "Date Incorrect";
 "general_now" = "Now";
-"general_added_seconds_ago" = "Added seconds ago";
+"general_added_seconds_ago" = "Added %d seconds ago";
 "general_added_a_minute_ago" = "Added a minute ago";
-"general_added_minutes_ago" = "Added minutes ago";
+"general_added_minutes_ago" = "Added %d minutes ago";
 "general_added_one_hour_ago" = "Added 1 hour ago";
-"general_added_hours_ago" = "Added hours ago";
+"general_added_hours_ago" = "Added %d hours ago";
 "general_added_yesterday" = "Added yesterday";
-"general_added_days_ago" = "Added days ago";
+"general_added_days_ago" = "Added %d days ago";
 "general_added_last_week" = "Added last week";
-"general_added_weeks_ago" = "Added weeks ago";
+"general_added_weeks_ago" = "Added %d weeks ago";
 "general_added_last_month" = "Added last month";
-"general_added_months_ago" = "Added months ago";
+"general_added_months_ago" = "Added %d months ago";
 "general_added_last_year" = "Added last year";
-"general_added_years_ago" = "Added years ago";
+"general_added_years_ago" = "Added %d years ago";
 
 /* Warning */
 "warning_mamazu" = "
