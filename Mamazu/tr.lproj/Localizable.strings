@@ -86,20 +86,6 @@
 
 /* General */
 "general_incorrect_date" = "Tarih Hatalı";
-"general_now" = "Şimdi";
-"general_added_seconds_ago" = "%d Saniye Önce Eklendi";
-"general_added_a_minute_ago" = "Bir Dakika Önce Eklendi";
-"general_added_minutes_ago" = "%d Dakika Önce Eklendi";
-"general_added_one_hour_ago" = "1 Saat Önce Eklendi";
-"general_added_hours_ago" = "%d Saat Önce Eklendi";
-"general_added_yesterday" = "Dün Eklendi";
-"general_added_days_ago" = "%d Gün Önce Eklendi";
-"general_added_last_week" = "Geçen Hafta Eklendi";
-"general_added_weeks_ago" = "%d Hafta Önce Eklendi";
-"general_added_last_month" = "Geçen Ay Eklendi";
-"general_added_months_ago" = "%d Ay Önce Eklendi";
-"general_added_last_year" = "Geçen Yıl Eklendi";
-"general_added_years_ago" = "%d Yıl Önce Eklendi";
 
 /* Warning */
 "warning_mamazu" = "

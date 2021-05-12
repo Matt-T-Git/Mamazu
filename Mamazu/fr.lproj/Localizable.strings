@@ -1,0 +1,100 @@
+/* 
+  Localizable.strings
+  Mamazu
+  French (FR) Strings
+  Created by Mathew Thomas on 08/05/2021.
+*/
+
+/* Common */
+"ok" = "d'accord";
+"add" = "Ajouter";
+"profile" = "Profil";
+"settings" = "Paramètres";
+"email_placeholder" = "Votre adresse email";
+"password_placeholder" = "Votre mot de passe";
+"loading" = "Chargement...";
+"use_camera" = "Utiliser la caméra";
+"select_from_gallery" = "Choisir depuis la galerie";
+"map_location_chosen" = "Emplacement choisi.";
+"location_disabled_message" = "Vous devez autoriser l'application à utiliser la localisation services afin que nous puissions répertorier les points d'aide près de chez vous.";
+"welcome" = "Bienvenue";
+"minute" = "MINUTE";
+"hour" = "HEURE";
+
+/* Login */
+"login_title" = "Content de te revoir!";
+"login_subtitle" = "Connectez-vous pour continuer.";
+"login_button_title" = "CONNEXION";
+"login_not_member_yet" = "Pas encore membre?";
+"login_register" = "S'INSCRIRE.";
+
+/* Register */
+"register_title" = "Bienvenue à bord!";
+"register_subtitle" = "Remplissez le formulaire pour continuer.";
+"register_name_placeholder" = "Nom et Nom de famille";
+"register_button_title" = "S'inscrire";
+"register_already_member" = "Déjà membre?";
+"register_login" = "CONNEXION.";
+
+/* Add Location */
+"lost_pet_description_placeholder" = "Description détaillée! \nPlus vous pouvez fournir de détails, plus nos chances de vous aider sont grandes.";
+"gallery_description" = "Vous pouvez ajouter la photo que vous utiliserez avec votre appareil photo ou choisir dans la galerie.";
+"animal_name_placeholder" = "Nom de notre ami";
+"gender_placeholder" = "Sexe";
+"age_placeholder" = "Âge";
+"breed_placeholder" = "Race animale";
+"save_location_button_title" = "ENREGISTRER L'EMPLACEMENT";
+"select_location" = "VEUILLEZ CHOISIR L'EMPLACEMENT";
+"location_selected" = "EMPLACEMENT SÉLECTIONNÉ";
+"add_help_location" = "Ajouter un emplacement d'aide";
+"add_missing_listing" = "Ajouter une annonce manquante";
+"add_mamazu_placeholder" = "Description détaillée! \nVeuillez partager des informations avec nous dans ce domaine. Par example. combien d'aide est nécessaire";
+"location_placeholder" = "Nom de la localisation";
+
+/* Home */
+"home_lost_title" = "Annonces manquantes";
+"home_no_missing_reports" = "Il n'y a aucun rapport manquant dans votre quartier.";
+"home_no_help_points" = "Il n'y a pas de centre d'aide près de chez vous.";
+"home_help_points" = "Points d'aide";
+"home_gender" = "SEXE";
+"home_breed" = "RACE ANIMALE";
+"home_age" = "ÂGE";
+"home_under_one_year" = "Moins de 1 an";
+"home_years_of_age" = "Ans d'âge";
+"home_found" = "TROUVÉ";
+"home_are_you_sure_found" = "Voulez-vous vraiment définir la notification trouvée?";
+"home_yes_found" = "Oui, trouvé!";
+
+/* Profile */
+"profile_lost" = "Perdue";
+"profile_are_you_sure_logout" = "Êtes-vous sûr de vouloir vous déconnecter?";
+"profile_logout" = "Se déconnecter";
+"profile_not_shared_help_points" = "Vous n'avez partagé aucun point d'aide";
+"profile_never_reported_loss" = "Vous n'avez jamais signalé de perte";
+"profile_add_new_entry" = "Ajouter une nouvelle entrée";
+
+/* Tutorial */
+"tutorial_title" = "Des informations";
+
+/* Errors */
+"error_notification_save_success" = "🥰Votre notification a été enregistrée avec succès.🥰";
+"error_something_went_wrong_try_again" = "Un problème est survenu. Veuillez réessayer plus tard.";
+"error_something_went_wrong" = "Un problème est survenu.";
+"error_email_password_blank" = "Les champs Email et Mot de passe ne peuvent pas être vides";
+"error_invalid_email" = "S'il vous plaît, mettez une adresse email valide.";
+"error_no_image" = "Veuillez ajouter une image.";
+
+/* General */
+"general_incorrect_date" = "Date incorrecte";
+
+/* Warning */
+"warning_mamazu" = "
+- Veuillez remplir tous les champs pour signaler un point d'aide.\n
+- L'ajout de photos est très important pour nos agents qui se rendront au point d'aide. Vous pouvez prendre des photos instantanées à l'aide de votre appareil photo sans quitter le programme.\n
+- Plus vous pouvez fournir d'informations détaillées dans la section description, plus nous pouvons vous aider.\n
+- Lors de l'enregistrement, votre position sera enregistrée automatiquement, vous n'avez rien d'autre à faire.";
+
+"warning_lost" = "
+- Il est très important de savoir à notre ami que les informations que vous fournissez lors de la déclaration d'une perte sont complètes et correctes.\n
+- Veuillez remplir soigneusement la description afin que nous puissions vous aider.\n
+- Passez au grand écran en appuyant sur la carte pour sélectionner l'emplacement perdu. Après avoir trouvé l'endroit où notre ami a disparu, mettez votre doigt sur la carte pendant une seconde et ajoutez l'épingle. Une fois l'épingle ajoutée, votre processus de sélection est terminé.";
