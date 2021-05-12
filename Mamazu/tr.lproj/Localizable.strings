@@ -77,29 +77,29 @@
 "tutorial_title" = "Sizi kısaca \nbilgilendirmek istiyoruz!!!";
 
 /* Errors */
-"notification_save_success" = "🥰 Bildiriminiz başarı ile kaydedildi. Birdaha ayrılmamanız dileği ile 🥰";
-"something_went_wrong_try_again" = "Bir Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyin.";
-"something_went_wrong" = "Bir Hata Oluştu";
-"email_password_blank" = "E-Mail ve Şifre Alanları Boş Bırakılamaz";
-"invalid_email" = "Lütfen geçerli bir E-Mail adresi giriniz.";
-"no_image" = "Lütfen Resim Ekleyin...";
+"error_notification_save_success" = "🥰 Bildiriminiz başarı ile kaydedildi. Birdaha ayrılmamanız dileği ile 🥰";
+"error_something_went_wrong_try_again" = "Bir Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyin.";
+"error_something_went_wrong" = "Bir Hata Oluştu";
+"error_email_password_blank" = "E-Mail ve Şifre Alanları Boş Bırakılamaz";
+"error_invalid_email" = "Lütfen geçerli bir E-Mail adresi giriniz.";
+"error_no_image" = "Lütfen Resim Ekleyin...";
 
 /* General */
 "general_incorrect_date" = "Tarih Hatalı";
 "general_now" = "Şimdi";
-"general_added_seconds_ago" = "Saniye Önce Eklendi";
+"general_added_seconds_ago" = "%d Saniye Önce Eklendi";
 "general_added_a_minute_ago" = "Bir Dakika Önce Eklendi";
-"general_added_minutes_ago" = "Dakika Önce Eklendi";
+"general_added_minutes_ago" = "%d Dakika Önce Eklendi";
 "general_added_one_hour_ago" = "1 Saat Önce Eklendi";
-"general_added_hours_ago" = "Saat Önce Eklendi";
+"general_added_hours_ago" = "%d Saat Önce Eklendi";
 "general_added_yesterday" = "Dün Eklendi";
-"general_added_days_ago" = "Gün Önce Eklendi";
+"general_added_days_ago" = "%d Gün Önce Eklendi";
 "general_added_last_week" = "Geçen Hafta Eklendi";
-"general_added_weeks_ago" = "Hafta Önce Eklendi";
+"general_added_weeks_ago" = "%d Hafta Önce Eklendi";
 "general_added_last_month" = "Geçen Ay Eklendi";
-"general_added_months_ago" = "Ay Önce Eklendi";
+"general_added_months_ago" = "%d Ay Önce Eklendi";
 "general_added_last_year" = "Geçen Yıl Eklendi";
-"general_added_years_ago" = "Yıl Önce Eklendi";
+"general_added_years_ago" = "%d Yıl Önce Eklendi";
 
 /* Warning */
 "warning_mamazu" = "

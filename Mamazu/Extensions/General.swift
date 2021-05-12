@@ -25,7 +25,7 @@ public func timeAgoSince(_ date: Date) -> String {
     let components = (calendar as NSCalendar).components(unitFlags, from: date, to: now, options: [])
     
     if let year = components.year, year >= 2 {
-        return "\(year) \(LocalizedString.General.addedYearsAgo)"
+        return String(format: LocalizedString.General.addedYearsAgo, year)
     }
     
     if let year = components.year, year >= 1 {
@@ -33,7 +33,7 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let month = components.month, month >= 2 {
-        return "\(month) \(LocalizedString.General.addedMonthsAgo)"
+        return String(format: LocalizedString.General.addedMonthsAgo, month)
     }
     
     if let month = components.month, month >= 1 {
@@ -41,7 +41,7 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let week = components.weekOfYear, week >= 2 {
-        return "\(week) \(LocalizedString.General.addedWeeksAgo)"
+        return String(format: LocalizedString.General.addedWeeksAgo, week)
     }
     
     if let week = components.weekOfYear, week >= 1 {
@@ -49,7 +49,7 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let day = components.day, day >= 2 {
-        return "\(day) \(LocalizedString.General.addedDaysAgo)"
+        return String(format: LocalizedString.General.addedDaysAgo, day)
     }
     
     if let day = components.day, day >= 1 {
@@ -57,7 +57,7 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let hour = components.hour, hour >= 2 {
-        return "\(hour) \(LocalizedString.General.addedHoursAgo)"
+        return String(format: LocalizedString.General.addedHoursAgo, hour)
     }
     
     if let hour = components.hour, hour >= 1 {
@@ -65,7 +65,7 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let minute = components.minute, minute >= 2 {
-        return "\(minute) \(LocalizedString.General.addedMinutesAgo)"
+        return String(format: LocalizedString.General.addedMinutesAgo, minute)
     }
     
     if let minute = components.minute, minute >= 1 {
@@ -73,7 +73,7 @@ public func timeAgoSince(_ date: Date) -> String {
     }
     
     if let second = components.second, second >= 3 {
-        return "\(second) \(LocalizedString.General.addedSecondsAgo)"
+        return String(format: LocalizedString.General.addedSecondsAgo, second)
     }
     
     return LocalizedString.General.now

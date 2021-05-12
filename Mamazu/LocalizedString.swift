@@ -86,12 +86,12 @@ struct LocalizedString {
     }
 
     struct Errors {
-        static let notificationSuccessfullySaved = NSLocalizedString("notification_save_success", comment: "")
-        static let somethingWentWrongTryAgain = NSLocalizedString("something_went_wrong_try_again", comment: "")
-        static let somethingWentWrong = NSLocalizedString("something_went_wrong", comment: "")
-        static let emailAndPasswordBlank = NSLocalizedString("email_password_blank", comment: "")
-        static let invalidEmail = NSLocalizedString("invalid_email", comment: "")
-        static let noImage = NSLocalizedString("no_image", comment: "")
+        static let notificationSuccessfullySaved = NSLocalizedString("error_notification_save_success", comment: "")
+        static let somethingWentWrongTryAgain = NSLocalizedString("error_something_went_wrong_try_again", comment: "")
+        static let somethingWentWrong = NSLocalizedString("error_something_went_wrong", comment: "")
+        static let emailAndPasswordBlank = NSLocalizedString("error_email_password_blank", comment: "")
+        static let invalidEmail = NSLocalizedString("error_invalid_email", comment: "")
+        static let noImage = NSLocalizedString("error_no_image", comment: "")
     }
 
     struct General {
