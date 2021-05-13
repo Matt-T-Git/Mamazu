@@ -155,6 +155,7 @@
 		D53207042646CE7C005D387A /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		D552815C2648546D00C12477 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D5528169264C187E00C12477 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D552816A264D4E2E00C12477 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +419,7 @@
 				tr,
 				fr,
 				nl,
+				ru,
 			);
 			mainGroup = B483ADA125E3F2DD0005CFB6;
 			packageReferences = (
@@ -531,6 +533,7 @@
 				D53207032646CD28005D387A /* tr */,
 				D552815C2648546D00C12477 /* fr */,
 				D5528169264C187E00C12477 /* nl */,
+				D552816A264D4E2E00C12477 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
