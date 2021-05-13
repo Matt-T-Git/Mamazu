@@ -23,6 +23,9 @@ struct LocalizedString {
     static let welcome = NSLocalizedString("welcome", comment: "")
     static let minute = NSLocalizedString("minute", comment: "")
     static let hour = NSLocalizedString("hour", comment: "")
+    
+    static let meter = NSLocalizedString("meter", comment: "")
+    static let kilometer = NSLocalizedString("kilometer", comment: "")
 
     struct Login {
         static let title = NSLocalizedString("login_title", comment: "")
@@ -55,6 +58,10 @@ struct LocalizedString {
         static let addMissingListing = NSLocalizedString("add_missing_listing", comment: "")
         static let addMamazuPlaceholder = NSLocalizedString("add_mamazu_placeholder", comment: "")
         static let locationPlaceholder  = NSLocalizedString("location_placeholder", comment: "")
+        static let male = NSLocalizedString("male", comment: "")
+        static let female = NSLocalizedString("female", comment: "")
+        static let choose = NSLocalizedString("choose", comment: "")
+        static let underAge = NSLocalizedString("under-age", comment: "")
     }
 
     struct Home {

@@ -20,6 +20,8 @@
 "welcome" = "Hoşgeldin";
 "minute" = "DAKIKA";
 "hour" = "SAAT";
+"meter" = "METRE";
+"kilometer" = "KİLOMETRE";
 
 /* Login */
 "login_title" = "Tekrar Hoşgeldiniz!";
@@ -50,6 +52,10 @@
 "add_missing_listing" = "Kayıp İlanı Ekle";
 "add_mamazu_placeholder" = "Detaylı açıklama! \nLütfen ne kadar yardıma ihtiyaç olduğu gibi bilgileri bu alanda bizimle paylaşınız.";
 "location_placeholder" = "Lokasyon Başlığı";
+"male" = "Erkek";
+"female" = "Dişi";
+"choose" = "SEÇİNİZ";
+"under-age" = "1 Yaşından küçük";
 
 /* Home */
 "home_lost_title" = "Kayıp İlanları";

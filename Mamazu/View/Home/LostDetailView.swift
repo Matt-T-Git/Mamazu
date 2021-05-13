@@ -105,7 +105,7 @@ struct LostDetailView: View {
                     Spacer()
                     VStack(alignment: .leading, spacing: 8){
                         Text(LocalizedString.Home.age).font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor)
-                        Text(lostData.petAge == LocalizedString.Home.under1Year ? lostData.petAge : "\(lostData.petAge) \(LocalizedString.Home.yearsOfAge)")
+                        Text(lostData.petAge)
                             .font(.system(size: 13, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
                     }
                 }

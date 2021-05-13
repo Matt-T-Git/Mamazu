@@ -197,7 +197,7 @@ struct MamazuDetail: View {
                 }
                 withAnimation {
                     let dist: String = distanceInMeters < 1000 ? "%.3f" : "%.1f"
-                    self.distanceMetric = distanceInMeters < 1000 ? "METRE" : "KILOMETRE"
+                    self.distanceMetric = distanceInMeters < 1000 ? LocalizedString.meter : LocalizedString.kilometer
                     self.distance = String(format: dist, distanceInMeters / 1000)
                 }
             }

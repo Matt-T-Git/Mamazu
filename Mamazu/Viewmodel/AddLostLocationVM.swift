@@ -34,11 +34,13 @@ class AddLostLocationVM: ObservableObject {
     @Published var selected: String? = nil
     
     var petAgeArray = Array(stride(from: 1, through: 30, by: 0.5)).map { String($0) }.map {$0.replacingOccurrences(of: ".0", with: "") }
-    let petGenderArray = ["SEÇİNİZ","Erkek", "Dişi"]
+    let petGenderArray = [LocalizedString.AddLocation.choose,
+                          LocalizedString.AddLocation.male,
+                          LocalizedString.AddLocation.female]
     
     init() {
-        petAgeArray.insert("SEÇİNİZ", at: 0)
-        petAgeArray.insert("1 Yaşından Küçük", at: 1)
+        petAgeArray.insert(LocalizedString.AddLocation.choose, at: 0)
+        petAgeArray.insert(LocalizedString.AddLocation.underAge, at: 1)
     }
     
     func addLostPet() {
@@ -55,13 +57,13 @@ class AddLostLocationVM: ObservableObject {
             return
         }
         
-        if petGender.isEmpty || petGender == "SEÇİNİZ" {
+        if petGender.isEmpty || petGender == LocalizedString.AddLocation.choose {
             self.isError.toggle()
             self.errorMessage = "Lütfen cinsiyet Seçimini Yapın..."
             return
         }
         
-        if petAge.isEmpty || petAge == "SEÇİNİZ" {
+        if petAge.isEmpty || petAge == LocalizedString.AddLocation.choose {
             self.isError.toggle()
             self.errorMessage = "Lütfen yaş Seçimini Yapın..."
             return

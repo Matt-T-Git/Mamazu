@@ -20,6 +20,8 @@
 "welcome" = "Welcome";
 "minute" = "MINUTE";
 "hour" = "HOUR";
+"meter" = "METER";
+"kilometer" = "KILOMETER";
 
 /* Login */
 "login_title" = "Welcome back!";
@@ -50,6 +52,10 @@
 "add_missing_listing" = "Add Missing Listing";
 "add_mamazu_placeholder" = "Detailed description! \nPlease share information with us in this area. E.g. how much help is needed";
 "location_placeholder" = "Location Name";
+"male" = "Male";
+"female" = "Female";
+"choose" = "CHOOSE";
+"under-age" = "Under the age of 1";
 
 /* Home */
 "home_lost_title" = "Missing Ads";
