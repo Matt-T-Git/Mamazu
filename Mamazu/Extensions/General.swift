@@ -16,68 +16,11 @@ extension String {
     }
 }
 
-//Time Ago Func
-public func timeAgoSince(_ date: Date) -> String {
-    
-    let calendar = Calendar.current
-    let now = Date()
-    let unitFlags: NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfYear, .month, .year]
-    let components = (calendar as NSCalendar).components(unitFlags, from: date, to: now, options: [])
-    
-    if let year = components.year, year >= 2 {
-        return String(format: LocalizedString.General.addedYearsAgo, year)
-    }
-    
-    if let year = components.year, year >= 1 {
-        return LocalizedString.General.addedLastYear
-    }
-    
-    if let month = components.month, month >= 2 {
-        return String(format: LocalizedString.General.addedMonthsAgo, month)
-    }
-    
-    if let month = components.month, month >= 1 {
-        return LocalizedString.General.addedLastMonth
-    }
-    
-    if let week = components.weekOfYear, week >= 2 {
-        return String(format: LocalizedString.General.addedWeeksAgo, week)
-    }
-    
-    if let week = components.weekOfYear, week >= 1 {
-        return LocalizedString.General.addedLastWeek
-    }
-    
-    if let day = components.day, day >= 2 {
-        return String(format: LocalizedString.General.addedDaysAgo, day)
-    }
-    
-    if let day = components.day, day >= 1 {
-        return LocalizedString.General.addedYesterday
-    }
-    
-    if let hour = components.hour, hour >= 2 {
-        return String(format: LocalizedString.General.addedHoursAgo, hour)
-    }
-    
-    if let hour = components.hour, hour >= 1 {
-        return LocalizedString.General.addedOneHourAgo
-    }
-    
-    if let minute = components.minute, minute >= 2 {
-        return String(format: LocalizedString.General.addedMinutesAgo, minute)
-    }
-    
-    if let minute = components.minute, minute >= 1 {
-        return LocalizedString.General.addedAMinuteAgo
-    }
-    
-    if let second = components.second, second >= 3 {
-        return String(format: LocalizedString.General.addedSecondsAgo, second)
-    }
-    
-    return LocalizedString.General.now
-    
+func timeAgoSince(_ date: Date) -> String {
+    let formatter = RelativeDateTimeFormatter()
+    formatter.dateTimeStyle = .named
+    formatter.formattingContext = .beginningOfSentence
+    return formatter.localizedString(for: date, relativeTo: Date())
 }
 
 public func timeAgoFrom(_ dateString: String) -> String {

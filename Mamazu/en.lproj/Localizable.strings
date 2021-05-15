@@ -92,20 +92,6 @@
 
 /* General */
 "general_incorrect_date" = "Date Incorrect";
-"general_now" = "Now";
-"general_added_seconds_ago" = "Added %d seconds ago";
-"general_added_a_minute_ago" = "Added a minute ago";
-"general_added_minutes_ago" = "Added %d minutes ago";
-"general_added_one_hour_ago" = "Added 1 hour ago";
-"general_added_hours_ago" = "Added %d hours ago";
-"general_added_yesterday" = "Added yesterday";
-"general_added_days_ago" = "Added %d days ago";
-"general_added_last_week" = "Added last week";
-"general_added_weeks_ago" = "Added %d weeks ago";
-"general_added_last_month" = "Added last month";
-"general_added_months_ago" = "Added %d months ago";
-"general_added_last_year" = "Added last year";
-"general_added_years_ago" = "Added %d years ago";
 
 /* Warning */
 "warning_mamazu" = "

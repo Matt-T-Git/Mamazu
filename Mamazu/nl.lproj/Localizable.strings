@@ -1,0 +1,100 @@
+/* 
+  Localizable.strings
+  Mamazu
+  Dutch (NL) Strings
+  Created by Mathew Thomas on 08/05/2021.
+*/
+
+/* Common */
+"ok" = "OK";
+"add" = "Toevoegen";
+"profile" = "Profiel";
+"settings" = "Instellingen";
+"email_placeholder" = "Uw e-mailadres";
+"password_placeholder" = "Uw wachtwoord";
+"loading" = "Laden…";
+"use_camera" = "Gebruik Camera";
+"select_from_gallery" = "Selecteren uit galerie";
+"map_location_chosen" = "Locatie gekozen.";
+"location_disabled_message" = "U moet toestaan dat de app locatieservices gebruikt, zodat we helppunten bij u in de buurt kunnen vermelden.";
+"welcome" = "Welkom";
+"minute" = "MINUUT";
+"hour" = "UUR";
+
+/* Login */
+"login_title" = "Welkom terug!";
+"login_subtitle" = "Inloggen om door te gaan!";
+"login_button_title" = "INLOGGEN";
+"login_not_member_yet" = "Nog geen lid?";
+"login_register" = "REGISTREREN.";
+
+/* Register */
+"register_title" = "Welkom aan boord!";
+"register_subtitle" = "Vul het formulier in om door te gaan.";
+"register_name_placeholder" = "Voor- en achternaam";
+"register_button_title" = "REGISTREREN.";
+"register_already_member" = "Ben je al lid?";
+"register_login" = "INLOGGEN.";
+
+/* Add Location */
+"lost_pet_description_placeholder" = "Gedetailleerde beschrijving! \nDe meer details die u kunt verstrekken, hoe groter onze kans om u te helpen..";
+"gallery_description" = "U kunt de foto toevoegen die u met uw camera gebruikt of kiezen uit de galerij.";
+"animal_name_placeholder" = "De naam van onze vriend";
+"gender_placeholder" = "Geslacht";
+"age_placeholder" = "Leeftijd";
+"breed_placeholder" = "Ras";
+"save_location_button_title" = "LOCATIE OPSLAAN";
+"select_location" = "SELECTEER DE LOCATIE";
+"location_selected" = "LOCATIE GESELECTEERD";
+"add_help_location" = "Help-locatie toevoegen";
+"add_missing_listing" = "Vermist toevoegen";
+"add_mamazu_placeholder" = "Gedetailleerde beschrijving! \nDeel informatie met ons op dit gebied. Bijvoorbeeld hoeveel hulp er nodig is";
+"location_placeholder" = "Locatienaam";
+
+/* Home */
+"home_lost_title" = "Vermist Advertenties";
+"home_no_missing_reports" = "Er zijn geen vermissingen vermeld in uw omgeving.";
+"home_no_help_points" = "Er zijn geen hulplocaties bij jou in de buurt.";
+"home_help_points" = "Hulplocaties";
+"home_gender" = "GESLACHT";
+"home_breed" = "RAS";
+"home_age" = "LEEFTIJD";
+"home_under_one_year" = "Jonger dan 1 jaar";
+"home_years_of_age" = "Leeftijd";
+"home_found" = "GEVONDEN";
+"home_are_you_sure_found" = "Weet u zeker dat u de gevonden melding wilt instellen?";
+"home_yes_found" = "Ja, gevonden!";
+
+/* Profile */
+"profile_lost" = "Verloren";
+"profile_are_you_sure_logout" = "Weet u zeker dat u wilt uitloggen?";
+"profile_logout" = "Uitloggen";
+"profile_not_shared_help_points" = "U hebt geen hulplocaties gedeeld";
+"profile_never_reported_loss" = "U hebt nog nooit een zoek geraakt melding gedaan";
+"profile_add_new_entry" = "Nieuw item toevoegen";
+
+/* Tutorial */
+"tutorial_title" = "Een beetje informatie";
+
+/* Errors */
+"error_notification_save_success" = "🥰 Uw melding is opgeslagen. 🥰";
+"error_something_went_wrong_try_again" = "Er is iets misgegaan. Probeer het later opnieuw.";
+"error_something_went_wrong" = "Er is iets misgegaan.";
+"error_email_password_blank" = "E-mail- en wachtwoordvelden kunnen niet leeg zijn";
+"error_invalid_email" = "Voer een geldig e-mailadres in.";
+"error_no_image" = "Voeg een afbeelding toe.";
+
+/* General */
+"general_incorrect_date" = "Datum onjuist";
+
+/* Warning */
+"warning_mamazu" = "
+-Vul alle velden in om een hulplocatie te melden.\n
+- Het toevoegen van foto's is erg belangrijk voor onze agenten die naar de hulplocatie gaan. U kunt direct foto's maken met uw camera zonder het programma te verlaten.\n
+- Hoe meer gedetailleerde informatie u kunt geven in het beschrijvingsgedeelte, hoe meer hulp we kunnen bieden.\n
+- Tijdens het opnemen wordt uw locatie automatisch opgenomen, u hoeft niets anders te doen.";
+
+"warning_lost" = "
+- Het is erg belangrijk om onze vriend te vinden dat de informatie die u verstrekt tijdens het melden van een verlies volledig en nauwkeurig is.\n
+- Vul de beschrijving zorgvuldig in, zodat we u kunnen helpen.\n
+- Schakel over naar het grote scherm door op de kaart te tikken om de verloren locatie te selecteren. Nadat je de locatie hebt gevonden waar onze vriend verdween, leg je je vinger even op de kaart en voeg je de pin toe. Nadat de pin is toegevoegd, is uw selectieproces voltooid.";
