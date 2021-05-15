@@ -20,6 +20,8 @@
 "welcome" = "Bienvenue";
 "minute" = "MINUTE";
 "hour" = "HEURE";
+"meter" = "MÈTRE";
+"kilometer" = "KILOMÈTRE";
 
 /* Login */
 "login_title" = "Content de te revoir!";
@@ -50,6 +52,10 @@
 "add_missing_listing" = "Ajouter une annonce manquante";
 "add_mamazu_placeholder" = "Description détaillée! \nVeuillez partager des informations avec nous dans ce domaine. Par example. combien d'aide est nécessaire";
 "location_placeholder" = "Nom de la localisation";
+"male" = "Mâle";
+"female" = "Chienne";
+"choose" = "CHOISIR";
+"under-age" = "Moins de 1 an";
 
 /* Home */
 "home_lost_title" = "Annonces manquantes";

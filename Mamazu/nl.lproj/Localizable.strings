@@ -20,6 +20,8 @@
 "welcome" = "Welkom";
 "minute" = "MINUUT";
 "hour" = "UUR";
+"meter" = "METER";
+"kilometer" = "KILOMETER";
 
 /* Login */
 "login_title" = "Welkom terug!";
@@ -50,6 +52,10 @@
 "add_missing_listing" = "Vermist toevoegen";
 "add_mamazu_placeholder" = "Gedetailleerde beschrijving! \nDeel informatie met ons op dit gebied. Bijvoorbeeld hoeveel hulp er nodig is";
 "location_placeholder" = "Locatienaam";
+"male" = "Mannetje";
+"female" = "Vrouw";
+"choose" = "KIEZEN";
+"under-age" = "Minder dan 1 jaar";
 
 /* Home */
 "home_lost_title" = "Vermist Advertenties";
