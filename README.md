@@ -1,9 +1,13 @@
 
 ## Mamazu - A project aiming to improve the living conditions of stray animals
 
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+
 [![Mamazu open source app](/resources/GHCover.jpg)](https://www.mamazuapp.com/)
 
 <a href='https://apps.apple.com/tr/app/mamazu/id1242834976#?platform=iphone'><img alt='Mamazu on Apple Store' src='/resources/download-app-store-button.svg' height="60"/></a>
+
+:star: Star us on GitHub — it motivates us a lot!
 
 ## Features
 
@@ -28,5 +32,11 @@ Do not forget that; We are the ones who will mark the locations and bring food a
 To send a request, suggestion or a greeting
 You can reach us at mamazuapp@gmail.com.
 
-## Lisans
-Code is released under Apache License Version 2.0
+## Contributors
+<a href="https://github.com/serccan/mamazu/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=serccan/mamazu" />
+</a>
+
+## License
+Code is released under Apache License Version 2.0  
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
