@@ -56,6 +56,13 @@
 "female" = "Dişi";
 "choose" = "SEÇİNİZ";
 "under-age" = "1 Yaşından küçük";
+// Warnings
+"full_fill" = "Lütfen tüm alanları doldurun.";
+"add_image" = "Lütfen bir fotoğraf ekleyin.";
+"choose_gender" = "Lütfen cinsiyet seçin.";
+"choose_age" = "Lütfen yaş seçin.";
+"location_service_error" = "Konum servisine ulaşılırken bir sorun oluştu.";
+"choose_location" = "Lütfen harita üzerine dokunarak açılan pencerede parmağınızı dostumuzun kaybolduğu düşündüğünüz konuma 1 saniye kadar basılı tutun";
 
 /* Home */
 "home_lost_title" = "Kayıp İlanları";

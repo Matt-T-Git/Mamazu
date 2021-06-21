@@ -10,8 +10,8 @@
 "add" = "Add";
 "profile" = "Profile";
 "settings" = "Settings";
-"email_placeholder" = "Your email address";
-"password_placeholder" = "Your password";
+"email_placeholder" = "Email address";
+"password_placeholder" = "Password";
 "loading" = "Loading...";
 "use_camera" = "Use Camera";
 "select_from_gallery" = "Select From Gallery";
@@ -56,6 +56,13 @@
 "female" = "Female";
 "choose" = "CHOOSE";
 "under-age" = "Under the age of 1";
+// Warnings
+"full_fill" = "Please fill in all fields.";
+"add_image" = "Please add a photo.";
+"choose_gender" = "Please select gender.";
+"choose_age" = "Please select age.";
+"location_service_error" = "There was a problem reaching the location service.";
+"choose_location" = "Please keep your finger pressed on map until adding new pin in the point that where you think your pet has disappeared.";
 
 /* Home */
 "home_lost_title" = "Missing Ads";

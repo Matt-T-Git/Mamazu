@@ -56,6 +56,13 @@
 "female" = "Vrouw";
 "choose" = "KIEZEN";
 "under-age" = "Minder dan 1 jaar";
+// Warnings
+"full_fill" = "Vul alstublieft alle velden in.";
+"add_image" = "Voeg een foto toe.";
+"choose_gender" = "Selecteer geslacht.";
+"choose_age" = "Selecteer leeftijd.";
+"location_service_error" = "Er is een probleem opgetreden bij het bereiken van de locatieservice.";
+"choose_location" = "Houd uw vinger op de kaart ingedrukt totdat u een nieuwe pin toevoegt op het punt waar u denkt dat uw huisdier is verdwenen.";
 
 /* Home */
 "home_lost_title" = "Vermist Advertenties";

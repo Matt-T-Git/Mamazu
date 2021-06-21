@@ -47,37 +47,37 @@ class AddLostLocationVM: ObservableObject {
         
         if petName.isEmpty || description.isEmpty || petBreed.isEmpty || petAge.isEmpty {
             self.isError.toggle()
-            self.errorMessage = "Lütfen tüm alanları doldurun..."
+            self.errorMessage = LocalizedString.AddLocation.fullFill
             return
         }
         
         if image.size == .zero {
             self.isError.toggle()
-            self.errorMessage = "Lütfen fotoğraf Ekleyin..."
+            self.errorMessage = LocalizedString.AddLocation.addImage
             return
         }
         
         if petGender.isEmpty || petGender == LocalizedString.AddLocation.choose {
             self.isError.toggle()
-            self.errorMessage = "Lütfen cinsiyet Seçimini Yapın..."
+            self.errorMessage = LocalizedString.AddLocation.chooseGender
             return
         }
         
         if petAge.isEmpty || petAge == LocalizedString.AddLocation.choose {
             self.isError.toggle()
-            self.errorMessage = "Lütfen yaş Seçimini Yapın..."
+            self.errorMessage = LocalizedString.AddLocation.chooseAge
             return
         }
         
         if !isLocationSelected {
             self.isError.toggle()
-            self.errorMessage = "Lütfen harita üzerine dokunarak açılan pencerede parmağınızı dostumuzun kaybolduğu düşündüğünüz konuma 1 saniye kadar basılı tutun"
+            self.errorMessage = LocalizedString.AddLocation.chooseLocationOnMap
             return
         }
         
         if latitude == 0.0 || longitude == 0.0 {
             self.isError.toggle()
-            self.errorMessage = "Konum servisine ulaşılırken bir sorun oluştu."
+            self.errorMessage = LocalizedString.AddLocation.locationServiceError
             return
         }
         self.isLoading = true

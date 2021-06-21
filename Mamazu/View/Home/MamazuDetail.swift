@@ -208,7 +208,7 @@ struct MamazuDetail: View {
 struct MamazuDetail_Previews: PreviewProvider {
     static var previews: some View {
         
-        let user = UserModel(id: "5edf2cfb1800575cd0",
+        let user = UserModel(id: "5",
                              name: "Sercan Burak AĞIR",
                              email: "sercanburak@gmail.com",
                              profileImg: "https://www.mamazuapp.com/profileImages/40e6d246-6101-4b9a-b7a6-39d66b5273df.png")
@@ -216,7 +216,7 @@ struct MamazuDetail_Previews: PreviewProvider {
         let location = Location(type: "Point",
                                 coordinates: [32.85789856768421, 30.76025889471372])
         
-        let mamazu = MamazuResults(id: "5edf2cfb1800575cd0",
+        let mamazu = MamazuResults(id: "5ed",
                                    title: "A216 ve arkadaşları",
                                    description: "Fener park girişinde 3 - 4 arkadaş geziyorlar. Havalar artık ısınmaya başladı mamanın yanında su da çok önemli",
                                    image: "https://www.mamazuapp.com/mamazuImages/d81cb359-6303-4237-93b7-621675771f96.jpeg",

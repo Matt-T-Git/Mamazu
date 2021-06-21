@@ -56,6 +56,13 @@
 "female" = "Chienne";
 "choose" = "CHOISIR";
 "under-age" = "Moins de 1 an";
+// Warnings
+"full_fill" = "Merci de remplir tous les champs.";
+"add_image" = "Veuillez ajouter une photo.";
+"choose_gender" = "Veuillez sélectionner le sexe.";
+"choose_age" = "Veuillez sélectionner l'âge.";
+"location_service_error" = "Un problème est survenu lors de l'accès au service de localisation.";
+"choose_location" = "Veuillez garder votre doigt appuyé sur la carte jusqu'à ce que vous ajoutiez une nouvelle épingle au point où vous pensez que votre animal a disparu.";
 
 /* Home */
 "home_lost_title" = "Annonces manquantes";

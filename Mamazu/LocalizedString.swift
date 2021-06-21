@@ -33,6 +33,10 @@ struct LocalizedString {
         static let loginButtonTitle = NSLocalizedString("login_button_title", comment: "")
         static let notMember = NSLocalizedString("login_not_member_yet", comment: "")
         static let register = NSLocalizedString("login_register", comment: "")
+        
+        // Warnings
+        
+        
     }
 
     struct Register {
@@ -62,6 +66,15 @@ struct LocalizedString {
         static let female = NSLocalizedString("female", comment: "")
         static let choose = NSLocalizedString("choose", comment: "")
         static let underAge = NSLocalizedString("under-age", comment: "")
+        
+        // Warnings
+        static let fullFill = NSLocalizedString("full_fill", comment: "")
+        static let addImage = NSLocalizedString("add_image", comment: "")
+        static let chooseGender = NSLocalizedString("choose_gender", comment: "")
+        static let chooseAge = NSLocalizedString("choose_age", comment: "")
+        static let chooseLocationOnMap = NSLocalizedString("choose_location", comment: "")
+        static let locationServiceError = NSLocalizedString("location_service_error", comment: "")
+        
     }
 
     struct Home {
@@ -123,4 +136,5 @@ struct LocalizedString {
         static let mamazuString = NSLocalizedString("warning_mamazu", comment: "")
         static let lostString = NSLocalizedString("warning_lost", comment: "")
     }
+    
 }

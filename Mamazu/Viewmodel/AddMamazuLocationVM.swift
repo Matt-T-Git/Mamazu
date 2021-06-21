@@ -30,13 +30,13 @@ class AddMamazuLocationVM: ObservableObject {
         
         if title.isEmpty || description.isEmpty || image.size == .zero {
             self.isError.toggle()
-            self.errorMessage = "Lütfen tüm alanları doldurun..."
+            self.errorMessage = LocalizedString.AddLocation.fullFill
             return
         }
         
         if latitude == 0.0 || longitude == 0.0 {
             self.isError.toggle()
-            self.errorMessage = "Konum Servisine ulaşılırken bir sorun oluştu."
+            self.errorMessage = LocalizedString.AddLocation.locationServiceError
             return
         }
         self.isLoading = true
