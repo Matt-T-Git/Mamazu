@@ -3,7 +3,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-[![Mamazu open source app](/resources/GHCover.jpg)](https://www.mamazuapp.com/)
+[![Mamazu open source app](/resources/GHCover.jpg)](mamazu.vercel.app)
 
 <a href='https://apps.apple.com/tr/app/mamazu/id1242834976#?platform=iphone'><img alt='Mamazu on Apple Store' src='/resources/download-app-store-button.svg' height="60"/></a>
 
