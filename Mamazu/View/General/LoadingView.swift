@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUIX
 
 struct LoadingView: View {
     @Binding var isShowing: Bool
@@ -17,8 +16,8 @@ struct LoadingView: View {
         
         if isShowing{
             ZStack {
-                VisualEffectBlurView(blurStyle: .regular)
-                    .cornerRadius(35, style: .continuous)
+                VisualEffectBlur(blurStyle: .systemChromeMaterial)
+                    .cornerRadius(35)
                     .frame(width: size.width / 1.8, height: size.width / 1.8)
                     .shadow(color: Color.black.opacity(0.2), radius: 15, x: 0, y: 10)
                 VStack {

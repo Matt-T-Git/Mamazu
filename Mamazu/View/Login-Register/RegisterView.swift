@@ -35,7 +35,7 @@ struct RegisterView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 180, height: 180)
                         .background(Image("selectImageMamazu"))
-                        .cornerRadius(55, style: .continuous)
+                        .cornerRadius(55)
                         .padding(.bottom, 40)
                         .shadow(color: Color.black.opacity(0.2), radius: 15, x: 0, y: 10)
                         .onTapGesture {
@@ -79,7 +79,7 @@ struct RegisterView: View {
                             .frame(height: 55)
                             .foregroundColor(.white)
                             .font(.system(size: 14, weight: .semibold))
-                            .cornerRadius(15, style: .continuous)
+                            .cornerRadius(15)
                         
                     })
                     .fullScreenCover(isPresented: $registerViewModel.isRegistered, content: {

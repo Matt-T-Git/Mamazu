@@ -62,7 +62,7 @@ struct HomeView: View {
                                         LostCardView(lostAnimalData: lost)
                                             .padding(.top, -20)
                                             .padding(.horizontal, 10)
-                                            .height(275)
+                                            .frame(height: 275)
                                             .rotation3DEffect(.degrees((Double(geometry.frame(in: .global).minX - 10) / -30)), axis: (x: 0, y: 10, z: 0))
                                             .animation(.easeInOut)
                                             .onTapGesture {
@@ -82,7 +82,7 @@ struct HomeView: View {
                         }
                     })
                     .padding(.top, -30)
-                    .height(280)
+                    .frame(height: 280)
                     .frame(maxWidth: .infinity, maxHeight: 280)
                     
                     //MARK:- Mamazu Title

@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Mamazu
+
+  Created by Sercan Burak AĞIR on 4.09.2021.
+  
+*/
+"NSLocationWhenInUseUsageDescription" = "Size en yakın yerleri listeleyebilmemiz için bulunduğunuz konum'a ulaşmamıza izin vermelisiniz.";
+"NSCameraUsageDescription" = "Lütfen fotoğraf çekmek için kamera erişimine izin verin.";
+"NSPhotoLibraryUsageDescription" = "Lütfen fotoğraf eklemek için fotoğraf albümü erişimine izin verin.";

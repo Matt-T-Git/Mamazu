@@ -42,7 +42,7 @@ struct MamazuDetail: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 55, height: 55)
-                                .cornerRadius(18, style: .continuous)
+                                .cornerRadius(18)
                             VStack(alignment: .leading, spacing: 2){
                                 Text(mamazuData.user.name).font(.system(size: 15, weight: .bold)).foregroundColor(Color.mamazuTextColor)
                                 Text(timeAgoFrom(mamazuData.date)).font(.system(size: 12, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
@@ -55,12 +55,13 @@ struct MamazuDetail: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
                                              startPoint: .leading, endPoint: .trailing))
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 45))
-                        .height(size.height / 2 + 7)
+                        .frame(height: size.height / 2 + 7)
+
                     AnimatedImage(url: URL(string: mamazuData.image)).indicator(SDWebImageActivityIndicator.medium)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: size.width)
-                        .height(size.height / 2)
+                        .frame(height: size.height / 2)
                         .background(Color.mamazuCardBackground)
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 50))
                 }
@@ -75,7 +76,8 @@ struct MamazuDetail: View {
                     ,alignment: .topTrailing
                 )
                 .frame(maxWidth: size.width)
-                .height(size.height / 2 + 83)
+                .frame(height: size.height / 2 + 83)
+
                 
                 //MARK:- Detail
                 VStack {
@@ -98,7 +100,7 @@ struct MamazuDetail: View {
                     MamazuMapView(latitude: mamazuData.location.coordinates[1], longitude: mamazuData.location.coordinates[0], title: mamazuData.title)
                         
                         .frame(maxWidth: size.width)
-                        .height(150)
+                        .frame(height: 150)
                         .cornerRadius(20)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
@@ -135,7 +137,7 @@ struct MamazuDetail: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.mamazuBackground)
+        .background(Color.mamazuBackground)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .onAppear(perform: {
             calculateDistance()

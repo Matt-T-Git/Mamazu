@@ -23,6 +23,18 @@
 "meter" = "METRE";
 "kilometer" = "KİLOMETRE";
 
+/* Onboarding */
+"mamazu_onboarding_title" = "Sokakta yaşayan dostlarımıza yardım etmek artık çok kolay.";
+"mamazu_onboarding_subtitle" = "Eklemek istediğiniz yardım konumunu bir fotoğrafı ve detaylı açıklaması ile bizimle paylaşmanız yeterli.";
+
+"lost_onboarding_title" = "Kayıp dostlarımızın bulunmasında size yardımcı olmak istiyoruz.";
+"lost_onboarding_subtitle" = "Yapmanız gereken sadece formu eksiksiz doldurmanız ve dostumuzun kaybolduğu konumu seçmek.";
+
+"location_onboarding_title" = "Size daha yakın olmak \nistiyoruz.";
+"location_onboarding_subtitle" = "Size en yakın ilanları listeleyebilmemiz için lokasyon servislerinin kullanımına izin vermelisiniz.";
+"location_allowed_title" = "İZİN VERİLDİ 🥳";
+"location_notallowed_title" = "HENÜZ İZİN VERİLMEDİ";
+
 /* Login */
 "login_title" = "Tekrar Hoşgeldiniz!";
 "login_subtitle" = "Devam etmek için giriş yapın.";

@@ -26,6 +26,19 @@ struct LocalizedString {
     
     static let meter = NSLocalizedString("meter", comment: "")
     static let kilometer = NSLocalizedString("kilometer", comment: "")
+    
+    struct Onboarding {
+        static let mamazuTitle = NSLocalizedString("mamazu_onboarding_title", comment: "")
+        static let mamazuSubtitle = NSLocalizedString("mamazu_onboarding_subtitle", comment: "")
+        
+        static let lostTitle = NSLocalizedString("lost_onboarding_title", comment: "")
+        static let lostSubtitle = NSLocalizedString("lost_onboarding_subtitle", comment: "")
+        
+        static let locationTitle = NSLocalizedString("location_onboarding_title", comment: "")
+        static let locationSubtitle = NSLocalizedString("location_onboarding_subtitle", comment: "")
+        static let locationButtonAllowedTitle = NSLocalizedString("location_allowed_title", comment: "")
+        static let locationButtonNotAllowedTitle = NSLocalizedString("location_notallowed_title", comment: "")
+    }
 
     struct Login {
         static let title = NSLocalizedString("login_title", comment: "")
@@ -35,8 +48,6 @@ struct LocalizedString {
         static let register = NSLocalizedString("login_register", comment: "")
         
         // Warnings
-        
-        
     }
 
     struct Register {

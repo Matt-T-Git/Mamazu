@@ -20,21 +20,21 @@ struct MamazuCard: View {
                 .background(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
                                            startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.clear)
-                .cornerRadius(45, style: .continuous)
-                .height(470)
+                .clipShape(RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                .frame(height: 470)
             ZStack(alignment: .top) {
                 RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 5)
                     .padding(.top, 6)
-                    .height(470)
+                    .frame(height: 470)
                 VStack(alignment: .leading) {
                     AnimatedImage(url: URL(string: mamazuImgUrl(mamazuData.image))).indicator(SDWebImageActivityIndicator.large)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .layoutPriority(-1)
                         .frame(maxWidth: UIDevice.current.iPad ? size.width / 2 - 40 : size.width - 60, maxHeight: 390)
-                        .cornerRadius(40, style: .continuous)
+                        .cornerRadius(40)
                         .padding(.top,4)
                     HStack(alignment: .center, spacing: 12) {
                         AnimatedImage(url: URL(string: mamazuData.user.profileImg)).indicator(SDWebImageActivityIndicator.medium)
@@ -42,7 +42,7 @@ struct MamazuCard: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 45, height: 45)
                             .aspectRatio(contentMode: .fill)
-                            .cornerRadius(18, style: .continuous)
+                            .cornerRadius(18)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(mamazuData.user.name).font(.system(size: 15, weight: .bold)).foregroundColor(Color.mamazuTextColor)
                             Text(timeAgoFrom(mamazuData.date)).font(.system(size: 12, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
@@ -57,7 +57,7 @@ struct MamazuCard: View {
         }
         .frame(maxWidth: UIDevice.current.iPad ? size.width / 2 - 20 : size.width - 60)
         .padding(.horizontal, 20)
-        .height(470)
+        .frame(height: 470)
     }
 }
 

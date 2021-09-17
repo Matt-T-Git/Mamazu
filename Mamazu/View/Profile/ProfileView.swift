@@ -4,7 +4,7 @@
 //
 //  Created by Sercan Burak AĞIR on 9.03.2021.
 //
-
+import UIKit
 import SwiftUI
 import SDWebImageSwiftUI
 
@@ -14,7 +14,7 @@ struct ProfileView: View {
     @StateObject var locationManager = LocationManager()
     @StateObject var lostViewModel = LostViewModel()
     @StateObject var mamazuViewModel = MamazuViewModel()
-    private let pickerPurple = Color(hex: 0x636FF7).toUIColor()
+    private let pickerPurple = UIColor(red: 0.39, green: 0.44, blue: 0.97, alpha: 1.00)
     @State private var selectedView = 0
     
     @State var isLostDetailShow: Bool = false
@@ -31,7 +31,7 @@ struct ProfileView: View {
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = pickerPurple
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: pickerPurple!], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: pickerPurple], for: .normal)
     }
     
     var body: some View {
@@ -62,7 +62,7 @@ struct ProfileView: View {
                     AnimatedImage(url: URL(string: userViewModel.imageUrl)).indicator(SDWebImageActivityIndicator.medium)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .cornerRadius(UIDevice.current.iPhones_5_5s_5c_SE ? 30 : 60, style: .continuous)
+                        .cornerRadius(UIDevice.current.iPhones_5_5s_5c_SE ? 30 : 60)
                         .frame(width: profileImageSize() , height: profileImageSize())
                         .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 10)
                         .padding(.bottom, UIDevice.current.iPhones_5_5s_5c_SE ? 30 : 50)
@@ -93,8 +93,7 @@ struct ProfileView: View {
                         .padding(.bottom,UIDevice.current.iPad ? 80 : 0)
                     ,alignment: UIDevice.current.iPad ? .bottomTrailing : .topTrailing
                 )
-                
-                .height(size.height / 2)
+                .frame(height: size.height / 2)
             }
             .opacity(userViewModel.isFetched ? 1 : 0)
             .animation(.easeIn(duration: 0.5))
@@ -127,9 +126,9 @@ struct ProfileView: View {
                                 .animation(.easeIn(duration: 0.5))
                             }else {
                                 ScrollView {
-                                    LazyVGrid(columns: [GridItem(.adaptive(size.height / 3)),
-                                                        GridItem(.adaptive(size.height / 3)),
-                                                        GridItem(.adaptive(size.height / 3))],
+                                    LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
+                                                        GridItem(.adaptive(minimum: size.height / 3)),
+                                                        GridItem(.adaptive(minimum: size.height / 3))],
                                               alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
                                                 ForEach(self.mamazuViewModel.mamazu) { mamazu in
                                                     AnimatedImage(url: URL(string: mamazu.image)).indicator(SDWebImageActivityIndicator.medium)
@@ -163,9 +162,9 @@ struct ProfileView: View {
                                 .padding(.top, 50)
                             }else {
                                 ScrollView {
-                                    LazyVGrid(columns: [GridItem(.adaptive(size.height / 3)),
-                                                        GridItem(.adaptive(size.height / 3)),
-                                                        GridItem(.adaptive(size.height / 3))],
+                                    LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
+                                                        GridItem(.adaptive(minimum: size.height / 3)),
+                                                        GridItem(.adaptive(minimum: size.height / 3))],
                                               alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
                                                 ForEach(self.lostViewModel.lost) { lost in
                                                     AnimatedImage(url: URL(string: lost.image)).indicator(SDWebImageActivityIndicator.medium)
@@ -196,7 +195,7 @@ struct ProfileView: View {
         })
         
         .frame(maxWidth: .infinity, maxHeight: size.height)
-        .background(.mamazuBackground)
+        .background(Color.mamazuBackground)
         .ignoresSafeArea()
         
     }

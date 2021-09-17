@@ -23,6 +23,18 @@
 "meter" = "MÈTRE";
 "kilometer" = "KILOMÈTRE";
 
+/* Onboarding Screens */
+"mamazu_onboarding_title" = "Maintenant très facile d'aider les animaux qui doivent vivre dans la rue.";
+"mamazu_onboarding_subtitle" = "Il suffit de partager avec nous l'emplacement que vous souhaitez ajouter avec une photo et une explication détaillée.";
+
+"lost_onboarding_title" = "Nous voulons vous aider à retrouver vos animaux perdus.";
+"lost_onboarding_subtitle" = "Tout ce que vous avez à faire est de remplir complètement le formulaire et de choisir l'endroit où votre animal a disparu.";
+
+"location_onboarding_title" = "Nous voulons être plus proches de vous";
+"location_onboarding_subtitle" = "Vous devez autoriser l'utilisation des services de localisation afin que nous puissions lister les publications les plus proches de vous.";
+"location_allowed_title" = "AUTORISÉ 🥳";
+"location_notallowed_title" = "PAS ENCORE AUTORISÉ 😔";
+
 /* Login */
 "login_title" = "Content de te revoir!";
 "login_subtitle" = "Connectez-vous pour continuer.";

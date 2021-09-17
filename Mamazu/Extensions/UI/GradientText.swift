@@ -10,15 +10,25 @@ import SwiftUI
 
 extension View {
     func GradientText(text: String, colors: [Color], font: Font) -> some View {
-        Text(text).font(font)
+        Text(text)
+            .font(font)
             .foregroundColor(.clear)
             .overlay(
                 LinearGradient(gradient: Gradient(colors: colors),
                                startPoint: .topLeading,
                                endPoint: .bottomTrailing)
-                    .mask(Text(text)
-                            .font(font).scaledToFill()
+                            .mask(Text(text)
+                            .font(font)
                     )
             )
+    }
+}
+
+extension View {
+    public func gradientForeground(colors: [Color]) -> some View {
+        self.overlay(LinearGradient(gradient: .init(colors: colors),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing))
+            .mask(self)
     }
 }

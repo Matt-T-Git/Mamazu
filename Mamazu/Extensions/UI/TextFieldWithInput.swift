@@ -28,11 +28,11 @@ struct TextFieldWithInputView : UIViewRepresentable {
         picker.delegate = context.coordinator
         picker.dataSource = context.coordinator
         picker.backgroundColor = UIColor(named: "MamazuCardBackground")
-        picker.tintColor = Color.mamazuTextColor.toUIColor()
+        picker.tintColor = UIColor(named: "TextColor")
         textField.placeholder = placeholder
         textField.inputView = picker
         textField.delegate = context.coordinator
-        textField.textColor = Color.mamazuTextColor.toUIColor()
+        textField.textColor = UIColor(named: "TextColor")
         return textField
     }
     

@@ -25,7 +25,7 @@ extension View {
         //.overlay(Rectangle().foregroundColor(lineColor).frame(height: 2), alignment: .bottom)
         .background(Color(hex: 0xF5F0FF))
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 3)
-        .cornerRadius(15, style: .continuous)
+        .cornerRadius(15)
     }
     
     func RoundedSecureTextField(placeholder: String, text: String, bindingText: Binding<String>) -> some View {
@@ -44,6 +44,6 @@ extension View {
         //.overlay(Rectangle().foregroundColor(lineColor).frame(height: 2), alignment: .bottom)
         .background(Color(hex: 0xF5F0FF))
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 3)
-        .cornerRadius(15, style: .continuous)
+        .cornerRadius(15)
     }
 }

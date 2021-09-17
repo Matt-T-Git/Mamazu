@@ -69,7 +69,7 @@ struct LoginView: View {
                                 .frame(height: 55)
                                 .foregroundColor(.white)
                                 .font(.system(size: 14, weight: .semibold))
-                                .cornerRadius(15, style: .continuous)
+                                .cornerRadius(15)
                         })
                         .alert(isPresented: $loginViewModel.isLoginError, content: {
                             Alert(title: Text("Mamazu"), message: Text(loginViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
@@ -77,10 +77,12 @@ struct LoginView: View {
                         .fullScreenCover(isPresented: $loginViewModel.isLoggedIn, content: {
                             if UIDevice.current.iPad {
                                 NavigationView {
-                                    SideBar().hideNavigationBar().accentColor(.mamazuTitle)
+                                    SideBar()
+                                    //SideBar().hideNavigationBar().accentColor(Color.mamazuTitle)
                                 }
                             } else {
                                 MamazuTabView()
+                                    .tabViewStyle(.automatic)
                             }
                         })
                         .background(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
@@ -110,6 +112,14 @@ struct LoginView: View {
                         .background(Color.mamazuBackground.opacity(0.8))
                 }
             }
+            .onAppear(perform: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    locationManager.requestAuth()
+                    if locationManager.locationStatus == nil || locationManager.locationStatus == .notDetermined {
+                        locationManager.requestAuth()
+                    }
+                }
+            })
             .onTapGesture {
                 hideKeyboard()
             }

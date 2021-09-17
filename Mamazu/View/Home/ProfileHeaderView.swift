@@ -23,22 +23,37 @@ struct ProfileHeaderView: View {
                 .foregroundColor(.clear)
             ZStack {
                 Capsule()
-                    .height(70)
-                    .foregroundColor(.mamazuCardBackground)
+                    .frame(height: 70)
+                    .foregroundColor(Color.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 5)
-                HStack(spacing: 15){
-                    AnimatedImage(url: URL(string: userViewModel.imageUrl)).indicator(SDWebImageActivityIndicator.gray)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .background(.mamazuBackground)
-                        .frame(maxWidth: 55, maxHeight: 55)
-                        .cornerRadius(27)
-                        .border(Color.mamazuCardGradientLeft, width: userViewModel.isFetched ? 1 : 0, cornerRadius: 27)
-                    VStack(alignment: .leading) {
-                        Text(LocalizedString.welcome).font(.system(size: 13, weight: .regular)).foregroundColor(.mamazuTextColor)
-                        Text(userViewModel.userName).font(.system(size: 16, weight: .bold)).foregroundColor(Color.mamazuTextColor).lineLimit(1).minimumScaleFactor(0.5)
-                        Text(city).font(.system(size: 12, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
+                HStack(spacing: 17){
+                    ZStack {
+                        Image(systemName: "circle.fill")
+                            .resizable()
+                            .font(.system(size: 60))
+                            .angularGradientGlow(colors: [Color(#colorLiteral(red: 0, green: 0.4366608262, blue: 1, alpha: 1)),
+                                                          Color(#colorLiteral(red: 0, green: 0.9882656932, blue: 0.6276883483, alpha: 1)),
+                                                          Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)),
+                                                          Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
+                            .frame(width: 50, height: 50)
+                            .blur(radius: 5)
+                        AnimatedImage(url: URL(string: userViewModel.imageUrl)).indicator(SDWebImageActivityIndicator.gray)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .background(Color.mamazuBackground)
+                            .frame(maxWidth: 52, maxHeight: 52)
+                            .cornerRadius(27)
+                    }
                         
+                    VStack(alignment: .leading, spacing: -2) {
+                        Text(LocalizedString.welcome).font(.system(size: 12, weight: .regular)).foregroundColor(.mamazuTextColor)
+                        Text(userViewModel.userName)
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(Color.mamazuTextColor)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                            .offset(x: -2)
+                        Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
                     }
                     Spacer()
                     Image("ProfileHeaderLogo")
@@ -50,7 +65,7 @@ struct ProfileHeaderView: View {
             }
         }
         .frame(maxWidth: size.width)
-        .height(75)
+        .frame(height: 75)
         .onAppear(perform: {
             userViewModel.getUserInfo()
         })

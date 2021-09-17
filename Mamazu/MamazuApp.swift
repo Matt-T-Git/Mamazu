@@ -13,7 +13,8 @@ struct MamazuApp: App {
     var body: some Scene {
         WindowGroup {
             if !isLoggedIn() {
-                LoginView()
+                OnboardingView()
+                //LoginView()
             }else{
                 if UIDevice.current.iPad {
                     SideBar().accentColor(.mamazuTextColor)

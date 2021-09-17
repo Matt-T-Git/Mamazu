@@ -34,7 +34,6 @@ struct LottieView: UIViewRepresentable {
             animationView.heightAnchor.constraint(equalTo: uiView.heightAnchor)
         ])
     }
-    
 }
 
 

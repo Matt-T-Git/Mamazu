@@ -42,7 +42,7 @@ struct LostDetailView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 55, height: 55)
-                                .cornerRadius(18, style: .continuous)
+                                .cornerRadius(18)
                             VStack(alignment: .leading, spacing: 0){
                                 Text(lostData.user.name).font(.system(size: 15, weight: .bold)).foregroundColor(Color.mamazuTextColor)
                                 Text(timeAgoFrom(lostData.date)).font(.system(size: 12, weight: .regular)).foregroundColor(Color.mamazuTextCaption)
@@ -57,14 +57,14 @@ struct LostDetailView: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                              startPoint: .leading, endPoint: .trailing))
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 45))
-                        .height(size.height / 2 + 7)
+                        .frame(height: size.height / 2 + 7)
                     
                     //MARK:- Lost Animal Image
                     AnimatedImage(url: URL(string: lostData.image)).indicator(SDWebImageActivityIndicator.medium)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: size.width)
-                        .height(size.height / 2)
+                        .frame(height: size.height / 2)
                         .background(Color.mamazuCardBackground)
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 50))
                 }
@@ -82,7 +82,7 @@ struct LostDetailView: View {
                     ,alignment: .topTrailing
                 )
                 .frame(maxWidth: size.width)
-                .height(size.height / 2 + 83)
+                .frame(height: size.height / 2 + 83)
             }
             
             //MARK:- Detail Stack
@@ -123,7 +123,7 @@ struct LostDetailView: View {
                         Text(LocalizedString.Home.found).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
                     }
                     .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
-                    .height(52)
+                    .frame(height: 52)
                     .padding(.top, 10)
                     .onTapGesture {
                         self.isShowingSheet.toggle()
@@ -157,7 +157,7 @@ struct LostDetailView: View {
                 MamazuMapView(latitude: lostData.location.coordinates[1], longitude: lostData.location.coordinates[0], title: lostData.petName)
                     
                     .frame(maxWidth: size.width)
-                    .height(150)
+                    .frame(height: 150)
                     .cornerRadius(20)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
@@ -172,7 +172,7 @@ struct LostDetailView: View {
             .padding(.top, 15)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.mamazuBackground)
+        .background(Color.mamazuBackground)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .opacity(isShow ? 1 : 0)
         .animation(.easeInOut(duration: 0.8))

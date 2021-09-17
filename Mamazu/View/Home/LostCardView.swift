@@ -19,20 +19,32 @@ struct LostCardView: View {
                 .background(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                            startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.clear)
-                .cornerRadius(35, style: .continuous)
+                .clipShape(RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
             ZStack(alignment: .top) {
                 RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                    .height(230)
+                    .frame(height: 230)
                     .foregroundColor(Color.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow.opacity(1), radius: 10, x: 0, y: 5)
                 VStack(alignment: .center) {
                     //Image("profile")
-                    AnimatedImage(url: URL(string: lostAnimalData.image)).indicator(SDWebImageActivityIndicator.medium)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 160, height: 150)
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(25, style: .continuous)
+                    ZStack {
+                        AnimatedImage(url: URL(string: lostAnimalData.image))
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 160, height: 150)
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(25)
+                            .blur(radius: 5)
+                            .scaleEffect(x: 0.95)
+                            .offset(y: 3)
+                            
+                        AnimatedImage(url: URL(string: lostAnimalData.image)).indicator(SDWebImageActivityIndicator.medium)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 160, height: 150)
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(25)
+                    }
                     VStack(alignment: .leading, spacing: 0) {
                         Text(lostAnimalData.petName).font(.system(size: 13, weight: .heavy, design: .rounded))
                             .foregroundColor(.mamazuTextColor)
@@ -46,7 +58,7 @@ struct LostCardView: View {
             }
         }
         .frame(maxWidth: 180)
-        .height(235)
+        .frame(height: 235)
         .padding(.horizontal, 15)
     }
 }

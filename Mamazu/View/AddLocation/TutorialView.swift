@@ -31,7 +31,7 @@ struct TutorialView: View {
                         .multilineTextAlignment(.leading)
                         .padding(.top, 5)
                 }
-                .height(UIDevice.current.iPhones_5_5s_5c_SE ? 100 : 280)
+                .frame(height: UIDevice.current.iPhones_5_5s_5c_SE ? 100 : 280)
                 
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
                     RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
@@ -41,7 +41,7 @@ struct TutorialView: View {
                     Text(LocalizedString.ok.uppercased()).font(.system(size: 14, weight: .medium, design: .rounded)).foregroundColor(.white)
                 }
                 .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
-                .height(44)
+                .frame(height: 44)
                 .padding(.vertical, 20)
                 .padding(.horizontal, UIDevice.current.iPad ? 70 : 0)
                 .onTapGesture {
@@ -55,8 +55,8 @@ struct TutorialView: View {
         .frame(maxWidth: UIDevice.current.iPad ? 500 : size.width)
         .padding(.horizontal, -30)
         .padding(.vertical, 30)
-        .background(.mamazuCardBackground)
-        .cornerRadius(45, style: .continuous)
+        .background(Color.mamazuCardBackground)
+        .cornerRadius(45)
         .shadow(color: Color.mamazuCardShadow.opacity(1), radius: 20, x: 0, y: 10)
         
         //Background

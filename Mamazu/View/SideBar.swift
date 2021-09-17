@@ -31,7 +31,7 @@ struct SideBar: View {
                 }
             }
             .accentColor(.mamazuCardBackground)
-            .background(.mamazuBackground)
+            .background(Color.mamazuBackground)
             .listStyle(SidebarListStyle())
             .navigationTitle("Mamazu")
             

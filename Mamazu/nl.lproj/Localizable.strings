@@ -23,6 +23,18 @@
 "meter" = "METER";
 "kilometer" = "KILOMETER";
 
+/* Onboarding Screens */
+"mamazu_onboarding_title" = "Nu heel gemakkelijk dieren helpen die op straat moeten leven.";
+"mamazu_onboarding_subtitle" = "Het volstaat om de locatie die je wilt toevoegen met ons te delen met een foto en uitgebreide uitleg.";
+
+"lost_onboarding_title" = "We willen u helpen uw verloren huisdieren terug te vinden.";
+"lost_onboarding_subtitle" = "Het enige wat u hoeft te doen is het formulier volledig in te vullen en de locatie te kiezen waar uw huisdier is verdwenen.";
+
+"location_onboarding_title" = "We willen dichter bij je zijn";
+"location_onboarding_subtitle" = "U moet het gebruik van locatieservices toestaan zodat we de dichtstbijzijnde berichten voor u kunnen vermelden.";
+"location_allowed_title" = "TOEGESTAAN 🥳";
+"location_notallowed_title" = "NOG NIET TOEGESTAAN 😔";
+
 /* Login */
 "login_title" = "Welkom terug!";
 "login_subtitle" = "Inloggen om door te gaan!";

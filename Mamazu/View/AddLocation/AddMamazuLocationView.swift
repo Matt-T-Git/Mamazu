@@ -39,7 +39,7 @@ struct AddMamazuLocationView: View {
                         .frame(width: 180, height: 180)
                         .background(Image("selectImageMamazu"))
                         .background(Color.mamazuBackground)
-                        .cornerRadius(55, style: .continuous)
+                        .cornerRadius(55)
                         .padding(.bottom, 40)
                         .shadow(color: Color.mamazuCardShadow, radius: 15, x: 0, y: 10)
                         .onTapGesture {
@@ -80,7 +80,7 @@ struct AddMamazuLocationView: View {
                         
                         MamazuMapView(latitude: latitude, longitude: longitude, title: "Mamazu")
                             .frame(maxWidth: size.width - 45)
-                            .height(150)
+                            .frame(height: 150)
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -96,7 +96,7 @@ struct AddMamazuLocationView: View {
                             Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
-                        .height(52)
+                        .frame(height: 52)
                         .onTapGesture {
                             viewModel.image = selectedImage
                             viewModel.latitude = latitude
@@ -121,7 +121,7 @@ struct AddMamazuLocationView: View {
                 .padding(.bottom, 40)
             }
             .background(Image("Addbackground").resizable())
-            .background(.mamazuBackground)
+            .background(Color.mamazuBackground)
             .frame(maxWidth: size.width, maxHeight: size.height)
             .onTapGesture {
                 hideKeyboard()

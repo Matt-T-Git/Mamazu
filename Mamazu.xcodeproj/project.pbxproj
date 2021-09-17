@@ -16,7 +16,6 @@
 		B408A2A52600D46E00F8CE62 /* LostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408A2A42600D46E00F8CE62 /* LostModel.swift */; };
 		B408A2AC260213F500F8CE62 /* Mamazu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408A2AB260213F500F8CE62 /* Mamazu.swift */; };
 		B408A2AF2602146800F8CE62 /* MamazuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408A2AE2602146800F8CE62 /* MamazuViewModel.swift */; };
-		B42FF88925EB6E0A008DF195 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = B42FF88825EB6E0A008DF195 /* SwiftUIX */; };
 		B42FF88C25EB6FC2008DF195 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42FF88B25EB6FC2008DF195 /* LoginService.swift */; };
 		B42FF88F25EB7112008DF195 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42FF88E25EB7112008DF195 /* General.swift */; };
 		B42FF89225EB7176008DF195 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42FF89125EB7176008DF195 /* Constants.swift */; };
@@ -41,6 +40,7 @@
 		B4644C9B2620864100DE2081 /* warning.json in Resources */ = {isa = PBXBuildFile; fileRef = B4644C9A2620864100DE2081 /* warning.json */; };
 		B46C46AD26089F5A004E15AB /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C46AC26089F5A004E15AB /* LocationCardView.swift */; };
 		B46C46B32609C333004E15AB /* AddMamazuLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C46B22609C333004E15AB /* AddMamazuLocationView.swift */; };
+		B477F6F326E0ADD00044EFB6 /* LostOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B477F6F226E0ADD00044EFB6 /* LostOnboardView.swift */; };
 		B47FA9B32604791100D8B92E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FA9B22604791100D8B92E /* TabView.swift */; };
 		B47FA9B626048BB900D8B92E /* LostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FA9B526048BB900D8B92E /* LostDetailView.swift */; };
 		B47FA9B926049A6F00D8B92E /* MamazuDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FA9B826049A6F00D8B92E /* MamazuDetail.swift */; };
@@ -51,6 +51,9 @@
 		B483ADB525E3F2DF0005CFB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B483ADB425E3F2DF0005CFB6 /* Preview Assets.xcassets */; };
 		B483ADC425E3F3800005CFB6 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483ADC325E3F3800005CFB6 /* GradientText.swift */; };
 		B483ADC925E3F7820005CFB6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483ADC825E3F7820005CFB6 /* Color.swift */; };
+		B490032B26E0B571004DA78E /* LocationOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B490032A26E0B571004DA78E /* LocationOnboardView.swift */; };
+		B490032D26E0BBC8004DA78E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B490032C26E0BBC8004DA78E /* OnboardingView.swift */; };
+		B490033026E36338004DA78E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B490033226E36338004DA78E /* InfoPlist.strings */; };
 		B49C8A8625EF833900B33C9A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C8A8525EF833900B33C9A /* RegisterView.swift */; };
 		B49C8A8925EF8B2200B33C9A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C8A8825EF8B2200B33C9A /* Device.swift */; };
 		B49C8A9C25EFC3DE00B33C9A /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C8A9B25EFC3DE00B33C9A /* KeyboardHandler.swift */; };
@@ -76,6 +79,10 @@
 		B4D3A52E25F748F600E53458 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A52D25F748F600E53458 /* ProfileView.swift */; };
 		B4D3A53125F7495700E53458 /* AddMamazuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A53025F7495700E53458 /* AddMamazuView.swift */; };
 		B4D3A53D25F798F100E53458 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A53C25F798F100E53458 /* ProfileHeaderView.swift */; };
+		B4D3EE1D26DF6D60000353BF /* Swiftui+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EE1C26DF6D60000353BF /* Swiftui+View.swift */; };
+		B4D3EE1F26DF74BC000353BF /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EE1E26DF74BC000353BF /* VisualEffectBlur.swift */; };
+		B4D3EE2126DF768A000353BF /* TrackableSrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EE2026DF768A000353BF /* TrackableSrollView.swift */; };
+		B4D3EE2426DFBEF8000353BF /* MamazuOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EE2326DFBEF8000353BF /* MamazuOnboardView.swift */; };
 		B4DCFDD6260333B700A2EE82 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DCFDD5260333B700A2EE82 /* LocationManager.swift */; };
 		D53207002646CD0E005D387A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D53207022646CD0E005D387A /* Localizable.strings */; };
 		D53207052646CE7C005D387A /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53207042646CE7C005D387A /* LocalizedString.swift */; };
@@ -114,6 +121,7 @@
 		B4644C9A2620864100DE2081 /* warning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = warning.json; sourceTree = "<group>"; };
 		B46C46AC26089F5A004E15AB /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
 		B46C46B22609C333004E15AB /* AddMamazuLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMamazuLocationView.swift; sourceTree = "<group>"; };
+		B477F6F226E0ADD00044EFB6 /* LostOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostOnboardView.swift; sourceTree = "<group>"; };
 		B47FA9B22604791100D8B92E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		B47FA9B526048BB900D8B92E /* LostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostDetailView.swift; sourceTree = "<group>"; };
 		B47FA9B826049A6F00D8B92E /* MamazuDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamazuDetail.swift; sourceTree = "<group>"; };
@@ -126,6 +134,13 @@
 		B483ADB625E3F2DF0005CFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B483ADC325E3F3800005CFB6 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
 		B483ADC825E3F7820005CFB6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B490032A26E0B571004DA78E /* LocationOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationOnboardView.swift; sourceTree = "<group>"; };
+		B490032C26E0BBC8004DA78E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B490033126E36338004DA78E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B490033326E3633D004DA78E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B490033426E3633D004DA78E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B490033526E3633E004DA78E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B490033626E3633F004DA78E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B49C8A8525EF833900B33C9A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		B49C8A8825EF8B2200B33C9A /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		B49C8A9B25EFC3DE00B33C9A /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
@@ -149,6 +164,10 @@
 		B4D3A52D25F748F600E53458 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B4D3A53025F7495700E53458 /* AddMamazuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMamazuView.swift; sourceTree = "<group>"; };
 		B4D3A53C25F798F100E53458 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		B4D3EE1C26DF6D60000353BF /* Swiftui+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swiftui+View.swift"; sourceTree = "<group>"; };
+		B4D3EE1E26DF74BC000353BF /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		B4D3EE2026DF768A000353BF /* TrackableSrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackableSrollView.swift; sourceTree = "<group>"; };
+		B4D3EE2326DFBEF8000353BF /* MamazuOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamazuOnboardView.swift; sourceTree = "<group>"; };
 		B4DCFDD5260333B700A2EE82 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D53207012646CD0E005D387A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D53207032646CD28005D387A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -165,7 +184,6 @@
 			files = (
 				B408A29925F7B1ED00F8CE62 /* SDWebImageSwiftUI in Frameworks */,
 				B4D3A50E25F1660B00E53458 /* Alamofire in Frameworks */,
-				B42FF88925EB6E0A008DF195 /* SwiftUIX in Frameworks */,
 				B4D3A51225F1664900E53458 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +256,7 @@
 				B483ADAD25E3F2DD0005CFB6 /* MamazuApp.swift */,
 				B483ADB125E3F2DF0005CFB6 /* Assets.xcassets */,
 				D53207042646CE7C005D387A /* LocalizedString.swift */,
+				B490033226E36338004DA78E /* InfoPlist.strings */,
 				D53207022646CD0E005D387A /* Localizable.strings */,
 				B483ADB625E3F2DF0005CFB6 /* Info.plist */,
 				B483ADB325E3F2DF0005CFB6 /* Preview Content */,
@@ -256,6 +275,7 @@
 		B483ADBE25E3F3370005CFB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4D3EE2226DFBECA000353BF /* Onboard */,
 				B4BBAEC3260884360003D738 /* AddLocation */,
 				B4D3A53B25F798DF00E53458 /* Home */,
 				B459031F25E69901009C0B40 /* General */,
@@ -314,6 +334,7 @@
 				B42FF89125EB7176008DF195 /* Constants.swift */,
 				B49C8A8825EF8B2200B33C9A /* Device.swift */,
 				B49C8A9B25EFC3DE00B33C9A /* KeyboardHandler.swift */,
+				B4D3EE2026DF768A000353BF /* TrackableSrollView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +373,8 @@
 				B4B3489E260B418E00220B2F /* TextFieldWithInput.swift */,
 				B42FF8C025ED3C05008DF195 /* ImagePicker.swift */,
 				B4BBAEBE26078E900003D738 /* MapDistanceBoxView.swift */,
+				B4D3EE1C26DF6D60000353BF /* Swiftui+View.swift */,
+				B4D3EE1E26DF74BC000353BF /* VisualEffectBlur.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -367,6 +390,17 @@
 				B47FA9B826049A6F00D8B92E /* MamazuDetail.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B4D3EE2226DFBECA000353BF /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				B4D3EE2326DFBEF8000353BF /* MamazuOnboardView.swift */,
+				B477F6F226E0ADD00044EFB6 /* LostOnboardView.swift */,
+				B490032A26E0B571004DA78E /* LocationOnboardView.swift */,
+				B490032C26E0BBC8004DA78E /* OnboardingView.swift */,
+			);
+			path = Onboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +420,6 @@
 			);
 			name = Mamazu;
 			packageProductDependencies = (
-				B42FF88825EB6E0A008DF195 /* SwiftUIX */,
 				B4D3A50D25F1660B00E53458 /* Alamofire */,
 				B4D3A51125F1664900E53458 /* Lottie */,
 				B408A29825F7B1ED00F8CE62 /* SDWebImageSwiftUI */,
@@ -443,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4644C9526207B1600DE2081 /* 404.json in Resources */,
+				B490033026E36338004DA78E /* InfoPlist.strings in Resources */,
 				B483ADB525E3F2DF0005CFB6 /* Preview Assets.xcassets in Resources */,
 				D53207002646CD0E005D387A /* Localizable.strings in Resources */,
 				B42FF8B825ED2C88008DF195 /* Dog2.json in Resources */,
@@ -474,7 +508,10 @@
 				B4B348A2260B467800220B2F /* MamazuPicker.swift in Sources */,
 				B42FF8C125ED3C05008DF195 /* ImagePicker.swift in Sources */,
 				B4D3A51B25F63D7600E53458 /* RegisterService.swift in Sources */,
+				B4D3EE2126DF768A000353BF /* TrackableSrollView.swift in Sources */,
 				B459032125E6991A009C0B40 /* LogoView.swift in Sources */,
+				B490032D26E0BBC8004DA78E /* OnboardingView.swift in Sources */,
+				B4D3EE1F26DF74BC000353BF /* VisualEffectBlur.swift in Sources */,
 				B42FF8B025ECEF39008DF195 /* LoadingView.swift in Sources */,
 				B47FA9B626048BB900D8B92E /* LostDetailView.swift in Sources */,
 				B4D3A53125F7495700E53458 /* AddMamazuView.swift in Sources */,
@@ -491,6 +528,7 @@
 				B4D3A52E25F748F600E53458 /* ProfileView.swift in Sources */,
 				B4B348A8260B4D2400220B2F /* AddLostLocationVM.swift in Sources */,
 				B459033625EA856D009C0B40 /* UserDefaults + Login.swift in Sources */,
+				B477F6F326E0ADD00044EFB6 /* LostOnboardView.swift in Sources */,
 				B42FF8A525ECE9BE008DF195 /* LottieView.swift in Sources */,
 				B4B348AB260B68C700220B2F /* ChooseLocationMapView.swift in Sources */,
 				B483ADC925E3F7820005CFB6 /* Color.swift in Sources */,
@@ -503,9 +541,11 @@
 				B4B3489F260B418E00220B2F /* TextFieldWithInput.swift in Sources */,
 				D53207052646CE7C005D387A /* LocalizedString.swift in Sources */,
 				B47FA9B32604791100D8B92E /* TabView.swift in Sources */,
+				B4D3EE1D26DF6D60000353BF /* Swiftui+View.swift in Sources */,
 				B4D3A51E25F63EB000E53458 /* RegisterModel.swift in Sources */,
 				B47FA9B926049A6F00D8B92E /* MamazuDetail.swift in Sources */,
 				B459032925E7D9E4009C0B40 /* LoginViewmodel.swift in Sources */,
+				B4D3EE2426DFBEF8000353BF /* MamazuOnboardView.swift in Sources */,
 				B4BBAEBF26078E900003D738 /* MapDistanceBoxView.swift in Sources */,
 				B4D3A52125F6419B00E53458 /* UserModel.swift in Sources */,
 				B408A2A52600D46E00F8CE62 /* LostModel.swift in Sources */,
@@ -517,6 +557,7 @@
 				B4B348A5260B4BBA00220B2F /* AddLostPetView.swift in Sources */,
 				B42FF88F25EB7112008DF195 /* General.swift in Sources */,
 				B408A2AF2602146800F8CE62 /* MamazuViewModel.swift in Sources */,
+				B490032B26E0B571004DA78E /* LocationOnboardView.swift in Sources */,
 				B459033225E8D2A7009C0B40 /* AnimatedBackgroundView.swift in Sources */,
 				B46C46B32609C333004E15AB /* AddMamazuLocationView.swift in Sources */,
 				B49C8A8625EF833900B33C9A /* RegisterView.swift in Sources */,
@@ -526,6 +567,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B490033226E36338004DA78E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B490033126E36338004DA78E /* tr */,
+				B490033326E3633D004DA78E /* ru */,
+				B490033426E3633D004DA78E /* nl */,
+				B490033526E3633E004DA78E /* en */,
+				B490033626E3633F004DA78E /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		D53207022646CD0E005D387A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -770,11 +823,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B408A29725F7B1ED00F8CE62 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
-		};
-		B42FF88825EB6E0A008DF195 /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B42FF88725EB6E0A008DF195 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
-			productName = SwiftUIX;
 		};
 		B4D3A50D25F1660B00E53458 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

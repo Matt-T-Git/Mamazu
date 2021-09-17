@@ -49,7 +49,7 @@ struct MamazuTextField: View {
         }
         .background(Color.mamazuTextFieldColor)
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 3)
-        .cornerRadius(radius!, style: .continuous)
+        .cornerRadius(radius!, antialiased: true)
         .overlay(
             RoundedRectangle(cornerRadius: radius!, style: .continuous)
                 .stroke(borderColor, lineWidth: 1)
@@ -99,7 +99,7 @@ struct MamazuTextEditor: View {
         })
         .background(Color.mamazuTextFieldColor)
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 3)
-        .cornerRadius(radius!, style: .continuous)
+        .cornerRadius(radius!)
         .overlay(
             RoundedRectangle(cornerRadius: radius!, style: .continuous)
                 .stroke(borderColor, lineWidth: 1)

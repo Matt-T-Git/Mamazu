@@ -23,6 +23,18 @@
 "meter" = "METER";
 "kilometer" = "KILOMETER";
 
+/* Onboarding Screens */
+"mamazu_onboarding_title" = "Now very easy to help animals that have to live on the street.";
+"mamazu_onboarding_subtitle" = "It is enough to share the location you want to add with us with a photo and detailed explanation.";
+
+"lost_onboarding_title" = "We want to help you to find your lost pets.";
+"lost_onboarding_subtitle" = "All you need to do is fill out the form completely and choose the location where your pet disappeared.";
+
+"location_onboarding_title" = "We want to be closer to you";
+"location_onboarding_subtitle" = "You must allow the use of location services so that we can list the nearest posts to you.";
+"location_allowed_title" = "ALLOWED 🥳";
+"location_notallowed_title" = "NOT YET ALLOWED 😔";
+
 /* Login */
 "login_title" = "Welcome back!";
 "login_subtitle" = "Sign in to continue.";

@@ -44,7 +44,7 @@ struct AddLostPetView: View {
                         .frame(width: 180, height: 180)
                         .background(Image("selectImageMamazu"))
                         .background(Color.mamazuBackground)
-                        .cornerRadius(55, style: .continuous)
+                        .cornerRadius(55)
                         .padding(.bottom, 40)
                         .shadow(color: Color.mamazuCardShadow, radius: 15, x: 0, y: 10)
                         .onTapGesture {
@@ -102,7 +102,7 @@ struct AddLostPetView: View {
                         
                         MamazuMapView(latitude: latitude, longitude: longitude, title: "Mamazu")
                             .frame(maxWidth: .infinity - 45)
-                            .height(140)
+                            .frame(height: 140)
                             .cornerRadius(20)
                             .overlay(
                                 ZStack {
@@ -133,7 +133,7 @@ struct AddLostPetView: View {
                             Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
-                        .height(52)
+                        .frame(height: 52)
                         .padding(.bottom, UIApplication.shared.windows.first!.safeAreaInsets.bottom + 60)
                         .onTapGesture {
                             viewModel.image = selectedImage
@@ -165,7 +165,7 @@ struct AddLostPetView: View {
             })
             
             .background(Image("Addbackground").resizable())
-            .background(.mamazuBackground)
+            .background(Color.mamazuBackground)
             .frame(maxWidth: size.width, maxHeight: size.height)
             .onTapGesture {
                 hideKeyboard()
