@@ -52,7 +52,6 @@ struct ProfileHeaderView: View {
                             .foregroundColor(Color.mamazuTextColor)
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)
-                            .offset(x: -2)
                         Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
                     }
                     Spacer()
@@ -69,6 +68,9 @@ struct ProfileHeaderView: View {
         .onAppear(perform: {
             userViewModel.getUserInfo()
         })
+//        .task {
+//            await userViewModel.getUserInfo()
+//        }
     }
 }
 

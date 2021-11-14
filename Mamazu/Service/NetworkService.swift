@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import UIKit
+import Combine
 
 struct NetworkService {
     
@@ -17,6 +18,8 @@ struct NetworkService {
     ]
     
     typealias params = Dictionary<String, Any>
+    
+    private var cancellable: Set<AnyCancellable> = []
     
     func fetchData<T: Codable>(urlString: String, completion: @escaping (Result<T, APIError>) -> ()){
         AF.request(urlString, method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
@@ -31,6 +34,50 @@ struct NetworkService {
             }
         }
     }
+    
+    func fetchAsyncData<T: Codable>(urlString: String) async throws -> T {
+        try await withUnsafeThrowingContinuation { continuation in
+            AF.request(urlString, method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+                switch response.result{
+                case .success(_):
+                    guard let jsonData = response.data else { return }
+                    guard let items = try? JSONDecoder().decode(T.self, from: jsonData) else { return }
+                    continuation.resume(returning: items)
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    continuation.resume(throwing: APIError.errorWithMessage(err.localizedDescription))
+                }
+            }
+        }
+    }
+    
+    
+    func fetchCombineData<T: Decodable>(urlString: String) -> AnyPublisher<T, APIError>  {
+        guard let url = URL(string: urlString) else { fatalError() }
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(UserDefaults.standard.returnUserToken(), forHTTPHeaderField: "Authorization")
+
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap({ result in
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: result.data)
+            })
+            .receive(on: RunLoop.main)
+            .mapError{$0 as! APIError}
+            .eraseToAnyPublisher()
+    }
+    
+        
+//    mutating func fetchCombineData<T: Codable>(urlString: String) -> AnyPublisher<T?, Error> {
+//        AF.request(urlString, method: .get, encoding: JSONEncoding.default, headers: header)
+//            .publishDecodable(type: T.self, queue: .main)
+//            .tryCompactMap { (response) -> T? in
+//                if let error = response.error { throw APIError.unknown }
+//                return response.value
+//            }
+//            .eraseToAnyPublisher()
+//    }
     
     func fetchDataWithParameters<T: Decodable>(params: params, urlString: String, completion: @escaping (Result<T, APIError>) -> Void){
         AF.request(urlString, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header)
@@ -49,10 +96,10 @@ struct NetworkService {
     }
     
     mutating func addNewLocation<T: Decodable>(image: UIImage,
-                        title: String,
-                        description: String,
-                        latitude: Double, longitude: Double,
-                        completion: @escaping (Result<T, APIError>) -> Void) {
+                                               title: String,
+                                               description: String,
+                                               latitude: Double, longitude: Double,
+                                               completion: @escaping (Result<T, APIError>) -> Void) {
         
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
         header["Content-type"] = "multipart/form-data"
@@ -90,13 +137,13 @@ struct NetworkService {
     }
     
     mutating func addLostPetLocation<T: Decodable>(image: UIImage,
-                                                      petName: String,
-                                                      petBreed: String,
-                                                      petGender: String,
-                                                      petAge: String,
-                                                      description: String,
-                                                      latitude: Double, longitude: Double,
-                        completion: @escaping (Result<T, APIError>) -> Void) {
+                                                   petName: String,
+                                                   petBreed: String,
+                                                   petGender: String,
+                                                   petAge: String,
+                                                   description: String,
+                                                   latitude: Double, longitude: Double,
+                                                   completion: @escaping (Result<T, APIError>) -> Void) {
         
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
         header["Content-type"] = "multipart/form-data"
@@ -155,4 +202,7 @@ struct NetworkService {
             }
         }
     }
+    
 }
+
+

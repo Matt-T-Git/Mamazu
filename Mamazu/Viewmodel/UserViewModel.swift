@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 class UserViewModel: ObservableObject {
     
     @Published var userName: String = ""
     @Published var imageUrl: String = ""
     @Published var errorMessage: String = ""
+    @Published var userlele: UserModel?
     
     @Published var isError: Bool = false
     @Published var isFetched: Bool = false
@@ -22,8 +24,11 @@ class UserViewModel: ObservableObject {
     
     private var userService = NetworkService()
     
+    var cancellables = Set<AnyCancellable>()
+    
     func getUserInfo() {
         isLoading = true
+        
         userService.fetchData(urlString: CURRENT_USER_URL) { [weak self] (response: Result<UserModel, APIError>) in
             switch response {
             case .failure(let error):
@@ -39,5 +44,29 @@ class UserViewModel: ObservableObject {
                 self?.isLoading = false
             }
         }
+    }
+    
+    func getCombineUserInfo(){
+        userService.fetchCombineData(urlString: CURRENT_USER_URL)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { [weak self] (model: UserModel) in
+                self?.userName = model.name
+                self?.imageUrl = model.profileImg
+                self?.userID = model.id
+                self?.isFetched = true
+                self?.isLoading = false
+            }).store(in: &cancellables)
+        
+        //            .sink { completion in
+        //                print(completion)
+        //            } receiveValue: { user: UserModel in
+        //                self?.userName = user.name
+        //                self?.userID = user.id
+        //                self?.imageUrl = user.profileImg
+        //                self?.isFetched = true
+        //                self?.isLoading = false
+        //            }
+        
     }
 }

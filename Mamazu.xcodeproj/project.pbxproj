@@ -40,6 +40,7 @@
 		B4644C9B2620864100DE2081 /* warning.json in Resources */ = {isa = PBXBuildFile; fileRef = B4644C9A2620864100DE2081 /* warning.json */; };
 		B46C46AD26089F5A004E15AB /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C46AC26089F5A004E15AB /* LocationCardView.swift */; };
 		B46C46B32609C333004E15AB /* AddMamazuLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C46B22609C333004E15AB /* AddMamazuLocationView.swift */; };
+		B46C743626FB28540060B2DF /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C743526FB28540060B2DF /* URL.swift */; };
 		B477F6F326E0ADD00044EFB6 /* LostOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B477F6F226E0ADD00044EFB6 /* LostOnboardView.swift */; };
 		B47FA9B32604791100D8B92E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FA9B22604791100D8B92E /* TabView.swift */; };
 		B47FA9B626048BB900D8B92E /* LostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FA9B526048BB900D8B92E /* LostDetailView.swift */; };
@@ -65,6 +66,7 @@
 		B4B348A5260B4BBA00220B2F /* AddLostPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B348A4260B4BBA00220B2F /* AddLostPetView.swift */; };
 		B4B348A8260B4D2400220B2F /* AddLostLocationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B348A7260B4D2400220B2F /* AddLostLocationVM.swift */; };
 		B4B348AB260B68C700220B2F /* ChooseLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B348AA260B68C700220B2F /* ChooseLocationMapView.swift */; };
+		B4BA3BE4273F98470017D3A9 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA3BE3273F98470017D3A9 /* CombineExtensions.swift */; };
 		B4BBAEBF26078E900003D738 /* MapDistanceBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAEBE26078E900003D738 /* MapDistanceBoxView.swift */; };
 		B4CF51262617200600D4D74F /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF51252617200600D4D74F /* ProfileCardView.swift */; };
 		B4CF51392618453A00D4D74F /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF51382618453A00D4D74F /* SideBar.swift */; };
@@ -121,6 +123,7 @@
 		B4644C9A2620864100DE2081 /* warning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = warning.json; sourceTree = "<group>"; };
 		B46C46AC26089F5A004E15AB /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
 		B46C46B22609C333004E15AB /* AddMamazuLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMamazuLocationView.swift; sourceTree = "<group>"; };
+		B46C743526FB28540060B2DF /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		B477F6F226E0ADD00044EFB6 /* LostOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostOnboardView.swift; sourceTree = "<group>"; };
 		B47FA9B22604791100D8B92E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		B47FA9B526048BB900D8B92E /* LostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostDetailView.swift; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 		B4B348A4260B4BBA00220B2F /* AddLostPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostPetView.swift; sourceTree = "<group>"; };
 		B4B348A7260B4D2400220B2F /* AddLostLocationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostLocationVM.swift; sourceTree = "<group>"; };
 		B4B348AA260B68C700220B2F /* ChooseLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationMapView.swift; sourceTree = "<group>"; };
+		B4BA3BE3273F98470017D3A9 /* CombineExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
 		B4BBAEBE26078E900003D738 /* MapDistanceBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDistanceBoxView.swift; sourceTree = "<group>"; };
 		B4CF51252617200600D4D74F /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		B4CF51382618453A00D4D74F /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
@@ -327,11 +331,13 @@
 		B483ADC225E3F3560005CFB6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B4BA3BE2273F98270017D3A9 /* Combine */,
 				B42FF8AB25ECEEDC008DF195 /* LottieFiles */,
 				B4D3A52325F649F900E53458 /* UI */,
 				B459033525EA856D009C0B40 /* UserDefaults + Login.swift */,
 				B42FF88E25EB7112008DF195 /* General.swift */,
 				B42FF89125EB7176008DF195 /* Constants.swift */,
+				B46C743526FB28540060B2DF /* URL.swift */,
 				B49C8A8825EF8B2200B33C9A /* Device.swift */,
 				B49C8A9B25EFC3DE00B33C9A /* KeyboardHandler.swift */,
 				B4D3EE2026DF768A000353BF /* TrackableSrollView.swift */,
@@ -347,6 +353,14 @@
 				B4CF51252617200600D4D74F /* ProfileCardView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B4BA3BE2273F98270017D3A9 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				B4BA3BE3273F98470017D3A9 /* CombineExtensions.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		B4BBAEC3260884360003D738 /* AddLocation */ = {
@@ -502,6 +516,7 @@
 				B4CF51392618453A00D4D74F /* SideBar.swift in Sources */,
 				B408A29C2600B39500F8CE62 /* LostCardView.swift in Sources */,
 				B4CF513F2619E4EE00D4D74F /* TutorialView.swift in Sources */,
+				B46C743626FB28540060B2DF /* URL.swift in Sources */,
 				B49C8A9C25EFC3DE00B33C9A /* KeyboardHandler.swift in Sources */,
 				B483ADB025E3F2DD0005CFB6 /* LoginView.swift in Sources */,
 				B49E02A92617011200B7E6B4 /* EmptyMamazu.swift in Sources */,
@@ -511,6 +526,7 @@
 				B4D3EE2126DF768A000353BF /* TrackableSrollView.swift in Sources */,
 				B459032125E6991A009C0B40 /* LogoView.swift in Sources */,
 				B490032D26E0BBC8004DA78E /* OnboardingView.swift in Sources */,
+				B4BA3BE4273F98470017D3A9 /* CombineExtensions.swift in Sources */,
 				B4D3EE1F26DF74BC000353BF /* VisualEffectBlur.swift in Sources */,
 				B42FF8B025ECEF39008DF195 /* LoadingView.swift in Sources */,
 				B47FA9B626048BB900D8B92E /* LostDetailView.swift in Sources */,
@@ -646,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -702,7 +718,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -723,7 +739,7 @@
 				DEVELOPMENT_TEAM = 8ZAQMTCL7E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mamazu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,7 +763,7 @@
 				DEVELOPMENT_TEAM = 8ZAQMTCL7E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mamazu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

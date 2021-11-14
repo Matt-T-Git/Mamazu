@@ -45,6 +45,7 @@ struct ProfileView: View {
                         .fill(Color.mamazuCardBackground)
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 45))
                         .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 10)
+                        
                     AnimatedImage(url: URL(string: userViewModel.imageUrl)).indicator(SDWebImageActivityIndicator.medium)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -112,8 +113,6 @@ struct ProfileView: View {
             .fullScreenCover(isPresented: $isLogout) {
                 LoginView()
             }
-            
-            
                         if selectedView == 0 {
                             if mamazuViewModel.mamazu.isEmpty {
                                 EmptyMamazu(closure: {
@@ -191,8 +190,11 @@ struct ProfileView: View {
         .onAppear(perform: {
             lostViewModel.fetchCurrentUsersLostLocations()
             mamazuViewModel.fetchCurrentUsersMamazuLocations()
-            userViewModel.getUserInfo()
+            userViewModel.getCombineUserInfo()
         })
+//        .task {
+//            await userViewModel.getUserInfo()
+//        }
         
         .frame(maxWidth: .infinity, maxHeight: size.height)
         .background(Color.mamazuBackground)
