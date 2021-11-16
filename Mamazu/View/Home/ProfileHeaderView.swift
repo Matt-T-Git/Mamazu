@@ -66,11 +66,8 @@ struct ProfileHeaderView: View {
         .frame(maxWidth: size.width)
         .frame(height: 75)
         .onAppear(perform: {
-            userViewModel.getUserInfo()
+            userViewModel.getCombineUserInfo()
         })
-//        .task {
-//            await userViewModel.getUserInfo()
-//        }
     }
 }
 

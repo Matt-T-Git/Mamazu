@@ -24,27 +24,8 @@ class UserViewModel: ObservableObject {
     
     private var userService = NetworkService()
     
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
-    func getUserInfo() {
-        isLoading = true
-        
-        userService.fetchData(urlString: CURRENT_USER_URL) { [weak self] (response: Result<UserModel, APIError>) in
-            switch response {
-            case .failure(let error):
-                print(error.localizedDescription)
-                self?.isError = true
-                self?.errorMessage = error.localizedDescription
-                self?.isLoading = false
-            case .success(let res):
-                self?.userName = res.name
-                self?.imageUrl = res.profileImg
-                self?.userID = res.id
-                self?.isFetched = true
-                self?.isLoading = false
-            }
-        }
-    }
     
     func getCombineUserInfo(){
         userService.fetchCombineData(urlString: CURRENT_USER_URL)
@@ -57,16 +38,5 @@ class UserViewModel: ObservableObject {
                 self?.isFetched = true
                 self?.isLoading = false
             }).store(in: &cancellables)
-        
-        //            .sink { completion in
-        //                print(completion)
-        //            } receiveValue: { user: UserModel in
-        //                self?.userName = user.name
-        //                self?.userID = user.id
-        //                self?.imageUrl = user.profileImg
-        //                self?.isFetched = true
-        //                self?.isLoading = false
-        //            }
-        
     }
 }

@@ -5,7 +5,6 @@
 //  Created by Sercan Burak AĞIR on 9.03.2021.
 //
 
-import Foundation
 import Alamofire
 import UIKit
 import Combine
@@ -19,38 +18,7 @@ struct NetworkService {
     
     typealias params = Dictionary<String, Any>
     
-    private var cancellable: Set<AnyCancellable> = []
-    
-    func fetchData<T: Codable>(urlString: String, completion: @escaping (Result<T, APIError>) -> ()){
-        AF.request(urlString, method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
-            switch response.result{
-            case .success(_):
-                guard let jsonData = response.data else { return }
-                guard let items = try? JSONDecoder().decode(T.self, from: jsonData) else { return }
-                completion(.success(items))
-            case .failure(let err):
-                print(err.localizedDescription)
-                completion(.failure(.errorWithMessage(err.localizedDescription)))
-            }
-        }
-    }
-    
-    func fetchAsyncData<T: Codable>(urlString: String) async throws -> T {
-        try await withUnsafeThrowingContinuation { continuation in
-            AF.request(urlString, method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
-                switch response.result{
-                case .success(_):
-                    guard let jsonData = response.data else { return }
-                    guard let items = try? JSONDecoder().decode(T.self, from: jsonData) else { return }
-                    continuation.resume(returning: items)
-                case .failure(let err):
-                    print(err.localizedDescription)
-                    continuation.resume(throwing: APIError.errorWithMessage(err.localizedDescription))
-                }
-            }
-        }
-    }
-    
+    //MARK: - Fetch Data
     
     func fetchCombineData<T: Decodable>(urlString: String) -> AnyPublisher<T, APIError>  {
         guard let url = URL(string: urlString) else { fatalError() }
@@ -68,31 +36,33 @@ struct NetworkService {
             .eraseToAnyPublisher()
     }
     
+    func fetchCombineDataWithParameters<T: Decodable>(params: params, urlString: String) -> AnyPublisher<T, APIError> {
+        guard let url = URL(string: urlString) else { fatalError("Url Error")}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(UserDefaults.standard.returnUserToken(), forHTTPHeaderField: "Authorization")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
         
-//    mutating func fetchCombineData<T: Codable>(urlString: String) -> AnyPublisher<T?, Error> {
-//        AF.request(urlString, method: .get, encoding: JSONEncoding.default, headers: header)
-//            .publishDecodable(type: T.self, queue: .main)
-//            .tryCompactMap { (response) -> T? in
-//                if let error = response.error { throw APIError.unknown }
-//                return response.value
-//            }
-//            .eraseToAnyPublisher()
-//    }
-    
-    func fetchDataWithParameters<T: Decodable>(params: params, urlString: String, completion: @escaping (Result<T, APIError>) -> Void){
-        AF.request(urlString, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header)
-            .validate()
-            .responseJSON { (response) in
-                switch response.result{
-                case .success(_):
-                    guard let jsonData = response.data else { return }
-                    guard let items = try? JSONDecoder().decode(T.self, from: jsonData) else { return }
-                    completion(.success(items))
-                case .failure(let err):
-                    print(err.localizedDescription)
-                    completion(.failure(.errorWithMessage(err.localizedDescription)))
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap({ result in
+                guard let httpResponse = result.response as? HTTPURLResponse,
+                      200..<300 ~= httpResponse.statusCode else {
+                          throw APIError.unknown
+                      }
+                
+                let decoder = JSONDecoder()
+                return try decoder.decode(T.self, from: result.data)
+            })
+            .receive(on: RunLoop.main)
+            .mapError { error in
+                if let error = error as? APIError {
+                    return error
+                } else {
+                    return APIError.errorWithMessage(error.localizedDescription)
                 }
             }
+            .eraseToAnyPublisher()
     }
     
     mutating func addNewLocation<T: Decodable>(image: UIImage,

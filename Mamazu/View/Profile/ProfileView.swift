@@ -192,9 +192,6 @@ struct ProfileView: View {
             mamazuViewModel.fetchCurrentUsersMamazuLocations()
             userViewModel.getCombineUserInfo()
         })
-//        .task {
-//            await userViewModel.getUserInfo()
-//        }
         
         .frame(maxWidth: .infinity, maxHeight: size.height)
         .background(Color.mamazuBackground)

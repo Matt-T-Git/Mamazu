@@ -74,7 +74,7 @@ struct HomeView: View {
                                 }
                             }
                             .onAppear(perform: {
-                                if locationManager.isLocated{lostViewModel.getLostData()}
+                                if locationManager.isLocated{lostViewModel.fetchPosts()}
                             })
                             .sheet(item: $selectedLostAnimal) {
                                 LostDetailView(lostData: $0, isShow: $isLostDetailShow)
@@ -121,7 +121,7 @@ struct HomeView: View {
                         }
                         .padding(.horizontal, 10)
                         .onAppear(perform: {
-                            if locationManager.isLocated{mamazuViewModel.fetchMamazuLocations()}
+                            if locationManager.isLocated{mamazuViewModel.fetchPosts()}
                         })
 
                         .fullScreenCover(item: $selectedMamazu) {
@@ -146,8 +146,8 @@ struct HomeView: View {
             .onChange(of: locationManager.locationStatus, perform: { (isChanged) in
                 if isChanged  == .authorizedWhenInUse || isChanged == .authorizedAlways {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        lostViewModel.getLostData()
-                        mamazuViewModel.fetchMamazuLocations()
+                        lostViewModel.fetchPosts()
+                        mamazuViewModel.fetchPosts()
                         self.isLocated = true
                     }
                 }else if isChanged == .denied || isChanged == .restricted {
@@ -173,16 +173,6 @@ struct HomeView: View {
         .frame(maxWidth: size.width, maxHeight: .infinity)
         .background(Color.mamazuBackground)
         .ignoresSafeArea()
-        
-        .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                locationManager.requestAuth()
-                if locationManager.locationStatus == nil || locationManager.locationStatus == .notDetermined {
-                    locationManager.requestAuth()
-                    print("Location Requested")
-                }
-            }
-        })
         
     }
     
