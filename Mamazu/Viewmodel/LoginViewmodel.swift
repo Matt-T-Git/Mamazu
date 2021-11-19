@@ -27,29 +27,26 @@ class LoginViewModel: ObservableObject {
     
     func login() {
         self.isLoading = true
-        
         loginService.login(email: email, password: password)
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
-                    self.isLoading = false
-                    self.isLoginError = true
-                    self.errorMessage = error.localizedDescription
+                    self.showAlertMessage(error.localizedDescription)
                 }
             }, receiveValue: { [weak self] (result) in
                 print(result)
                 if result.error{
-                    self?.isLoginError = true
-                    self?.errorMessage = result.message ?? "Login Error"
+                    self?.showAlertMessage(result.message ?? "Login Error")
                 }
-                
                 guard let token = result.token else { return }
-                print(token)
                 UserDefaults.standard.saveUserToken(token: token)
-                UserDefaults.standard.setIsLoggedIn(value: true)
-                UserDefaults.standard.synchronize()
-                
                 self?.isLoggedIn = true
                 self?.isLoading = false
             }).store(in: &cancellables)
+    }
+    
+    fileprivate func showAlertMessage(_ message: String) {
+        self.isLoading = false
+        self.isLoginError = true
+        self.errorMessage = message
     }
 }

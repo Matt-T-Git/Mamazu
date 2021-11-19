@@ -72,7 +72,7 @@ struct RegisterView: View {
                     
                     Button(action: {
                         registerViewModel.image = selectedImage
-                        registerViewModel.registerUser()
+                        registerViewModel.register()
                     }, label: {
                         Text(LocalizedString.Register.registerButtonTitle)
                             .frame(maxWidth: size.width - 50)

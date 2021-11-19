@@ -77,10 +77,10 @@
 "choose_location" = "Please keep your finger pressed on map until adding new pin in the point that where you think your pet has disappeared.";
 
 /* Home */
-"home_lost_title" = "Lost Pet Notices";
+"home_lost_title" = "Lost Pet";
 "home_no_missing_reports" = "There are no missing reports in your vicinity.";
 "home_no_help_points" = "There are no help locations near you.";
-"home_help_points" = "Stray Animal Help Locations";
+"home_help_points" = "Stray Animal Locations";
 "home_gender" = "GENDER";
 "home_breed" = "BREED";
 "home_age" = "AGE";
@@ -108,6 +108,8 @@
 "error_email_password_blank" = "E-Mail and Password Fields Cannot Be Blank";
 "error_invalid_email" = "Please enter a valid e-mail address.";
 "error_no_image" = "Please add an image.";
+"error_no_user" = "No registered user found with this e-mail address! Would you like to register?";
+"error_user_exist" = "There is a registered user with this e-mail address.";
 
 /* General */
 "general_incorrect_date" = "Date Incorrect";

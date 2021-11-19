@@ -29,7 +29,7 @@ extension APIError: LocalizedError {
         case .errorWithMessage(let message):
             return message
         case .unknown:
-            return "The error is unknown"
+            return "Something went wrong. Please Try again soon"
         }
     }
 }

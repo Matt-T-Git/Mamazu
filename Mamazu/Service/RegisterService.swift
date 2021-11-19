@@ -7,56 +7,48 @@
 
 import UIKit
 import Alamofire
+import Combine
 
 struct RegisterService {
-    func registerUser(name: String, email: String, password: String, profileImg: UIImage, completion: @escaping (Result<RegisteModel, APIError>) -> ()) {
+    
+    func register(name: String, email: String, password: String, profileImg: UIImage)  -> AnyPublisher<RegisteModel, APIError>  {
+        
         if name.isEmpty == true || email.isEmpty == true || password.isEmpty == true{
-            completion(.failure(.errorWithMessage(LocalizedString.Errors.emailAndPasswordBlank)))
-            return
+            return Fail(error: APIError.errorWithMessage(LocalizedString.Errors.emailAndPasswordBlank)).eraseToAnyPublisher()
         }else if email.isValidEmail() == false {
-            completion(.failure(.errorWithMessage(LocalizedString.Errors.invalidEmail)))
-            return
+            return Fail(error: APIError.errorWithMessage(LocalizedString.Errors.invalidEmail)).eraseToAnyPublisher()
         }
         if profileImg.size == .zero {
-            completion(.failure(.errorWithMessage(LocalizedString.Errors.noImage)))
-            return
+            return Fail(error: APIError.errorWithMessage(LocalizedString.Errors.noImage)).eraseToAnyPublisher()
         }
+     
         //Parameters
         let parameters = ["name": name,"email": email, "password": password]
-        //ImageData Settings
-        guard let imgData = profileImg.jpegData(compressionQuality: 0.5) else { return }
         
-        let headers: HTTPHeaders
-        headers = ["Content-type": "multipart/form-data",
-                   "Content-Type": "application/json"]
+        let mamazuRequest = MamazuMultipartImage(REGISTER_URL, paramters: parameters, image: profileImg, imagekey: "profileImg", imageName: "mamazu.jpeg")
         
-        AF.upload(multipartFormData: { multiPart in
-            for p in parameters {
-                multiPart.append("\(p.value)".data(using: String.Encoding.utf8)!, withName: p.key)
-            }
-            multiPart.append(imgData, withName: "profileImg", fileName: "image.jpg", mimeType: "image/jpg")
-        }, to: REGISTER_URL, method: .post, headers: headers) .uploadProgress(queue: .main, closure: { progress in
-            print("Upload Progress: \(progress.fractionCompleted)")
-        }).responseString(completionHandler: { data in
-            print("upload finished: \(data)")
-        }).response { (response) in
-            switch response.result {
-            case .success(let resut):
-                guard let data = resut else { return completion(.failure(.decodingError)) }
-                guard let json = try? JSONDecoder().decode(RegisteModel.self, from: data) else {
-                    completion(.failure(.decodingError))
-                    return
+        return URLSession.shared.dataTaskPublisher(for: mamazuRequest.request)
+            .tryMap({ result in
+                
+                guard let httpResponse = result.response as? HTTPURLResponse else { throw APIError.unknown }
+                
+                if httpResponse.statusCode == 409 { throw APIError.errorWithMessage(LocalizedString.Errors.userIsExist) }
+                
+                guard (200..<300).contains(httpResponse.statusCode) else {
+                    throw APIError.errorWithMessage("An error occurred. Error code is \(httpResponse.statusCode)") }
+                
+                let decoder = JSONDecoder()
+                return try decoder.decode(RegisteModel.self, from: result.data)
+            })
+            .receive(on: RunLoop.main)
+            .mapError { error in
+                if let error = error as? APIError {
+                    return error
+                } else {
+                    return APIError.errorWithMessage(error.localizedDescription)
                 }
-                if json.error == true {
-                    completion(.failure(.errorWithMessage(json.message ?? LocalizedString.Errors.somethingWentWrong)))
-                    return
-                }
-                completion(.success(json))
-            case .failure(let error):
-                print(error.localizedDescription)
-                completion(.failure(.errorWithMessage(error.localizedDescription)))
-                print("upload err: \(error)")
             }
-        }
+            .eraseToAnyPublisher()
     }
 }
+

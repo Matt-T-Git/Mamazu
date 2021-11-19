@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class RegisterViewModel: ObservableObject {
     
@@ -25,40 +26,41 @@ class RegisterViewModel: ObservableObject {
     private var registerService = RegisterService()
     private var loginService = LoginService()
     
-    func registerUser() {
-        print("Register Tapped...")
+    private var cancellables = Set<AnyCancellable>()
+    
+    func register() {
         self.isLoading = true
-        // MARK:- Register user
-        registerService.registerUser(name: name, email: email, password: password, profileImg: image) { (result) in
-            switch result {
-            case .success(_):
-                
-                // MARK:- Login user when register is success
-                self.isLoading = false
-                self.loginService.loginUser(email: self.email, password: self.password) { (result) in
-                    switch result {
-                    case .success(let loginData):
-                        //Save user token to userDefault
-                        guard let token = loginData.token else { return }
-                        print(token)
-                        UserDefaults.standard.saveUserToken(token: token)
-                        UserDefaults.standard.setIsLoggedIn(value: true)
-                        UserDefaults.standard.synchronize()
-                        
-                        self.isRegistered = true
-                        self.isLoading = false
-                    case .failure(let error):
-                        self.isRegisterError = true
-                        self.isLoading = false
-                        self.errorMessage = error.localizedDescription
-                    }
+        registerService.register(name: name, email: email, password: password, profileImg: image)
+            .sink { completion in
+                if case let .failure(error) = completion {
+                    self.showAlertMessage(error.localizedDescription)
                 }
-            // MARK:- Register Failure
-            case .failure(let error):
-                self.isRegisterError = true
-                self.isLoading = false
-                self.errorMessage = error.localizedDescription
-            }
-        }
+            } receiveValue: { [unowned self] registeredUser in
+                if !registeredUser.error {
+                    loginService.login(email: email, password: password)
+                        .sink(receiveCompletion: { completion in
+                            print(completion)
+                            if case let .failure(error) = completion {
+                                self.showAlertMessage(error.localizedDescription)
+                            }
+                        }, receiveValue: { [weak self] (result) in
+                            print(result)
+                            if result.error{
+                                self?.showAlertMessage(result.message ?? "Register Error")
+                            }
+                            guard let token = result.token else { return }
+                            UserDefaults.standard.saveUserToken(token: token)
+                            print(token)
+                            self?.isRegistered = true
+                            self?.isLoading = false
+                        }).store(in: &cancellables)
+                }
+            }.store(in: &cancellables)
+    }
+    
+    fileprivate func showAlertMessage(_ message: String) {
+        self.isLoading = false
+        self.isRegisterError = true
+        self.errorMessage = message
     }
 }

@@ -123,6 +123,8 @@ struct LocalizedString {
         static let emailAndPasswordBlank = NSLocalizedString("error_email_password_blank", comment: "")
         static let invalidEmail = NSLocalizedString("error_invalid_email", comment: "")
         static let noImage = NSLocalizedString("error_no_image", comment: "")
+        static let noUser = NSLocalizedString("error_no_user", comment: "")
+        static let userIsExist = NSLocalizedString("error_user_exist", comment: "")
     }
 
     struct General {

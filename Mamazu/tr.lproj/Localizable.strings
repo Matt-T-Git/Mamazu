@@ -108,6 +108,8 @@
 "error_email_password_blank" = "E-Mail ve Şifre Alanları Boş Bırakılamaz";
 "error_invalid_email" = "Lütfen geçerli bir E-Mail adresi giriniz.";
 "error_no_image" = "Lütfen Resim Ekleyin...";
+"error_no_user" = "Bu E-mail adresi ile kayıtlı bir kullanıcı bulunamadı! Kayıt olmak ister misiniz?";
+"error_user_exist" = "Bu E-Mail adresi ile kayıtlı bir kullanıcı var.";
 
 /* General */
 "general_incorrect_date" = "Tarih Hatalı";

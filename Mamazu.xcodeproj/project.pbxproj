@@ -35,6 +35,7 @@
 		B459033225E8D2A7009C0B40 /* AnimatedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459033125E8D2A7009C0B40 /* AnimatedBackgroundView.swift */; };
 		B459033625EA856D009C0B40 /* UserDefaults + Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459033525EA856D009C0B40 /* UserDefaults + Login.swift */; };
 		B459033A25EA85B0009C0B40 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459033925EA85B0009C0B40 /* HomeView.swift */; };
+		B4626BF0274649AC008F98EC /* MamazuMultipartImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4626BEF274649AC008F98EC /* MamazuMultipartImage.swift */; };
 		B4644C9526207B1600DE2081 /* 404.json in Resources */ = {isa = PBXBuildFile; fileRef = B4644C9426207B1600DE2081 /* 404.json */; };
 		B4644C982620838400DE2081 /* NotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = B4644C972620838400DE2081 /* NotFound.json */; };
 		B4644C9B2620864100DE2081 /* warning.json in Resources */ = {isa = PBXBuildFile; fileRef = B4644C9A2620864100DE2081 /* warning.json */; };
@@ -118,6 +119,7 @@
 		B459033125E8D2A7009C0B40 /* AnimatedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBackgroundView.swift; sourceTree = "<group>"; };
 		B459033525EA856D009C0B40 /* UserDefaults + Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Login.swift"; sourceTree = "<group>"; };
 		B459033925EA85B0009C0B40 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B4626BEF274649AC008F98EC /* MamazuMultipartImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamazuMultipartImage.swift; sourceTree = "<group>"; };
 		B4644C9426207B1600DE2081 /* 404.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 404.json; sourceTree = "<group>"; };
 		B4644C972620838400DE2081 /* NotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NotFound.json; sourceTree = "<group>"; };
 		B4644C9A2620864100DE2081 /* warning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = warning.json; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				B4D3A51A25F63D7600E53458 /* RegisterService.swift */,
 				B4DCFDD5260333B700A2EE82 /* LocationManager.swift */,
 				B408A29125F7A88900F8CE62 /* NetworkService.swift */,
+				B4626BEF274649AC008F98EC /* MamazuMultipartImage.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				B4334F682610A9BE005456A0 /* DetailedMapView.swift in Sources */,
 				B4B348952609EA2F00220B2F /* MamazuTextField.swift in Sources */,
 				B4CF51262617200600D4D74F /* ProfileCardView.swift in Sources */,
+				B4626BF0274649AC008F98EC /* MamazuMultipartImage.swift in Sources */,
 				B4DCFDD6260333B700A2EE82 /* LocationManager.swift in Sources */,
 				B408A2A22600C11F00F8CE62 /* LostViewModel.swift in Sources */,
 				B46C46AD26089F5A004E15AB /* LocationCardView.swift in Sources */,

@@ -108,6 +108,8 @@
 "error_email_password_blank" = "E-mail- en wachtwoordvelden kunnen niet leeg zijn";
 "error_invalid_email" = "Voer een geldig e-mailadres in.";
 "error_no_image" = "Voeg een afbeelding toe.";
+"error_no_user" = "Geen geregistreerde gebruiker gevonden met dit e-mailadres! Wilt u zich inschrijven?";
+"error_user_exist" = "Er is een geregistreerde gebruiker met dit e-mailadres.";
 
 /* General */
 "general_incorrect_date" = "Datum onjuist";
