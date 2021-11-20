@@ -64,7 +64,7 @@ struct HomeView: View {
                                             .padding(.horizontal, 10)
                                             .frame(height: 275)
                                             .rotation3DEffect(.degrees((Double(geometry.frame(in: .global).minX - 10) / -30)), axis: (x: 0, y: 10, z: 0))
-                                            .animation(.easeInOut)
+                                            //.animation(.easeInOut)
                                             .onTapGesture {
                                                 self.selectedLostAnimal = lost
                                                 self.isLostDetailShow.toggle()
@@ -131,14 +131,14 @@ struct HomeView: View {
                     
                 }
                 .opacity(isLoading ? 0 : 1)
-                .animation(.easeIn(duration: 0.6))
+                .animation(.easeIn(duration: 0.6), value: isLoading)
                 
                 //MARK:- Show Loading View
                 LoadingView(isShowing: $mamazuViewModel.isLoading, animationName: "Dog2")
                     .frame(width: size.width, height: size.height)
                     .background(Color.mamazuBackground.opacity(0.8))
                     .opacity(isLoading ? 1 : 0)
-                    .animation(.easeInOut(duration: 0.5))
+                    .animation(.easeInOut(duration: 0.5), value: isLoading)
                 
             }
             

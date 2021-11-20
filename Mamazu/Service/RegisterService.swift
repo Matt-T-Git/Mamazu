@@ -23,7 +23,7 @@ struct RegisterService {
         }
      
         //Parameters
-        let parameters = ["name": name,"email": email, "password": password]
+        let parameters: Dictionary<String, Any> = ["name": name,"email": email, "password": password]
         
         let mamazuRequest = MamazuMultipartImage(REGISTER_URL, paramters: parameters, image: profileImg, imagekey: "profileImg", imageName: "mamazu.jpeg")
         

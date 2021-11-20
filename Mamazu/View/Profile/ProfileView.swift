@@ -97,7 +97,7 @@ struct ProfileView: View {
                 .frame(height: size.height / 2)
             }
             .opacity(userViewModel.isFetched ? 1 : 0)
-            .animation(.easeIn(duration: 0.5))
+            .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
             .actionSheet(isPresented: $isShowingSheet) {
                 ActionSheet(
                     title: Text("Mamazu"),
@@ -122,7 +122,7 @@ struct ProfileView: View {
                                 .sheet(isPresented: $addMamazuLocation, onDismiss: { mamazuViewModel.fetchCurrentUsersMamazuLocations() }) { AddMamazuLocationView() }
                                 .padding(.top, 50)
                                 .opacity(userViewModel.isFetched ? 1 : 0)
-                                .animation(.easeIn(duration: 0.5))
+                                .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
                             }else {
                                 ScrollView {
                                     LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),

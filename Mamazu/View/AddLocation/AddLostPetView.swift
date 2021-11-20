@@ -158,7 +158,6 @@ struct AddLostPetView: View {
                 .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 30)
                 .frame(maxWidth: size.width, maxHeight: .infinity)
                 .padding(.bottom, keyboardHandler.keyboardHeight)
-                .animation(.easeInOut)
             }
             .onChange(of: viewModel.isSuccess, perform: { _ in
                 self.presentationMode.wrappedValue.dismiss()

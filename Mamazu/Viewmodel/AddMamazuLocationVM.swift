@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class AddMamazuLocationVM: ObservableObject {
     
@@ -24,10 +25,10 @@ class AddMamazuLocationVM: ObservableObject {
     @State private var showingAlert = false
     
     private var networkService = NetworkService()
+    private var cancellables = Set<AnyCancellable>()
+    typealias params = Dictionary<String, Any>
     
-    
-    func addMamazu() {
-        
+    func add() {
         if title.isEmpty || description.isEmpty || image.size == .zero {
             self.isError.toggle()
             self.errorMessage = LocalizedString.AddLocation.fullFill
@@ -40,16 +41,33 @@ class AddMamazuLocationVM: ObservableObject {
             return
         }
         self.isLoading = true
-        networkService.addNewLocation(image: image, title: title, description: description, latitude: latitude, longitude: longitude) { (response: Result<MamazuResult, APIError>) in
-            switch response {
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.isError.toggle()
-                self.errorMessage = error.localizedDescription
-            case .success(_):
-                self.isLoading = false
-                self.isSuccess = true
-            }
-        }
+        
+        let parameters: params = [
+            "title": title,
+            "description": description,
+            "latitude": latitude,
+            "longitude": longitude
+        ]
+        
+        networkService.addLocation(ADD_POST, parameters: parameters, image: image)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+                if case let .failure(error) = completion {
+                    self.showAlertMessage(error.localizedDescription)
+                }
+            }, receiveValue: { [weak self] (result: MamazuResult) in
+                print(result)
+                if result.error{
+                    self?.showAlertMessage(result.message ?? "Add Location Error")
+                }
+                self?.isLoading = false
+                self?.isSuccess = true
+            }).store(in: &cancellables)
+    }
+    
+    fileprivate func showAlertMessage(_ message: String) {
+        self.isLoading = false
+        self.isError.toggle()
+        self.errorMessage = message
     }
 }

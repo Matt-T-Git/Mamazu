@@ -29,7 +29,7 @@ struct LoadingView: View {
                         .padding(.bottom, UIDevice.current.iPhones_5_5s_5c_SE ? 55 : 15)
                 }
             }
-            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: isShowing)
         }
     }
 }

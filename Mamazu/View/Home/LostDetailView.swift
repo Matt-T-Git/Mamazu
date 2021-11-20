@@ -175,7 +175,7 @@ struct LostDetailView: View {
         .background(Color.mamazuBackground)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .opacity(isShow ? 1 : 0)
-        .animation(.easeInOut(duration: 0.8))
+        .animation(.easeInOut(duration: 0.8), value: isShow)
     }
 }
 

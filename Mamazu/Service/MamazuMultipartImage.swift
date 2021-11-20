@@ -19,7 +19,7 @@ public enum MimeType:String {
     case gif = "image/gif"
 }
 
-public typealias Parameters = [String: String]
+public typealias Parameters = [String: Any]
 
 open class MamazuMultipartImage: NSObject {
     
@@ -49,9 +49,17 @@ open class MamazuMultipartImage: NSObject {
         
         if let parameters = params {
             for (key, value) in parameters {
-                body.append("--\(boundary + lineBreak)")
-                body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
-                body.append("\(value + lineBreak)")
+                if let arr = value as? [Any]  {
+                    for i in 0 ..< arr.count {
+                        body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+                        body.append("Content-Disposition: form-data; name=\"\(key)[]\"\r\n\r\n".data(using: String.Encoding.utf8)!)
+                        body.append("\(arr[i])\r\n".data(using: String.Encoding.utf8)!)
+                    }
+                } else {
+                    body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+                    body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: String.Encoding.utf8)!)
+                    body.append("\(value)\r\n".data(using: String.Encoding.utf8)!)
+                }
             }
         }
         

@@ -29,7 +29,7 @@ class LostViewModel: ObservableObject {
               let lng = self.locationService.lastLocation?.coordinate.longitude else { return }
         let parameters = ["latitude": lat, "longitude": lng]
         
-        lostService.fetchCombineDataWithParameters(params: parameters, urlString: POSTS_URL)
+        lostService.fetchCombineDataWithParameters(params: parameters, urlString: LOST_LOCATION_URL)
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
                      self.isError = true
@@ -53,15 +53,34 @@ class LostViewModel: ObservableObject {
     }
     
     func found() {
-        self.lostService.setFound(postId: id) { (success) in
-            if success {
-                self.isError = true
-                self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
-            }else {
-                self.isError = true
-                self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
-            }
-        }
+        
+        lostService.found(postId: id)
+            .sink { completion in
+                print(completion)
+                if case let .failure(error) = completion {
+                    self.isError = true
+                    self.errorMessage = error.localizedDescription }
+            } receiveValue: { value in
+                print(value)
+                if value.success{
+                    self.isError = true
+                    self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
+                }else{
+                    self.isError = true
+                    self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
+                }
+            }.store(in: &cancellables)
+
+        
+//        self.lostService.setFound(postId: id) { (success) in
+//            if success {
+//                self.isError = true
+//                self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
+//            }else {
+//                self.isError = true
+//                self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
+//            }
+//        }
     }
     
 }
