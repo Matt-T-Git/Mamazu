@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Combine
 import SwiftUI
 
 class AddLostLocationVM: ObservableObject {
@@ -31,9 +31,15 @@ class AddLostLocationVM: ObservableObject {
     
     private var networkService = NetworkService()
     
+    private var cancellables = Set<AnyCancellable>()
+    typealias params = Dictionary<String, Any>
+    
     @Published var selected: String? = nil
     
-    var petAgeArray = Array(stride(from: 1, through: 30, by: 0.5)).map { String($0) }.map {$0.replacingOccurrences(of: ".0", with: "") }
+    var petAgeArray = Array(stride(from: 1, through: 30, by: 0.5))
+        .map { String($0) }
+        .map {$0.replacingOccurrences(of: ".0", with: "") }
+    
     let petGenderArray = [LocalizedString.AddLocation.choose,
                           LocalizedString.AddLocation.male,
                           LocalizedString.AddLocation.female]
@@ -82,26 +88,35 @@ class AddLostLocationVM: ObservableObject {
         }
         self.isLoading = true
         
-        networkService.addLostPetLocation(image: image,
-                                             petName: petName,
-                                             petBreed: petBreed,
-                                             petGender: petGender,
-                                             petAge: petAge,
-                                             description: description,
-                                             latitude: latitude,
-                                             longitude: longitude) { (response: Result<LostAnimalResult, APIError>) in
-            
-            
-            switch response {
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.isError.toggle()
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
-            case .success(_):
-                self.isLoading = false
-                self.isSuccess = true
-            }
-        }
+        let parameters: params = [
+            "petName": petName,
+            "petBreed": petBreed,
+            "petGender": petGender,
+            "petAge": petAge,
+            "description": description,
+            "latitude": latitude,
+            "longitude": longitude,
+        ]
+        
+        networkService.addLocation(ADD_LOST_ANIMAL, parameters: parameters, image: image)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+                if case let .failure(error) = completion {
+                    self.showAlertMessage(error.localizedDescription)
+                }
+            }, receiveValue: { [weak self] (result: MamazuResult) in
+                print(result)
+                if result.error{
+                    self?.showAlertMessage(result.message ?? "Add Location Error")
+                }
+                self?.isLoading = false
+                self?.isSuccess = true
+            }).store(in: &cancellables)
+    }
+    
+    fileprivate func showAlertMessage(_ message: String) {
+        self.isLoading = false
+        self.isError.toggle()
+        self.errorMessage = message
     }
 }

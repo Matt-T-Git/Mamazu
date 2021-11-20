@@ -101,7 +101,7 @@ struct AddMamazuLocationView: View {
                             viewModel.image = selectedImage
                             viewModel.latitude = latitude
                             viewModel.longitude = longitude
-                            viewModel.addMamazu()
+                            viewModel.add()
                         }
                         .alert(isPresented: $viewModel.isError, content: {
                             Alert(title: Text("Mamazu"), message: Text(viewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
@@ -115,7 +115,6 @@ struct AddMamazuLocationView: View {
                     
                 })
                 .padding(.bottom, keyboardHandler.keyboardHeight)
-                .animation(.easeInOut)
                 .frame(maxWidth: size.width, maxHeight: .infinity)
                 .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 30)
                 .padding(.bottom, 40)

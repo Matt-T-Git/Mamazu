@@ -37,9 +37,11 @@ struct LostAnimalResults: Codable, Identifiable {
         case location
     }
 }
-
-
 struct LostAnimalResult: Codable {
     let error: Bool
     var message: String?
+}
+
+struct Found: Codable {
+    var success: Bool
 }

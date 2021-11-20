@@ -72,7 +72,7 @@ struct RegisterView: View {
                     
                     Button(action: {
                         registerViewModel.image = selectedImage
-                        registerViewModel.registerUser()
+                        registerViewModel.register()
                     }, label: {
                         Text(LocalizedString.Register.registerButtonTitle)
                             .frame(maxWidth: size.width - 50)
@@ -119,9 +119,9 @@ struct RegisterView: View {
         .onTapGesture {
             hideKeyboard()
         }
-        .background(Color.black.opacity(registerViewModel.isLoading ? 0.7 : 0)).animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+        .background(Color.black.opacity(registerViewModel.isLoading ? 0.7 : 0)).animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: registerViewModel.isLoading)
         .padding(.bottom, keyboardHandler.keyboardHeight)
-        .animation(.easeInOut)
+        .animation(.easeInOut, value: 0)
         .frame(maxWidth: size.width, maxHeight: size.height)
         .background(LinearGradient(gradient: Gradient(colors: [Color.mamazuPurple, Color.mamazuLoginGradientDark]),
                                    startPoint: .topLeading,

@@ -48,7 +48,7 @@ struct LocationOnboardView: View {
                 .background(LinearGradient(gradient: Gradient(colors: locationManager.isLocated ? [Color(hex: 0x65FDF0), Color(hex: 0x1D6FA3)] : [Color(hex: 0xe52d27), Color(hex: 0xb31217)]),
                                            startPoint: .topLeading, endPoint: .bottomTrailing))
                 .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                .animation(.easeIn)
+                .animation(.easeIn, value: 0)
         }
         .padding(.horizontal, 20)
     }

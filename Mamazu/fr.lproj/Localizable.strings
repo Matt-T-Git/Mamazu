@@ -108,6 +108,8 @@
 "error_email_password_blank" = "Les champs Email et Mot de passe ne peuvent pas être vides";
 "error_invalid_email" = "S'il vous plaît, mettez une adresse email valide.";
 "error_no_image" = "Veuillez ajouter une image.";
+"error_no_user" = "Aucun utilisateur enregistré trouvé avec cette adresse e-mail ! Voulez-vous vous inscrire?";
+"error_user_exist" = "Il y a un utilisateur enregistré avec cette adresse e-mail.";
 
 /* General */
 "general_incorrect_date" = "Date incorrecte";

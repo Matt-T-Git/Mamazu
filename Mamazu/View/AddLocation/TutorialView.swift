@@ -64,7 +64,7 @@ struct TutorialView: View {
         .background(Color.mamazuBackground.opacity(0.8))
         .ignoresSafeArea()
         .opacity(isShowing ? 1 : 0)
-        .animation(.easeInOut(duration: 0.5))
+        .animation(.easeInOut(duration: 0.5), value: isShowing)
         
     }
 }

@@ -48,3 +48,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+URL.Swift
+Mamazu/Extensions/URL.swift

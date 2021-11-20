@@ -18,7 +18,7 @@ struct AnimatedBackgroundView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: colors), startPoint: start, endPoint: end)
-                .animation(Animation.easeInOut(duration: 15).repeatForever())
+                .animation(Animation.easeInOut(duration: 15).repeatForever(), value: 0)
                 .onReceive(timer) { _ in
                     self.start = UnitPoint(x: 4, y: 0)
                     self.end = UnitPoint(x: 0, y: 2)

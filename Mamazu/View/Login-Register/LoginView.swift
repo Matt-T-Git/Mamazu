@@ -61,7 +61,7 @@ struct LoginView: View {
                         
                         //MARK:- Login button
                         Button(action: {
-                            loginViewModel.loginUser()
+                            loginViewModel.login()
                             print(loginViewModel.isLoading)
                         }, label: {
                             Text(LocalizedString.Login.loginButtonTitle)

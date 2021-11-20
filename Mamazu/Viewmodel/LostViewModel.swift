@@ -7,11 +7,11 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class LostViewModel: ObservableObject {
     
     @Published var lost = [LostAnimalResults]()
-    @Published var losted: String = ""
     @Published var errorMessage: String = ""
     @Published var id: String = ""
     
@@ -21,47 +21,53 @@ class LostViewModel: ObservableObject {
     @ObservedObject var locationService = LocationManager()
     private var lostService = NetworkService()
     
-    func getLostData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            let parameters = ["latitude": self.locationService.lastLocation?.coordinate.latitude, "longitude": self.self.locationService.lastLocation?.coordinate.longitude]
-            self.lostService.fetchDataWithParameters(params: parameters as NetworkService.params, urlString: LOST_LOCATION_URL) { [weak self] (response: Result<Lost, APIError>) in
-                switch response {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                case .success(let result):
-                    DispatchQueue.main.async {
-                        self?.lost = result.results
-                        self?.isFetched = true
-                    }
+    private var cancellables = Set<AnyCancellable>()
+    
+    func fetchPosts() {
+        guard let lat = self.locationService.lastLocation?.coordinate.latitude,
+              let lng = self.locationService.lastLocation?.coordinate.longitude else { return }
+        let parameters = ["latitude": lat, "longitude": lng]
+        
+        lostService.fetchCombineDataWithParameters(params: parameters, urlString: LOST_LOCATION_URL)
+            .sink(receiveCompletion: { completion in
+                if case let .failure(error) = completion {
+                     self.isError = true
+                    self.errorMessage = error.localizedDescription
                 }
-            }
-        }
+            }, receiveValue: { [weak self] (result: Lost) in
+                print(result.error)
+                self?.lost = result.results
+                self?.isFetched = true
+            }).store(in: &cancellables)
     }
     
     func fetchCurrentUsersLostLocations() {
-        self.lostService.fetchData(urlString: CURRENT_USER_LOST_ANIMAL_URL) { (response: Result<Lost, APIError>) in
-            switch response {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let result):
-                self.lost = result.results
-                self.isFetched = true
-                self.isFetched = true
-                print(result.results.count)
-            }
-        }
+        lostService.fetchCombineData(urlString: CURRENT_USER_LOST_ANIMAL_URL)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { [weak self] (model: Lost) in
+                self?.lost = model.results
+                self?.isFetched = true
+            }).store(in: &cancellables)
     }
     
     func found() {
-        self.lostService.setFound(postId: id) { (success) in
-            if success {
-                self.isError = true
-                self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
-            }else {
-                self.isError = true
-                self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
-            }
-        }
+        lostService.found(postId: id)
+            .sink { completion in
+                print(completion)
+                if case let .failure(error) = completion {
+                    self.isError = true
+                    self.errorMessage = error.localizedDescription }
+            } receiveValue: { value in
+                print(value)
+                if value.success{
+                    self.isError = true
+                    self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
+                }else{
+                    self.isError = true
+                    self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
+                }
+            }.store(in: &cancellables)
     }
     
 }

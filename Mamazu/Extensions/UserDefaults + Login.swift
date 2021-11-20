@@ -21,6 +21,7 @@ extension UserDefaults{
     
     func saveUserToken(token: String) {
         set(token, forKey: "userToken")
+        UserDefaults.standard.setIsLoggedIn(value: true)
         synchronize()
     }
     

@@ -45,6 +45,7 @@ struct ProfileView: View {
                         .fill(Color.mamazuCardBackground)
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 45))
                         .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 10)
+                        
                     AnimatedImage(url: URL(string: userViewModel.imageUrl)).indicator(SDWebImageActivityIndicator.medium)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -96,7 +97,7 @@ struct ProfileView: View {
                 .frame(height: size.height / 2)
             }
             .opacity(userViewModel.isFetched ? 1 : 0)
-            .animation(.easeIn(duration: 0.5))
+            .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
             .actionSheet(isPresented: $isShowingSheet) {
                 ActionSheet(
                     title: Text("Mamazu"),
@@ -112,8 +113,6 @@ struct ProfileView: View {
             .fullScreenCover(isPresented: $isLogout) {
                 LoginView()
             }
-            
-            
                         if selectedView == 0 {
                             if mamazuViewModel.mamazu.isEmpty {
                                 EmptyMamazu(closure: {
@@ -123,7 +122,7 @@ struct ProfileView: View {
                                 .sheet(isPresented: $addMamazuLocation, onDismiss: { mamazuViewModel.fetchCurrentUsersMamazuLocations() }) { AddMamazuLocationView() }
                                 .padding(.top, 50)
                                 .opacity(userViewModel.isFetched ? 1 : 0)
-                                .animation(.easeIn(duration: 0.5))
+                                .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
                             }else {
                                 ScrollView {
                                     LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
@@ -191,7 +190,7 @@ struct ProfileView: View {
         .onAppear(perform: {
             lostViewModel.fetchCurrentUsersLostLocations()
             mamazuViewModel.fetchCurrentUsersMamazuLocations()
-            userViewModel.getUserInfo()
+            userViewModel.getCombineUserInfo()
         })
         
         .frame(maxWidth: .infinity, maxHeight: size.height)
