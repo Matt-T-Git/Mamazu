@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 import Combine
 
 struct RegisterService {
@@ -42,11 +41,8 @@ struct RegisterService {
             })
             .receive(on: RunLoop.main)
             .mapError { error in
-                if let error = error as? APIError {
-                    return error
-                } else {
-                    return APIError.errorWithMessage(error.localizedDescription)
-                }
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
             }
             .eraseToAnyPublisher()
     }

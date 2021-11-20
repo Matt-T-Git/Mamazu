@@ -9,7 +9,6 @@ import Combine
 
 struct NetworkService {
     
-    
     typealias params = Dictionary<String, Any>
     
     //MARK: - Fetch Data
@@ -50,11 +49,8 @@ struct NetworkService {
             })
             .receive(on: RunLoop.main)
             .mapError { error in
-                if let error = error as? APIError {
-                    return error
-                } else {
-                    return APIError.errorWithMessage(error.localizedDescription)
-                }
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
             }
             .eraseToAnyPublisher()
     }
@@ -75,11 +71,8 @@ struct NetworkService {
             })
             .receive(on: RunLoop.main)
             .mapError { error in
-                if let error = error as? APIError {
-                    return error
-                } else {
-                    return APIError.errorWithMessage(error.localizedDescription)
-                }
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
             }
             .eraseToAnyPublisher()
         
@@ -108,11 +101,8 @@ struct NetworkService {
             })
             .receive(on: RunLoop.main)
             .mapError { error in
-                if let error = error as? APIError {
-                    return error
-                } else {
-                    return APIError.errorWithMessage(error.localizedDescription)
-                }
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
             }
             .eraseToAnyPublisher()
     }

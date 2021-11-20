@@ -72,7 +72,6 @@
 		B4CF51262617200600D4D74F /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF51252617200600D4D74F /* ProfileCardView.swift */; };
 		B4CF51392618453A00D4D74F /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF51382618453A00D4D74F /* SideBar.swift */; };
 		B4CF513F2619E4EE00D4D74F /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF513E2619E4EE00D4D74F /* TutorialView.swift */; };
-		B4D3A50E25F1660B00E53458 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4D3A50D25F1660B00E53458 /* Alamofire */; };
 		B4D3A51225F1664900E53458 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B4D3A51125F1664900E53458 /* Lottie */; };
 		B4D3A51725F6295100E53458 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A51625F6295100E53458 /* LoginModel.swift */; };
 		B4D3A51B25F63D7600E53458 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3A51A25F63D7600E53458 /* RegisterService.swift */; };
@@ -189,7 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B408A29925F7B1ED00F8CE62 /* SDWebImageSwiftUI in Frameworks */,
-				B4D3A50E25F1660B00E53458 /* Alamofire in Frameworks */,
 				B4D3A51225F1664900E53458 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +435,6 @@
 			);
 			name = Mamazu;
 			packageProductDependencies = (
-				B4D3A50D25F1660B00E53458 /* Alamofire */,
 				B4D3A51125F1664900E53458 /* Lottie */,
 				B408A29825F7B1ED00F8CE62 /* SDWebImageSwiftUI */,
 			);
@@ -843,11 +840,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B408A29725F7B1ED00F8CE62 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
-		};
-		B4D3A50D25F1660B00E53458 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4D3A50C25F1660B00E53458 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		B4D3A51125F1664900E53458 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

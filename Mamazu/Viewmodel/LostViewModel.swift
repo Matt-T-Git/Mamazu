@@ -24,7 +24,6 @@ class LostViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     func fetchPosts() {
-        
         guard let lat = self.locationService.lastLocation?.coordinate.latitude,
               let lng = self.locationService.lastLocation?.coordinate.longitude else { return }
         let parameters = ["latitude": lat, "longitude": lng]
@@ -53,7 +52,6 @@ class LostViewModel: ObservableObject {
     }
     
     func found() {
-        
         lostService.found(postId: id)
             .sink { completion in
                 print(completion)
@@ -70,17 +68,6 @@ class LostViewModel: ObservableObject {
                     self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
                 }
             }.store(in: &cancellables)
-
-        
-//        self.lostService.setFound(postId: id) { (success) in
-//            if success {
-//                self.isError = true
-//                self.errorMessage = LocalizedString.Errors.notificationSuccessfullySaved
-//            }else {
-//                self.isError = true
-//                self.errorMessage = LocalizedString.Errors.somethingWentWrongTryAgain
-//            }
-//        }
     }
     
 }

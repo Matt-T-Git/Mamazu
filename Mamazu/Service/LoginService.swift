@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import Alamofire
 import Combine
 
 struct LoginService {
-    
     
     func login(email: String, password: String) -> AnyPublisher<LoginModel, APIError> {
         if email.isEmpty == true || password.isEmpty == true{
@@ -40,11 +38,8 @@ struct LoginService {
             })
             .receive(on: RunLoop.main)
             .mapError { error in
-                if let error = error as? APIError {
-                    return error
-                } else {
-                    return APIError.errorWithMessage(error.localizedDescription)
-                }
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
             }
             .eraseToAnyPublisher()
     }
