@@ -12,7 +12,6 @@ struct LostCardView: View {
     @StateObject var lostViewModel = LostViewModel()
     var lostAnimalData: LostAnimalResults
     
-    
     var body: some View {
         ZStack(alignment: .bottom) {
             RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
