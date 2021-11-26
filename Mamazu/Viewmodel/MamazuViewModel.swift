@@ -28,6 +28,7 @@ class MamazuViewModel: ObservableObject {
         guard let lat = self.locationService.lastLocation?.coordinate.latitude,
               let lng = self.locationService.lastLocation?.coordinate.longitude else { return }
         let parameters = ["latitude": lat, "longitude": lng]
+        print(parameters)
         
         mamazuService.fetchCombineDataWithParameters(params: parameters, urlString: POSTS_URL)
             .sink(receiveCompletion: { completion in

@@ -145,12 +145,12 @@ struct HomeView: View {
             //MARK:- Fetch data when location service is authorised
             .onChange(of: locationManager.locationStatus, perform: { (isChanged) in
                 if isChanged  == .authorizedWhenInUse || isChanged == .authorizedAlways {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                         lostViewModel.fetchPosts()
                         mamazuViewModel.fetchPosts()
                         self.isLocated = true
                     }
-                }else if isChanged == .denied || isChanged == .restricted {
+                }else if isChanged == .denied || isChanged == .restricted || isChanged == .notDetermined {
                     self.isPermissionError.toggle()
                     self.errorMessage = LocalizedString.locationDisabledMessage
                 }
