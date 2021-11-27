@@ -13,19 +13,25 @@ struct SideBar: View {
             List {
                 NavigationLink(destination: HomeView()) {
                     HStack{
-                        Image("HomeIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                        Image("TabBar-Home").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                         Text("Mamazu").foregroundColor(.mamazuTextColor).fontWeight(.bold)
                     }
                 }
                 NavigationLink(destination: AddMamazuView()) {
                     HStack{
-                        Image("LocationIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                        Image("TabBar-Add").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                         Text(LocalizedString.add).foregroundColor(.mamazuTextColor).fontWeight(.bold)
+                    }
+                }
+                NavigationLink(destination: DiscountView()) {
+                    HStack{
+                        Image("TabBar-Discount").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                        Text(LocalizedString.discount).foregroundColor(.mamazuTextColor).fontWeight(.bold)
                     }
                 }
                 NavigationLink(destination: ProfileView()) {
                     HStack{
-                        Image("ProfileIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                        Image("TabBar-Profile").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                         Text(LocalizedString.profile).foregroundColor(.mamazuTextColor).fontWeight(.bold)
                     }
                 }

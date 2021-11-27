@@ -14,17 +14,22 @@ struct MamazuTabView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image("HomeIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                    Image("TabBar-Home").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                 }
             
             AddMamazuView()
                 .tabItem {
-                    Image("LocationIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                    Image("TabBar-Add").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                }
+            
+            DiscountView()
+                .tabItem {
+                    Image("TabBar-Discount").renderingMode(.template)
                 }
             
             ProfileView()
                 .tabItem {
-                    Image("ProfileIcon").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                    Image("TabBar-Profile").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                 }
         }
         .background(Color.mamazuCardBackground)
