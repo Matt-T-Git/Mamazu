@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		20DA75E52750E7D200CBA11E /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA75E42750E7D200CBA11E /* URL.swift */; };
+		20DA75E82752389C00CBA11E /* DiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA75E72752389C00CBA11E /* DiscountView.swift */; };
+		20FA58DE275517C40001E470 /* DiscountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA58DD275517C40001E470 /* DiscountHeaderView.swift */; };
+		20FA58E22758C6510001E470 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA58E12758C6510001E470 /* Tab.swift */; };
+		20FA58E42758F3770001E470 /* MamazuTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA58E32758F3770001E470 /* MamazuTabBar.swift */; };
+		20FA58E62758F44F0001E470 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA58E52758F44F0001E470 /* PreferenceKey.swift */; };
+		20FA58E82758F7940001E470 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA58E72758F7940001E470 /* Modifiers.swift */; };
 		B408A29225F7A88900F8CE62 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408A29125F7A88900F8CE62 /* NetworkService.swift */; };
 		B408A29525F7AAB200F8CE62 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408A29425F7AAB200F8CE62 /* UserViewModel.swift */; };
 		B408A29925F7B1ED00F8CE62 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B408A29825F7B1ED00F8CE62 /* SDWebImageSwiftUI */; };
@@ -92,6 +98,12 @@
 
 /* Begin PBXFileReference section */
 		20DA75E42750E7D200CBA11E /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		20DA75E72752389C00CBA11E /* DiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountView.swift; sourceTree = "<group>"; };
+		20FA58DD275517C40001E470 /* DiscountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountHeaderView.swift; sourceTree = "<group>"; };
+		20FA58E12758C6510001E470 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		20FA58E32758F3770001E470 /* MamazuTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamazuTabBar.swift; sourceTree = "<group>"; };
+		20FA58E52758F44F0001E470 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
+		20FA58E72758F7940001E470 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		B408A29125F7A88900F8CE62 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B408A29425F7AAB200F8CE62 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		B408A29B2600B39500F8CE62 /* LostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardView.swift; sourceTree = "<group>"; };
@@ -195,6 +207,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20DA75E62752386F00CBA11E /* Discounts */ = {
+			isa = PBXGroup;
+			children = (
+				20DA75E72752389C00CBA11E /* DiscountView.swift */,
+				20FA58DD275517C40001E470 /* DiscountHeaderView.swift */,
+			);
+			path = Discounts;
+			sourceTree = "<group>";
+		};
 		B42FF8AB25ECEEDC008DF195 /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +306,9 @@
 				B459031F25E69901009C0B40 /* General */,
 				B459032F25E7E001009C0B40 /* Login-Register */,
 				B49E029F2615BE9400B7E6B4 /* Profile */,
+				20DA75E62752386F00CBA11E /* Discounts */,
 				B47FA9B22604791100D8B92E /* TabView.swift */,
+				20FA58E32758F3770001E470 /* MamazuTabBar.swift */,
 				B4CF51382618453A00D4D74F /* SideBar.swift */,
 			);
 			path = View;
@@ -299,6 +322,8 @@
 				B4D3A52025F6419B00E53458 /* UserModel.swift */,
 				B408A2A42600D46E00F8CE62 /* LostModel.swift */,
 				B408A2AB260213F500F8CE62 /* Mamazu.swift */,
+				20FA58E12758C6510001E470 /* Tab.swift */,
+				20FA58E52758F44F0001E470 /* PreferenceKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +367,7 @@
 				B49C8A8825EF8B2200B33C9A /* Device.swift */,
 				B49C8A9B25EFC3DE00B33C9A /* KeyboardHandler.swift */,
 				B4D3EE2026DF768A000353BF /* TrackableSrollView.swift */,
+				20FA58E72758F7940001E470 /* Modifiers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -518,6 +544,7 @@
 				B49C8A9C25EFC3DE00B33C9A /* KeyboardHandler.swift in Sources */,
 				B483ADB025E3F2DD0005CFB6 /* LoginView.swift in Sources */,
 				B49E02A92617011200B7E6B4 /* EmptyMamazu.swift in Sources */,
+				20FA58E82758F7940001E470 /* Modifiers.swift in Sources */,
 				B4B348A2260B467800220B2F /* MamazuPicker.swift in Sources */,
 				B42FF8C125ED3C05008DF195 /* ImagePicker.swift in Sources */,
 				B4D3A51B25F63D7600E53458 /* RegisterService.swift in Sources */,
@@ -525,6 +552,7 @@
 				B459032125E6991A009C0B40 /* LogoView.swift in Sources */,
 				B490032D26E0BBC8004DA78E /* OnboardingView.swift in Sources */,
 				B4BA3BE4273F98470017D3A9 /* CombineExtensions.swift in Sources */,
+				20FA58E42758F3770001E470 /* MamazuTabBar.swift in Sources */,
 				B4D3EE1F26DF74BC000353BF /* VisualEffectBlur.swift in Sources */,
 				B42FF8B025ECEF39008DF195 /* LoadingView.swift in Sources */,
 				B47FA9B626048BB900D8B92E /* LostDetailView.swift in Sources */,
@@ -533,15 +561,18 @@
 				B4B348952609EA2F00220B2F /* MamazuTextField.swift in Sources */,
 				B4CF51262617200600D4D74F /* ProfileCardView.swift in Sources */,
 				B4626BF0274649AC008F98EC /* MamazuMultipartImage.swift in Sources */,
+				20FA58DE275517C40001E470 /* DiscountHeaderView.swift in Sources */,
 				B4DCFDD6260333B700A2EE82 /* LocationManager.swift in Sources */,
 				B408A2A22600C11F00F8CE62 /* LostViewModel.swift in Sources */,
 				B46C46AD26089F5A004E15AB /* LocationCardView.swift in Sources */,
 				B408A29225F7A88900F8CE62 /* NetworkService.swift in Sources */,
 				B4B348982609F1CF00220B2F /* AddMamazuLocationVM.swift in Sources */,
 				B459031B25E63CD2009C0B40 /* RoundedTextField.swift in Sources */,
+				20FA58E22758C6510001E470 /* Tab.swift in Sources */,
 				B42FF89225EB7176008DF195 /* Constants.swift in Sources */,
 				B4D3A52E25F748F600E53458 /* ProfileView.swift in Sources */,
 				B4B348A8260B4D2400220B2F /* AddLostLocationVM.swift in Sources */,
+				20FA58E62758F44F0001E470 /* PreferenceKey.swift in Sources */,
 				B459033625EA856D009C0B40 /* UserDefaults + Login.swift in Sources */,
 				B477F6F326E0ADD00044EFB6 /* LostOnboardView.swift in Sources */,
 				B42FF8A525ECE9BE008DF195 /* LottieView.swift in Sources */,
@@ -575,6 +606,7 @@
 				B408A2AF2602146800F8CE62 /* MamazuViewModel.swift in Sources */,
 				B490032B26E0B571004DA78E /* LocationOnboardView.swift in Sources */,
 				B459033225E8D2A7009C0B40 /* AnimatedBackgroundView.swift in Sources */,
+				20DA75E82752389C00CBA11E /* DiscountView.swift in Sources */,
 				B46C46B32609C333004E15AB /* AddMamazuLocationView.swift in Sources */,
 				B49C8A8625EF833900B33C9A /* RegisterView.swift in Sources */,
 			);

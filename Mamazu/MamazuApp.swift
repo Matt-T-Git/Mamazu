@@ -10,16 +10,39 @@ import SwiftUI
 @main
 struct MamazuApp: App {
     
+    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    
     var body: some Scene {
         WindowGroup {
             if !isLoggedIn() {
                 OnboardingView()
-                //LoginView()
             }else{
                 if UIDevice.current.iPad {
-                    SideBar().accentColor(.mamazuTextColor)
+                    SideBar()
+                        .accentColor(.mamazuTextColor)
                 } else {
-                    MamazuTabView()
+                    ZStack{
+                        Group {
+                            switch selectedTab {
+                            case .home:
+                                HomeView()
+                            case .add:
+                                AddMamazuView()
+                            case .discount:
+                                DiscountView()
+                            case .profile:
+                                ProfileView()
+                            }
+                        }
+                        MamazuTabBar()
+                    }
+                    .safeAreaInset(edge: .bottom) {
+                        VStack {}.frame(height: 44)
+                    }
+                    
+                    }
+                    //MamazuTabBar()
+                    //MamazuTabView()
                 }
             }
         }
@@ -28,4 +51,4 @@ struct MamazuApp: App {
     fileprivate func isLoggedIn() -> Bool {
         return UserDefaults.standard.isLoggedIn()
     }
-}
+

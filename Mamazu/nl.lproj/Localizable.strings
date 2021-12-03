@@ -8,6 +8,7 @@
 /* Common */
 "ok" = "OK";
 "add" = "Toevoegen";
+"discount" = "Korting";
 "profile" = "Profiel";
 "settings" = "Instellingen";
 "email_placeholder" = "Uw e-mailadres";

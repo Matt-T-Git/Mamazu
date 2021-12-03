@@ -8,6 +8,7 @@
 /* Common */
 "ok" = "OK";
 "add" = "Add";
+"discount" = "Discount";
 "profile" = "Profile";
 "settings" = "Settings";
 "email_placeholder" = "Email address";

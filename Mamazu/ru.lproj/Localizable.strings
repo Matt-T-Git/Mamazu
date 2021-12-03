@@ -8,6 +8,7 @@
 /* Common */
 "ok" = "OK";
 "add" = "Добавлять";
+"discount" = "Скидка";
 "profile" = "Профиль";
 "settings" = "Настройки";
 "email_placeholder" = "Электронный адрес";
