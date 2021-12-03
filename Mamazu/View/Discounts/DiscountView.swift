@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct DiscountView: View {
+    
+    private var size = UIScreen.main.bounds
+    
     var body: some View {
-        Text("Discoun View For Mamazu")
+        ScrollView {
+            Text("Discoun View For Mamazu")
+        }
+        .frame(maxWidth: size.width, maxHeight: .infinity)
+        .background(Color.mamazuBackground)
+        .ignoresSafeArea()
     }
 }
 

@@ -17,7 +17,7 @@ struct AddMamazuView: View {
         ZStack(alignment: .top) {
             Image("AddLocationBackground")
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: 220)
             ScrollView {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15, content: {
