@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct MamazuApp: App {
     
-    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @State var selectedTab: Tab = .home
     
     var body: some Scene {
         WindowGroup {
@@ -34,21 +34,18 @@ struct MamazuApp: App {
                                 ProfileView()
                             }
                         }
-                        MamazuTabBar()
+                        MamazuTabBar(selectedTab: $selectedTab)
                     }
                     .safeAreaInset(edge: .bottom) {
                         VStack {}.frame(height: 44)
                     }
-                    
-                    }
-                    //MamazuTabBar()
-                    //MamazuTabView()
                 }
             }
         }
     }
-    
-    fileprivate func isLoggedIn() -> Bool {
-        return UserDefaults.standard.isLoggedIn()
-    }
+}
+
+fileprivate func isLoggedIn() -> Bool {
+    return UserDefaults.standard.isLoggedIn()
+}
 

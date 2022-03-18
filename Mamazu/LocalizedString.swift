@@ -12,6 +12,7 @@ struct LocalizedString {
     static let ok = NSLocalizedString("ok", comment: "")
     static let add = NSLocalizedString("add", comment: "")
     static let discount = NSLocalizedString("discount", comment: "")
+    static let mamazu = NSLocalizedString("mamazu", comment: "")
     static let profile = NSLocalizedString("profile", comment: "")
     static let settings = NSLocalizedString("settings", comment: "")
     static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")

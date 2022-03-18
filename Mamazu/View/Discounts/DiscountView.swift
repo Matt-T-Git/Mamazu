@@ -12,12 +12,15 @@ struct DiscountView: View {
     private var size = UIScreen.main.bounds
     
     var body: some View {
-        ScrollView {
-            Text("Discoun View For Mamazu")
+        GeometryReader { proxy in
+            ScrollView {
+                DiscountHeaderView()
+            }
+            .frame(maxWidth: size.width, maxHeight: .infinity)
+            .background(Color.mamazuBackground)
+            .padding(.top, proxy.safeAreaInsets.top)
+            .ignoresSafeArea()
         }
-        .frame(maxWidth: size.width, maxHeight: .infinity)
-        .background(Color.mamazuBackground)
-        .ignoresSafeArea()
     }
 }
 

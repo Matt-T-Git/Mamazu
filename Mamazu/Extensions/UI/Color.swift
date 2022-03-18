@@ -33,6 +33,8 @@ extension Color {
     public static var mamazuJava = Color("Java")
     public static var mamazuDiscount = Color("Discount")
     public static var mamazuDiscountLight = Color("DiscountLight")
+    public static var mamazuDiscountLeft = Color("DiscountLeft")
+    public static var mamazuDiscountRight = Color("DiscountRight")
     
     public static var mamazuBackground = Color("mamazuBackground")
     
