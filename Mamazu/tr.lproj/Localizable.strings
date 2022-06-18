@@ -42,7 +42,7 @@
 "login_subtitle" = "Devam etmek için giriş yapın.";
 "login_button_title" = "GİRİŞ YAP";
 "login_not_member_yet" = "Henüz üye değil misiniz?";
-"login_register" = "KAYIT OLUN.";
+"login_register" = "Kayıt Olun.";
 
 /* Register */
 "register_title" = "Aramıza Hoşgeldiniz!";

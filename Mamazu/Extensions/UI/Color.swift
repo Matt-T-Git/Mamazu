@@ -48,6 +48,8 @@ extension Color {
     public static var mamazuTextColor = Color("TextColor")
     public static var mamazuHeaderWelcometext = Color("HeaderWelcometext")
     public static var mamazuTextCaption = Color("TextCaption")
+    public static var mamazuOrangeText = Color("OrangeText")
+    public static var mamazuPinkText = Color("PinkText")
     
     public static var mamazuTextFieldColor = Color("TextFieldColor")
     public static var mamazuTextFieldPlaceholderBg = Color("TextFieldPlaceholderBg")
@@ -76,7 +78,10 @@ extension Color {
     public static var MidBoxRight = Color("MidBoxRight")
     
     
+    // Login
     
+    public static var loginBg = Color("loginBg")
+    public static var loginBtnBg = Color("loginBtnBg")
     
 }
 

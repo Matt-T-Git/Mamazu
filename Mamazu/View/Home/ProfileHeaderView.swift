@@ -23,7 +23,7 @@ struct ProfileHeaderView: View {
                 .foregroundColor(.clear)
             ZStack {
                 Capsule()
-                    .frame(height: 70)
+                    .frame(height: 72)
                     .foregroundColor(Color.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 5)
                 HStack(spacing: 17){

@@ -75,12 +75,40 @@ struct NetworkService {
                 else { return APIError.errorWithMessage(error.localizedDescription) }
             }
             .eraseToAnyPublisher()
-        
     }
     
     func found(postId: String) -> AnyPublisher<Found, APIError> {
         
         guard let url = URL(string: FOUND_URL + postId) else { fatalError("URL Error") }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(UserDefaults.standard.returnUserToken(), forHTTPHeaderField: "Authorization")
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap({ result in
+                
+                guard let httpResponse = result.response as? HTTPURLResponse else { throw APIError.decodingError }
+                
+                if httpResponse.statusCode == 404 { throw APIError.errorWithMessage(LocalizedString.Errors.noUser) }
+                
+                guard (200..<300).contains(httpResponse.statusCode) else {
+                    throw APIError.errorWithMessage("An error occurred. Error code is \(httpResponse.statusCode)") }
+               
+                let decoder = JSONDecoder()
+                return try decoder.decode(Found.self, from: result.data)
+            })
+            .receive(on: RunLoop.main)
+            .mapError { error in
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func deleteUser(userId: String) -> AnyPublisher<Found, APIError> {
+        
+        guard let url = URL(string: DELETE_USER_URL + userId) else { fatalError("URL Error") }
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

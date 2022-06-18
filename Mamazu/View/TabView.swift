@@ -22,10 +22,10 @@ struct MamazuTabView: View {
                     Image("TabBar-Add").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                 }
             
-            DiscountView()
-                .tabItem {
-                    Image("TabBar-Discount").renderingMode(.template)
-                }
+//            DiscountView()
+//                .tabItem {
+//                    Image("TabBar-Discount").renderingMode(.template)
+//                }
             
             ProfileView()
                 .tabItem {

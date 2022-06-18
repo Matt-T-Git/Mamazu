@@ -13,6 +13,7 @@ struct LoginView: View {
     
     @State var isRegistrationViewShow: Bool = false
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @StateObject private var keyboardHandler = KeyboardHandler()
     @StateObject var loginViewModel = LoginViewModel()
@@ -21,89 +22,136 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                ZStack {
+                    
                     //MARK:- Login Stack
+                ZStack {
                     VStack(alignment: .center, spacing: 4) {
-                        //MARK:- Graident welcome view
-                        WelcomeTextView(welcomeText: LocalizedString.Login.title,
-                                        infotext: LocalizedString.Login.subtitle,
-                                        colors: [Color.mamazuNeonCarrot, Color.mamazuWildStrawberry])
-                        //MARK:- Logo View
-                        LogoView(width: 220, height: 175, padding: .bottom, paddingSize: 30)
-                        
-                        //MARK:- Textfields
-                        VStack(alignment: .leading, spacing: 25) {
-                            MamazuTextField(bindingText: $loginViewModel.email,
-                                            placeholder: LocalizedString.emailPlaceholder,
-                                            borderColor: Color.mamazuDarkPink.opacity(0.5),
-                                            image: "envelope.badge")
-                                .textContentType(.emailAddress)
-                                .keyboardType(.emailAddress)
-                                .autocapitalization(.none)
-                            
-                            MamazuTextField(bindingText: $loginViewModel.password,
-                                            placeholder: LocalizedString.passwordPlaceholder,
-                                            borderColor: Color.mamazuDarkPink.opacity(0.5),
-                                            image: "lock.circle",
-                                            isPassword: true)
-                                .textContentType(.password)
-                            
-                            //TODO
-//                            Button(action: {}, label: {
-//                                Text("Şifremi Unuttum")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.mamazuWelcomeSubtitle)
-//                                    .frame(maxWidth: .infinity, alignment: .trailing)
-//                            })
-                        }
-                        .padding(.horizontal, 25)
-                        .padding(.bottom, 20)
-                        
-                        //MARK:- Login button
-                        Button(action: {
-                            loginViewModel.login()
-                            print(loginViewModel.isLoading)
-                        }, label: {
-                            Text(LocalizedString.Login.loginButtonTitle)
-                                .frame(maxWidth: size.width - 50)
-                                .frame(height: 55)
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .semibold))
-                                .cornerRadius(15)
-                        })
-                        .alert(isPresented: $loginViewModel.isLoginError, content: {
-                            Alert(title: Text("Mamazu"), message: Text(loginViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
-                        })
-                        .fullScreenCover(isPresented: $loginViewModel.isLoggedIn, content: {
-                            if UIDevice.current.iPad {
-                                NavigationView {
-                                    SideBar()
-                                    //SideBar().hideNavigationBar().accentColor(Color.mamazuTitle)
+                            //MARK:- Logo View
+                            ZStack {
+                                Image("mmz_logo")
+                                    //.fill(Color.mamazuTurquoise)
+                                    .blur(radius: 45)
+                                    .frame(width: 220, height: 220)
+                                    .opacity(0.9)
+                                VStack(spacing: -15) {
+                                    Image("mmz_logo")
+                                    Image("LogoText")
                                 }
-                            } else {
-                                MamazuTabView()
-                                    .tabViewStyle(.automatic)
                             }
-                        })
-                        .background(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
-                                                   startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                        
-                        //MARK:- Go to register button
-                        NavigationLink(destination: RegisterView(isLoggedIn: $loginViewModel.isLoggedIn)) {
-                            HStack {
-                                Text(LocalizedString.Login.notMember)
-                                    .font(.system(size: 14, weight: .regular))
-                                Text(LocalizedString.Login.register)
-                                    .font(.system(size: 14, weight: .heavy))
+                            .padding(.top,safeAreaInsets.top + 10)
+                            .padding(.bottom, 30)
+                            
+                            //MARK:- Textfields
+                            VStack(alignment: .leading, spacing: 20) {
+                                //MARK:- Graident welcome view
+                                WelcomeTextView(welcomeText: LocalizedString.Login.title,
+                                                infotext: LocalizedString.Login.subtitle,
+                                                colors: [Color.mamazuOrangeText, Color.mamazuPinkText])
+                                
+                                MamazuTextField(bindingText: $loginViewModel.email,
+                                                placeholder: LocalizedString.emailPlaceholder,
+                                                borderColor: Color.white,
+                                                backgroundColor: Color.loginBg,
+                                                image: "envelope.badge")
+                                    .textContentType(.emailAddress)
+                                    .keyboardType(.emailAddress)
+                                    .autocapitalization(.none)
+                                    .preferredColorScheme(.dark)
+                                
+                                MamazuTextField(bindingText: $loginViewModel.password,
+                                                placeholder: LocalizedString.passwordPlaceholder,
+                                                borderColor: Color.white,
+                                                backgroundColor: Color.loginBg,
+                                                image: "lock.circle",
+                                                isPassword: true)
+                                    .textContentType(.password)
+                                    .preferredColorScheme(.dark)
+                                
+                                //TODO
+    //                            Button(action: {}, label: {
+    //                                Text("Şifremi Unuttum")
+    //                                    .font(.subheadline)
+    //                                    .foregroundColor(Color.mamazuWelcomeSubtitle)
+    //                                    .frame(maxWidth: .infinity, alignment: .trailing)
+    //                            })
+                                
+                                //MARK:- Login button
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .angularGradientGlow(colors: [Color(#colorLiteral(red: 0, green: 0.4366608262, blue: 1, alpha: 1)),
+                                                                      Color(#colorLiteral(red: 0, green: 0.9882656932, blue: 0.6276883483, alpha: 1)),
+                                                                      Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)),
+                                                                      Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
+                                        .blur(radius: 8)
+                                        .opacity(0.5)
+                                        .frame(maxWidth: size.width - 50)
+                                        .frame(height: 50)
+                                    Button(action: {
+                                        loginViewModel.login()
+                                        print(loginViewModel.isLoading)
+                                    }, label: {
+                                        Text(LocalizedString.Login.loginButtonTitle)
+                                            .frame(maxWidth: size.width - 50)
+                                            .frame(height: 50)
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 14, weight: .semibold))
+                                            .cornerRadius(15)
+                                    })
+                                    .background(RadialGradient(colors: [Color.loginBtnBg, Color.loginBtnBg.opacity(0.7)], center: .center, startRadius: 50, endRadius: 300))
+                                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(.white, lineWidth: 2)
+                                                .blendMode(.softLight)
+                                )
+                                }
+                                
+                                
+                                //MARK:- Go to register button
+                                NavigationLink(destination: RegisterView(isLoggedIn: $loginViewModel.isLoggedIn)) {
+                                    HStack {
+                                        Text(LocalizedString.Login.notMember)
+                                            .font(.system(size: 14, weight: .regular))
+                                        Text(LocalizedString.Login.register)
+                                            .font(.system(size: 14, weight: .bold))
+                                    }
+                                    .foregroundColor(.white.opacity(0.7))
+                                    .padding(.leading, 7)
+                                }
+                                
                             }
+                            .padding(.horizontal, 25)
+                            .padding(.bottom, 20)
+                            .background(
+                                Color.loginBg.opacity(0.7)
+                                    .cornerRadius(30)
+                                    .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 15)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 30)
+                                                .stroke(.white, lineWidth: 1)
+                                                .blendMode(.softLight)
+                                        )
+                            )
+        
+                            .padding(.horizontal)
+                            
+                            .alert(isPresented: $loginViewModel.isLoginError, content: {
+                                Alert(title: Text("Mamazu"), message: Text(loginViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
+                            })
+                            
+                            .fullScreenCover(isPresented: $loginViewModel.isLoggedIn, content: {
+                                if UIDevice.current.iPad {
+                                    NavigationView {
+                                        SideBar()
+                                        //SideBar().hideNavigationBar().accentColor(Color.mamazuTitle)
+                                    }
+                                } else {
+                                    MamazuTabView()
+                                        .tabViewStyle(.automatic)
+                                }
+                            })
+                            
                         }
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 25)
-                        .padding(.vertical, 50)
-                        
-                    }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     
                     //MARK:- Loading animation
@@ -111,6 +159,9 @@ struct LoginView: View {
                         .frame(width: size.width, height: size.height)
                         .background(Color.mamazuBackground.opacity(0.8))
                 }
+                    
+                   
+                
             }
             .onAppear(perform: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -125,9 +176,7 @@ struct LoginView: View {
             }
             .padding(.bottom, keyboardHandler.keyboardHeight)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.mamazuPurple, Color.mamazuLoginGradientDark]),
-                                       startPoint: .topLeading,
-                                       endPoint: .center))
+            .background(Image("LoginBackground").resizable().scaledToFill())
             .ignoresSafeArea(.all)
             .navigationBarHidden(true)
         }

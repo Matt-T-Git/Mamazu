@@ -10,16 +10,20 @@ import SDWebImageSwiftUI
 
 struct ProfileView: View {
     
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    
     @StateObject var userViewModel = UserViewModel()
     @StateObject var locationManager = LocationManager()
     @StateObject var lostViewModel = LostViewModel()
     @StateObject var mamazuViewModel = MamazuViewModel()
+    
     private let pickerPurple = UIColor(red: 0.39, green: 0.44, blue: 0.97, alpha: 1.00)
     @State private var selectedView = 0
     
     @State var isLostDetailShow: Bool = false
     @State var isMamazuDetailShow: Bool = false
     @State var isShowingSheet: Bool = false
+    @State var isShowingAccountDeleteSheet: Bool = false
     @State var isLogout: Bool = false
     
     @State var selectedLostAnimal: LostAnimalResults?
@@ -45,7 +49,7 @@ struct ProfileView: View {
                         .fill(Color.mamazuCardBackground)
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 45))
                         .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 10)
-                        
+                    
                     AnimatedImage(url: URL(string: userViewModel.imageUrl)).indicator(SDWebImageActivityIndicator.medium)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -72,120 +76,132 @@ struct ProfileView: View {
                     
                 }
                 
+                // MARK: - Mamazu and Lost Picker View
                 .overlay(
                     Picker(selection: $selectedView, label: Text("")) {
                         Text("Mamazu").tag(0)
                         Text(LocalizedString.Profile.lost).tag(1)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding(.horizontal, 45)
-                    .padding(.bottom, 10)
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding(.horizontal, 45)
+                        .padding(.bottom, 10)
                     ,alignment: .bottom
                 )
                 
+                // MARK: - Logout and delete account button
                 .overlay(
-                    Image("Logout")
-                        .onTapGesture {
-                            self.isShowingSheet.toggle()
+                    Menu(content: {
+                        Button(action: { self.isShowingSheet.toggle() }) {
+                            Label("Log Out", systemImage: "arrow.down.heart.fill").font(.largeTitle)
                         }
-                        
+                        Button(action: { self.isShowingAccountDeleteSheet.toggle() }) {
+                            Label("Delete Your account", systemImage: "trash.fill").font(.largeTitle)
+                        }
+                    }, label: {
+                        Image("Logout")
+                    })
                         .padding(.trailing, 20)
-                        .padding(.top,UIDevice.current.iPad ? 0 : UIApplication.shared.windows.first!.safeAreaInsets.top)
+                        .padding(.top,UIDevice.current.iPad ? 0 : safeAreaInsets.top)
                         .padding(.bottom,UIDevice.current.iPad ? 80 : 0)
-                    ,alignment: UIDevice.current.iPad ? .bottomTrailing : .topTrailing
-                )
+                    ,alignment: UIDevice.current.iPad ? .bottomTrailing : .topTrailing)
                 .frame(height: size.height / 2)
             }
             .opacity(userViewModel.isFetched ? 1 : 0)
             .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
-            .actionSheet(isPresented: $isShowingSheet) {
+            .actionSheet(isPresented: $isShowingAccountDeleteSheet) {
                 ActionSheet(
                     title: Text("Mamazu"),
                     message: Text(LocalizedString.Profile.areYouSureLogout),
                     buttons: [.default(Text(LocalizedString.Profile.logout), action: {
-                        UserDefaults.standard.setIsLoggedIn(value: false)
-                        UserDefaults.standard.resetUserToken()
-                        self.isLogout.toggle()
+                        userViewModel.delete()
+                        if !userViewModel.isUserDeleted { userIsLoggedOut() }
                     }),
                     .cancel()]
                 )
             }
+            .alert("Mamazu", isPresented: $isShowingSheet) {
+                Button("Cancel", role: .cancel) { }
+                Button("Log Out", role: .destructive) { userIsLoggedOut() }
+            } message: {
+                Text(LocalizedString.Profile.areYouSureLogout)
+            }
+            
             .fullScreenCover(isPresented: $isLogout) {
                 LoginView()
             }
-                        if selectedView == 0 {
-                            if mamazuViewModel.mamazu.isEmpty {
-                                EmptyMamazu(closure: {
-                                    self.addMamazuLocation.toggle()
-                                }, title: LocalizedString.Profile.notSharedHelpPoints
-                                )
-                                .sheet(isPresented: $addMamazuLocation, onDismiss: { mamazuViewModel.fetchCurrentUsersMamazuLocations() }) { AddMamazuLocationView() }
-                                .padding(.top, 50)
-                                .opacity(userViewModel.isFetched ? 1 : 0)
-                                .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
-                            }else {
-                                ScrollView {
-                                    LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
-                                                        GridItem(.adaptive(minimum: size.height / 3)),
-                                                        GridItem(.adaptive(minimum: size.height / 3))],
-                                              alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
-                                                ForEach(self.mamazuViewModel.mamazu) { mamazu in
-                                                    AnimatedImage(url: URL(string: mamazu.image)).indicator(SDWebImageActivityIndicator.medium)
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fill)
-                                                        .cornerRadius(20)
-                                                        .frame(height: size.width / 3 - 20)
-                                                        .onTapGesture {
-                                                            self.selectedMamazu = mamazu
-                                                            DispatchQueue.main.async {
-                                                                self.isMamazuDetailShow = true
-                                                            }
-                                                        }
-                                                        .sheet(item: $selectedMamazu) {
-                                                            MamazuDetail(mamazuData: $0, isShow: $isMamazuDetailShow)
-                                                        }
-                                                }
-                                              })
-                                }
-                                .padding()
+            if selectedView == 0 {
+                if mamazuViewModel.mamazu.isEmpty {
+                    EmptyMamazu(closure: {
+                        self.addMamazuLocation.toggle()
+                    }, title: LocalizedString.Profile.notSharedHelpPoints
+                    )
+                    .sheet(isPresented: $addMamazuLocation, onDismiss: { mamazuViewModel.fetchCurrentUsersMamazuLocations() }) { AddMamazuLocationView() }
+                    .padding(.top, 50)
+                    .opacity(userViewModel.isFetched ? 1 : 0)
+                    .animation(.easeIn(duration: 0.5), value: userViewModel.isFetched)
+                }else {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
+                                            GridItem(.adaptive(minimum: size.height / 3)),
+                                            GridItem(.adaptive(minimum: size.height / 3))],
+                                  alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
+                            ForEach(self.mamazuViewModel.mamazu) { mamazu in
+                                AnimatedImage(url: URL(string: mamazu.image)).indicator(SDWebImageActivityIndicator.medium)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .cornerRadius(20)
+                                    .frame(height: size.width / 3 - 20)
+                                    .onTapGesture {
+                                        self.selectedMamazu = mamazu
+                                        DispatchQueue.main.async {
+                                            self.isMamazuDetailShow = true
+                                        }
+                                    }
+                                    .sheet(item: $selectedMamazu) {
+                                        MamazuDetail(mamazuData: $0, isShow: $isMamazuDetailShow)
+                                    }
                             }
-            
-                        }else{
-            
-                            if lostViewModel.lost.isEmpty {
-                                EmptyMamazu(closure: {
-                                    self.addLostPetLocation.toggle()
-                                }, title: LocalizedString.Profile.neverReportedLoss
-                                )
-                                .sheet(isPresented: $addLostPetLocation, onDismiss: { lostViewModel.fetchCurrentUsersLostLocations() }) { AddLostPetView() }
-                                .padding(.top, 50)
-                            }else {
-                                ScrollView {
-                                    LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
-                                                        GridItem(.adaptive(minimum: size.height / 3)),
-                                                        GridItem(.adaptive(minimum: size.height / 3))],
-                                              alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
-                                                ForEach(self.lostViewModel.lost) { lost in
-                                                    AnimatedImage(url: URL(string: lost.image)).indicator(SDWebImageActivityIndicator.medium)
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fill)
-                                                        .cornerRadius(20)
-                                                        .frame(height: size.width / 3 - 20)
-                                                        .onTapGesture {
-                                                            self.selectedLostAnimal = lost
-                                                            DispatchQueue.main.async {
-                                                                self.isLostDetailShow = true
-                                                            }
-                                                        }
-                                                        .sheet(item: $selectedLostAnimal) {
-                                                            LostDetailView(lostData: $0, isShow: $isLostDetailShow)
-                                                        }
-                                                }
-                                              })
-                                }
-                                .padding()
+                        })
+                    }
+                    .padding()
+                }
+                
+            }else{
+                
+                if lostViewModel.lost.isEmpty {
+                    EmptyMamazu(closure: {
+                        self.addLostPetLocation.toggle()
+                    }, title: LocalizedString.Profile.neverReportedLoss
+                    )
+                    .sheet(isPresented: $addLostPetLocation, onDismiss: { lostViewModel.fetchCurrentUsersLostLocations() }) { AddLostPetView() }
+                    .padding(.top, 50)
+                }else {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: size.height / 3)),
+                                            GridItem(.adaptive(minimum: size.height / 3)),
+                                            GridItem(.adaptive(minimum: size.height / 3))],
+                                  alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
+                            ForEach(self.lostViewModel.lost) { lost in
+                                AnimatedImage(url: URL(string: lost.image)).indicator(SDWebImageActivityIndicator.medium)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .cornerRadius(20)
+                                    .frame(height: size.width / 3 - 20)
+                                    .onTapGesture {
+                                        self.selectedLostAnimal = lost
+                                        DispatchQueue.main.async {
+                                            self.isLostDetailShow = true
+                                        }
+                                    }
+                                    .sheet(item: $selectedLostAnimal) {
+                                        LostDetailView(lostData: $0, isShow: $isLostDetailShow)
+                                    }
                             }
-                        }
+                        })
+                    }
+                    .padding()
+                }
+            }
         }
         .onAppear(perform: {
             lostViewModel.fetchCurrentUsersLostLocations()
@@ -209,6 +225,12 @@ struct ProfileView: View {
             imageSize = size.width / 1.9
         }
         return imageSize
+    }
+    
+    fileprivate func userIsLoggedOut() {
+        UserDefaults.standard.setIsLoggedIn(value: false)
+        UserDefaults.standard.resetUserToken()
+        self.isLogout.toggle()
     }
 }
 

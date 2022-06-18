@@ -13,9 +13,10 @@ struct UserModel: Codable, Identifiable {
     var email: String
     var profileImg: String
     var token: String?
+    var isDeleted: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case name, email, profileImg, token
+        case name, email, profileImg, token, isDeleted
     }
 }

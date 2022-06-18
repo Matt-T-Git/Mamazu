@@ -18,6 +18,7 @@ struct RegisterView: View {
     @Binding var isLoggedIn: Bool
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @StateObject private var keyboardHandler = KeyboardHandler()
     @StateObject private var registerViewModel = RegisterViewModel()
@@ -27,16 +28,15 @@ struct RegisterView: View {
         ScrollView(.vertical) {
             ZStack {
                 VStack {
-                    WelcomeTextView(welcomeText: LocalizedString.Register.title,
-                                    infotext: LocalizedString.Register.subtitle,
-                                    colors: [Color.mamazuBrightTurquoise, Color.mamazuJava])
+                    
                     Image(uiImage: selectedImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 180, height: 180)
                         .background(Image("selectImageMamazu"))
                         .cornerRadius(55)
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 30)
+                        .padding(.top, safeAreaInsets.top + 20)
                         .shadow(color: Color.black.opacity(0.2), radius: 15, x: 0, y: 10)
                         .onTapGesture {
                             self.isShowGallery.toggle()
@@ -44,44 +44,96 @@ struct RegisterView: View {
                         .sheet(isPresented: $isShowGallery, content: {
                             ImagePicker(isPresented: self.$isShowGallery, image: self.$selectedImage, isImageSelected: $isImageSelected, sourceType: .photoLibrary)
                         })
+                    
                     //Text Inputs
                     VStack(alignment: .leading, spacing: 25) {
+                        
+                        WelcomeTextView(welcomeText: LocalizedString.Register.title,
+                                        infotext: LocalizedString.Register.subtitle,
+                                        colors: [Color.mamazuBrightTurquoise, Color.mamazuJava])
+                        
                         MamazuTextField(bindingText: $registerViewModel.name,
                                         placeholder: LocalizedString.Register.namePlaceholder,
-                                        borderColor: Color.mamazuDarkPink.opacity(0.5),
+                                        borderColor: .white,
                                         image: "person.fill")
                             .textContentType(.name)
                             .autocapitalization(.words)
                         MamazuTextField(bindingText: $registerViewModel.email,
                                         placeholder: LocalizedString.emailPlaceholder,
-                                        borderColor: Color.mamazuDarkPink.opacity(0.5),
+                                        borderColor: .white,
                                         image: "envelope.badge")
                             .textContentType(.emailAddress)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                         MamazuTextField(bindingText: $registerViewModel.password,
                                         placeholder: LocalizedString.passwordPlaceholder,
-                                        borderColor: Color.mamazuDarkPink.opacity(0.5),
+                                        borderColor: .white,
                                         image: "lock.fill",
                                         isPassword: true)
                             .textContentType(.password)
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .angularGradientGlow(colors: [Color(#colorLiteral(red: 0, green: 0.4366608262, blue: 1, alpha: 1)),
+                                                              Color(#colorLiteral(red: 0, green: 0.9882656932, blue: 0.6276883483, alpha: 1)),
+                                                              Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)),
+                                                              Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
+                                .blur(radius: 8)
+                                .opacity(0.8)
+                                .frame(maxWidth: size.width - 50)
+                                .frame(height: 50)
+                            
+                            Button(action: {
+                                registerViewModel.image = selectedImage
+                                registerViewModel.register()
+                            }, label: {
+                                Text(LocalizedString.Register.registerButtonTitle)
+                                    .frame(maxWidth: size.width - 50)
+                                    .frame(height: 55)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .cornerRadius(15)
+                                
+                            })
+                            .background(RadialGradient(colors: [Color.loginBtnBg, Color.loginBtnBg.opacity(0.7)], center: .center, startRadius: 50, endRadius: 300))
+                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                            .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(.white, lineWidth: 2)
+                                        .blendMode(.softLight)
+                        )
+                        }
+                        
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            HStack {
+                                Text(LocalizedString.Register.alreadyMember)
+                                    .font(.system(size: 14, weight: .regular))
+                                Text(LocalizedString.Register.login)
+                                    .font(.system(size: 14, weight: .heavy))
+                            }
+                        })
+                        .foregroundColor(Color.white.opacity(0.7))
+                        .padding(.leading, 7)
                     }
+                    .preferredColorScheme(.dark)
                     
                     .padding(.horizontal, 25)
-                    .padding(.bottom, 20)
+                    .padding(.vertical, 20)
+                    .background(
+                        Color.loginBg.opacity(0.7)
+                            .cornerRadius(30)
+                            .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 15)
+                            .overlay(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .stroke(.white, lineWidth: 1)
+                                        .blendMode(.softLight)
+                                )
+                    )
+
+                    .padding(.horizontal)
                     
-                    Button(action: {
-                        registerViewModel.image = selectedImage
-                        registerViewModel.register()
-                    }, label: {
-                        Text(LocalizedString.Register.registerButtonTitle)
-                            .frame(maxWidth: size.width - 50)
-                            .frame(height: 55)
-                            .foregroundColor(.white)
-                            .font(.system(size: 14, weight: .semibold))
-                            .cornerRadius(15)
-                        
-                    })
                     .fullScreenCover(isPresented: $registerViewModel.isRegistered, content: {
                         MamazuTabView()
                     })
@@ -91,25 +143,9 @@ struct RegisterView: View {
                               dismissButton: .default(Text(LocalizedString.ok)))
                     })
                     
-                    .background(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
-                                               startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                    
-                    
                     Spacer(minLength: 40)
                     
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        HStack {
-                            Text(LocalizedString.Register.alreadyMember)
-                                .font(.system(size: 14, weight: .regular))
-                            Text(LocalizedString.Register.login)
-                                .font(.system(size: 14, weight: .heavy))
-                        }
-                    })
-                    .foregroundColor(Color.white)
-                    .padding(.bottom, 30)
+                    
                 }
                 LoadingView(isShowing: $registerViewModel.isLoading, animationName: "Dog2")
                     .frame(width: size.width, height: size.height)
@@ -123,9 +159,7 @@ struct RegisterView: View {
         .padding(.bottom, keyboardHandler.keyboardHeight)
         .animation(.easeInOut, value: 0)
         .frame(maxWidth: size.width, maxHeight: size.height)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.mamazuPurple, Color.mamazuLoginGradientDark]),
-                                   startPoint: .topLeading,
-                                   endPoint: .center))
+        .background(Image("LoginBackground").resizable().scaledToFill())
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .navigationBarHidden(true)
     }

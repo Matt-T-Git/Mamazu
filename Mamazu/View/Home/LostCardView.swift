@@ -21,7 +21,7 @@ struct LostCardView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
             ZStack(alignment: .top) {
                 RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                    .frame(height: 230)
+                    .frame(height: 228)
                     .foregroundColor(Color.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow.opacity(1), radius: 10, x: 0, y: 5)
                 VStack(alignment: .center) {
