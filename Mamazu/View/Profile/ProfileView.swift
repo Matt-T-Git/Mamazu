@@ -164,6 +164,7 @@ struct ProfileView: View {
                         })
                     }
                     .padding()
+                    .padding(.bottom, 90)
                 }
                 
             }else{
@@ -200,6 +201,7 @@ struct ProfileView: View {
                         })
                     }
                     .padding()
+                    .padding(.bottom, 50)
                 }
             }
         }

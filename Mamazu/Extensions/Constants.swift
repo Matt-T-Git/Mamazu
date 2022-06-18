@@ -8,7 +8,7 @@
 
 import Foundation
 
-let BASE_URL = "https://mamazu.herokuapp.com/"
+let BASE_URL = "https://mamazuserver.herokuapp.com/"
 //let BASE_URL = "http://127.0.0.1:3000/"
 
 let PROFILE_IMG_URL = ""
