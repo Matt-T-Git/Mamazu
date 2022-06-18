@@ -18,6 +18,7 @@ class UserViewModel: ObservableObject {
     @Published var isError: Bool = false
     @Published var isFetched: Bool = false
     @Published var isLoading: Bool = false
+    @Published var isUserDeleted: Bool = false
     
     //For lost pet detail view
     @AppStorage("userId") var userID = "0"
@@ -38,5 +39,21 @@ class UserViewModel: ObservableObject {
                 self?.isFetched = true
                 self?.isLoading = false
             }).store(in: &cancellables)
+    }
+    
+    func delete() {
+        userService.deleteUser(userId: userID)
+            .sink { completion in
+                print(completion)
+            } receiveValue: { [weak self] deleted in
+                if deleted.success {
+                    self?.isUserDeleted.toggle()
+                }else {
+                    self?.isError.toggle()
+                    self?.errorMessage = "An Error occured while deleting the user info. Please try again soon."
+                }
+            }
+            .store(in: &cancellables)
+
     }
 }

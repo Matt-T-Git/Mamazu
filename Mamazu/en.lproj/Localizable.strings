@@ -42,7 +42,7 @@
 "login_subtitle" = "Sign in to continue.";
 "login_button_title" = "LOGIN";
 "login_not_member_yet" = "Not a member yet?";
-"login_register" = "REGISTER.";
+"login_register" = "Register.";
 
 /* Register */
 "register_title" = "Welcome aboard!";

@@ -57,7 +57,7 @@ struct LostCardView: View {
             }
         }
         .frame(maxWidth: 180)
-        .frame(height: 235)
+        .frame(height: 232)
         .padding(.horizontal, 15)
     }
 }
