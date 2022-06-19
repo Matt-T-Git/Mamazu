@@ -70,6 +70,7 @@
 "female" = "Female";
 "choose" = "CHOOSE";
 "under-age" = "Under the age of 1";
+
 // Warnings
 "full_fill" = "Please fill in all fields.";
 "add_image" = "Please add a photo.";
@@ -96,6 +97,11 @@
 "profile_lost" = "Lost";
 "profile_are_you_sure_logout" = "Are you sure you want to log out?";
 "profile_logout" = "Log out";
+"delete_account" = "Delete Your Account";
+"cancel_button" = "Cancel";
+"profile_are_you_sure_delete" = "Are you sure you want to permanently delete your account? This action cannot be undone.";
+"profile_delete" = "Delete Permanently!";
+
 "profile_not_shared_help_points" = "You have not shared any help points";
 "profile_never_reported_loss" = "You have never reported a loss";
 "profile_add_new_entry" = "Add New Entry";

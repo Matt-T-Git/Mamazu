@@ -96,6 +96,10 @@
 "profile_lost" = "Потерялся/Потерялась";
 "profile_are_you_sure_logout" = "Вы уверены, что хотите выйти?";
 "profile_logout" = "ВЫХОД ИЗ СИСТЕМЫ";
+"delete_account" = "Удалить учетную запись";
+"profile_are_you_sure_delete" = "Вы уверены, что хотите навсегда удалить свою учетную запись? Это действие не может быть отменено.";
+"profile_delete" = "Удалить навсегда!";
+
 "profile_not_shared_help_points" = "Вы не поделились информацией о пунктах помощи";
 "profile_never_reported_loss" = "Вы не заявляли о пропаже";
 "profile_add_new_entry" = "Добавить новую запись";

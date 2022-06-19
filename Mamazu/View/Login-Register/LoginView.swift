@@ -51,21 +51,17 @@ struct LoginView: View {
                                 MamazuTextField(bindingText: $loginViewModel.email,
                                                 placeholder: LocalizedString.emailPlaceholder,
                                                 borderColor: Color.white,
-                                                backgroundColor: Color.loginBg,
                                                 image: "envelope.badge")
                                     .textContentType(.emailAddress)
                                     .keyboardType(.emailAddress)
                                     .autocapitalization(.none)
-                                    .preferredColorScheme(.dark)
                                 
                                 MamazuTextField(bindingText: $loginViewModel.password,
                                                 placeholder: LocalizedString.passwordPlaceholder,
                                                 borderColor: Color.white,
-                                                backgroundColor: Color.loginBg,
                                                 image: "lock.circle",
                                                 isPassword: true)
                                     .textContentType(.password)
-                                    .preferredColorScheme(.dark)
                                 
                                 //TODO
     //                            Button(action: {}, label: {
@@ -163,14 +159,6 @@ struct LoginView: View {
                    
                 
             }
-            .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    locationManager.requestAuth()
-                    if locationManager.locationStatus == nil || locationManager.locationStatus == .notDetermined {
-                        locationManager.requestAuth()
-                    }
-                }
-            })
             .onTapGesture {
                 hideKeyboard()
             }
@@ -179,6 +167,15 @@ struct LoginView: View {
             .background(Image("LoginBackground").resizable().scaledToFill())
             .ignoresSafeArea(.all)
             .navigationBarHidden(true)
+            
+            .onAppear(perform: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    locationManager.requestAuth()
+                    if locationManager.locationStatus == nil || locationManager.locationStatus == .notDetermined {
+                        locationManager.requestAuth()
+                    }
+                }
+            })
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -189,6 +186,8 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             LoginView()
                 .preferredColorScheme(.dark)
+            LoginView()
+                .preferredColorScheme(.light)
         }
     }
 }

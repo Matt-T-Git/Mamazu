@@ -96,6 +96,11 @@
 "profile_lost" = "Kayıp";
 "profile_are_you_sure_logout" = "Çıkış yapmak istediğinize emin misiniz?";
 "profile_logout" = "Çıkış Yap";
+"delete_account" = "Hesabını Sil";
+"cancel_button" = "İptal";
+"profile_are_you_sure_delete" = "Hesabınızı kalıcı olarak silmek istediğinize emin misiniz? Bu işlem geri alınamaz.";
+"profile_delete" = "Kalıcı Olarak Sil!";
+
 "profile_not_shared_help_points" = "Hiç yardım noktası \npaylaşmamışsınız!!!";
 "profile_never_reported_loss" = "Hiç kayıp bildiriminde bulunmamışsınız.";
 "profile_add_new_entry" = "Yeni Kayıt Ekle";

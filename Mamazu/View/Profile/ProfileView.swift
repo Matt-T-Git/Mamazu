@@ -92,10 +92,10 @@ struct ProfileView: View {
                 .overlay(
                     Menu(content: {
                         Button(action: { self.isShowingSheet.toggle() }) {
-                            Label("Log Out", systemImage: "arrow.down.heart.fill").font(.largeTitle)
+                            Label(LocalizedString.Profile.logout, systemImage: "rectangle.portrait.and.arrow.right").font(.largeTitle)
                         }
                         Button(action: { self.isShowingAccountDeleteSheet.toggle() }) {
-                            Label("Delete Your account", systemImage: "trash.fill").font(.largeTitle)
+                            Label(LocalizedString.Profile.delete_account, systemImage: "trash.fill").font(.largeTitle)
                         }
                     }, label: {
                         Image("Logout")
@@ -111,8 +111,8 @@ struct ProfileView: View {
             .actionSheet(isPresented: $isShowingAccountDeleteSheet) {
                 ActionSheet(
                     title: Text("Mamazu"),
-                    message: Text(LocalizedString.Profile.areYouSureLogout),
-                    buttons: [.default(Text(LocalizedString.Profile.logout), action: {
+                    message: Text(LocalizedString.Profile.areYouSureDelete),
+                    buttons: [.default(Text(LocalizedString.Profile.delete), action: {
                         userViewModel.delete()
                         if !userViewModel.isUserDeleted { userIsLoggedOut() }
                     }),
@@ -120,8 +120,7 @@ struct ProfileView: View {
                 )
             }
             .alert("Mamazu", isPresented: $isShowingSheet) {
-                Button("Cancel", role: .cancel) { }
-                Button("Log Out", role: .destructive) { userIsLoggedOut() }
+                Button(LocalizedString.Profile.logout, role: .destructive) { userIsLoggedOut() }
             } message: {
                 Text(LocalizedString.Profile.areYouSureLogout)
             }

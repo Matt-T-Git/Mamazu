@@ -117,7 +117,7 @@ struct RegisterView: View {
                         .foregroundColor(Color.white.opacity(0.7))
                         .padding(.leading, 7)
                     }
-                    .preferredColorScheme(.dark)
+                    //.preferredColorScheme(.dark)
                     
                     .padding(.horizontal, 25)
                     .padding(.vertical, 20)
