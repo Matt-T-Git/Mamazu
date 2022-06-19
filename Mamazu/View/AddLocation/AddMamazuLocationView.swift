@@ -19,6 +19,7 @@ struct AddMamazuLocationView: View {
     
     @State private var showingSheet = false
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @StateObject var viewModel = AddMamazuLocationVM()
     @StateObject var locationManager = LocationManager()
@@ -116,7 +117,7 @@ struct AddMamazuLocationView: View {
                 })
                 .padding(.bottom, keyboardHandler.keyboardHeight)
                 .frame(maxWidth: size.width, maxHeight: .infinity)
-                .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 30)
+                .padding(.top, safeAreaInsets.top + 30)
                 .padding(.bottom, 40)
             }
             .background(Image("Addbackground").resizable())

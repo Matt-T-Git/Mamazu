@@ -26,6 +26,16 @@ struct MamazuPicker: View {
     var body: some View {
         HStack {
             ZStack {
+                Image(systemName: "circle.fill")
+                    .resizable()
+                    .font(.system(size: 15))
+                    .angularGradientGlow(colors: [Color(#colorLiteral(red: 0, green: 0.4366608262, blue: 1, alpha: 1)),
+                                                  Color(#colorLiteral(red: 0, green: 0.9882656932, blue: 0.6276883483, alpha: 1)),
+                                                  Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)),
+                                                  Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
+                    //.frame(width: 50, height: 50)
+                    .blur(radius: 4)
+                    .opacity(0.6)
                 RoundedRectangle(cornerRadius: 15, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.mamazuTextFieldPlaceholderBg)
                 Image(systemName: image)
@@ -48,7 +58,7 @@ struct MamazuPicker: View {
         .cornerRadius(radius!)
         .overlay(
             RoundedRectangle(cornerRadius: radius!, style: .continuous)
-                .stroke(borderColor, lineWidth: 1)
+                .stroke(borderColor.opacity(0.3), lineWidth: 1)
         )
     }
 }

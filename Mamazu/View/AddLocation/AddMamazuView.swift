@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddMamazuView: View {
     let size = UIScreen.main.bounds
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @State var showMamazuLocation: Bool = false
     @State var showLostLocation: Bool = false
@@ -49,7 +50,7 @@ struct AddMamazuView: View {
                     
                 })
                 .frame(maxWidth: size.width, maxHeight: size.height)
-                .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 10)
+                .padding(.top, safeAreaInsets.top + 10)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -20,6 +20,7 @@ struct LostDetailView: View {
     
     @StateObject var lostViewModel = LostViewModel()
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     var body: some View {
         
@@ -78,7 +79,7 @@ struct LostDetailView: View {
                         Image("Close")
                     })
                     .padding(.trailing, 20)
-                    .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top)
+                    .padding(.top, safeAreaInsets.top)
                     ,alignment: .topTrailing
                 )
                 .frame(maxWidth: size.width)
