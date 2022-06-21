@@ -767,7 +767,7 @@
 		B483ADBA25E3F2DF0005CFB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Mamazu_new_icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -791,7 +791,7 @@
 		B483ADBB25E3F2DF0005CFB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Mamazu_new_icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

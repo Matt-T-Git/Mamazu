@@ -131,7 +131,7 @@ struct AddLostPetView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                                      startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 14, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
                         .frame(height: 52)

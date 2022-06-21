@@ -89,7 +89,7 @@ struct RegisterView: View {
                             }, label: {
                                 Text(LocalizedString.Register.registerButtonTitle)
                                     .frame(maxWidth: size.width - 50)
-                                    .frame(height: 55)
+                                    .frame(height: 50)
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .semibold))
                                     .cornerRadius(15)

@@ -79,7 +79,7 @@ struct LoginView: View {
                                                                       Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)),
                                                                       Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
                                         .blur(radius: 8)
-                                        .opacity(0.5)
+                                        .opacity(0.8)
                                         .frame(maxWidth: size.width - 50)
                                         .frame(height: 50)
                                     Button(action: {
