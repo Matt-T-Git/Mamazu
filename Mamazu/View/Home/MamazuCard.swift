@@ -21,7 +21,7 @@ struct MamazuCard: View {
                                            startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.clear)
                 .clipShape(RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                .frame(height: 470)
+                .frame(height: 468)
             ZStack(alignment: .top) {
                 RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.mamazuCardBackground)

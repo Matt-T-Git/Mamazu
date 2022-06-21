@@ -88,7 +88,7 @@ struct BackgroundColor: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay(
-                Color("Background")
+                Color.mamazuBackground
                     .opacity(colorScheme == .dark ? opacity : 0)
                     .blendMode(.overlay)
                     .allowsHitTesting(false)
@@ -111,7 +111,7 @@ struct BackgroundStyle: ViewModifier {
         content
             .backgroundColor(opacity: opacity)
             .cornerRadius(cornerRadius)
-            .shadow(color: Color("Shadow").opacity(isLiteMode ? 0 : 0.3), radius: 20, x: 0, y: 10)
+            .shadow(color: Color.mamazuCardShadow.opacity(isLiteMode ? 0 : 0.3), radius: 20, x: 0, y: 10)
             .modifier(OutlineOverlay(cornerRadius: cornerRadius))
     }
 }

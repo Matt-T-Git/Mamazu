@@ -1,5 +1,5 @@
 //
-//  NewTabBar.swift
+//  MamazuTabBar.swift
 //  Mamazu
 //
 //  Created by Sercan Burak AĞIR on 2.12.2021.
@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MamazuTabBar: View {
-    @State var color: Color = .teal
+    @State var color: Color = .mamazuPurple
     @State var selectedX: CGFloat = 0
     @State var x: [CGFloat] = [0, 0, 0, 0]
     
-    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @Binding var selectedTab: Tab
     
     var body: some View {
+        
         GeometryReader { proxy in
             let hasHomeIndicator = proxy.safeAreaInsets.bottom > 0
             
@@ -57,11 +58,11 @@ struct MamazuTabBar: View {
                     color = tab.color
                 }
             } label: {
-                VStack(spacing: 0) {
+                VStack(spacing: 3) {
                     Image(tab.icon)
                         .renderingMode(.template)
                         .symbolVariant(.fill)
-                        .font(.system(size: 17, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         .frame(width: 44, height: 29)
                     Text(tab.text).font(.caption2)
                         .frame(width: 88)
@@ -92,6 +93,6 @@ struct MamazuTabBar: View {
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        MamazuTabBar()
+        MamazuTabBar(selectedTab: .constant(Tab.home))
     }
 }

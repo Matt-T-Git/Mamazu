@@ -12,6 +12,7 @@ struct LocalizedString {
     static let ok = NSLocalizedString("ok", comment: "")
     static let add = NSLocalizedString("add", comment: "")
     static let discount = NSLocalizedString("discount", comment: "")
+    static let mamazu = NSLocalizedString("mamazu", comment: "")
     static let profile = NSLocalizedString("profile", comment: "")
     static let settings = NSLocalizedString("settings", comment: "")
     static let emailPlaceholder = NSLocalizedString("email_placeholder", comment: "")
@@ -106,8 +107,15 @@ struct LocalizedString {
 
     struct Profile {
         static let lost = NSLocalizedString("profile_lost", comment: "")
+        //Logout
         static let areYouSureLogout = NSLocalizedString("profile_are_you_sure_logout", comment: "")
         static let logout = NSLocalizedString("profile_logout", comment: "")
+        static let cancel = NSLocalizedString("cancel_button", comment: "")
+        //Delete Account
+        static let delete_account = NSLocalizedString("delete_account", comment: "")
+        static let areYouSureDelete = NSLocalizedString("profile_are_you_sure_delete", comment: "")
+        static let delete = NSLocalizedString("profile_delete", comment: "")
+        
         static let notSharedHelpPoints =  NSLocalizedString("profile_not_shared_help_points", comment: "")
         static let neverReportedLoss = NSLocalizedString("profile_never_reported_loss", comment: "")
         static let addNewEntry = NSLocalizedString("profile_add_new_entry", comment: "")

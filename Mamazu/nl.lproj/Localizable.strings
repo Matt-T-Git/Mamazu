@@ -10,6 +10,7 @@
 "add" = "Toevoegen";
 "discount" = "Korting";
 "profile" = "Profiel";
+"mamazu" = "Mamazu";
 "settings" = "Instellingen";
 "email_placeholder" = "Uw e-mailadres";
 "password_placeholder" = "Uw wachtwoord";
@@ -95,6 +96,10 @@
 "profile_lost" = "Verloren";
 "profile_are_you_sure_logout" = "Weet u zeker dat u wilt uitloggen?";
 "profile_logout" = "Uitloggen";
+"delete_account" = "Verwijder je account";
+"profile_are_you_sure_delete" = "Weet je zeker dat je je account definitief wilt verwijderen? Deze actie kan niet ongedaan gemaakt worden.";
+"profile_delete" = "Permanent verwijderen!";
+
 "profile_not_shared_help_points" = "U hebt geen hulplocaties gedeeld";
 "profile_never_reported_loss" = "U hebt nog nooit een zoek geraakt melding gedaan";
 "profile_add_new_entry" = "Nieuw item toevoegen";

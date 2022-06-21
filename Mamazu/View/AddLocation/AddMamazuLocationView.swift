@@ -19,6 +19,7 @@ struct AddMamazuLocationView: View {
     
     @State private var showingSheet = false
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @StateObject var viewModel = AddMamazuLocationVM()
     @StateObject var locationManager = LocationManager()
@@ -93,7 +94,7 @@ struct AddMamazuLocationView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
                                                                   startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 14, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
                         .frame(height: 52)
@@ -116,7 +117,7 @@ struct AddMamazuLocationView: View {
                 })
                 .padding(.bottom, keyboardHandler.keyboardHeight)
                 .frame(maxWidth: size.width, maxHeight: .infinity)
-                .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 30)
+                .padding(.top, safeAreaInsets.top + 30)
                 .padding(.bottom, 40)
             }
             .background(Image("Addbackground").resizable())

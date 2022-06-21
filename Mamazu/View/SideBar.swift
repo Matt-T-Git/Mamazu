@@ -23,12 +23,12 @@ struct SideBar: View {
                         Text(LocalizedString.add).foregroundColor(.mamazuTextColor).fontWeight(.bold)
                     }
                 }
-                NavigationLink(destination: DiscountView()) {
-                    HStack{
-                        Image("TabBar-Discount").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                        Text(LocalizedString.discount).foregroundColor(.mamazuTextColor).fontWeight(.bold)
-                    }
-                }
+//                NavigationLink(destination: DiscountView()) {
+//                    HStack{
+//                        Image("TabBar-Discount").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+//                        Text(LocalizedString.discount).foregroundColor(.mamazuTextColor).fontWeight(.bold)
+//                    }
+//                }
                 NavigationLink(destination: ProfileView()) {
                     HStack{
                         Image("TabBar-Profile").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)

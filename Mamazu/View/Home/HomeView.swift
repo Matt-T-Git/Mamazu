@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     private var size = UIScreen.main.bounds
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    
     @StateObject var locationManager: LocationManager = LocationManager()
     @StateObject var lostViewModel = LostViewModel()
     @StateObject var mamazuViewModel = MamazuViewModel()
@@ -34,7 +36,7 @@ struct HomeView: View {
                 VStack {
                     //MARK:- Profile Header View
                     ProfileHeaderView()
-                        .padding(.top, UIDevice.current.iPad ? 80 : UIApplication.shared.windows.first!.safeAreaInsets.top + 10)
+                        .padding(.top, UIDevice.current.iPad ? 80 : safeAreaInsets.top + 10)
                         .padding(.horizontal, 20)
                     
                     //MARK:- Lost Title

@@ -10,6 +10,7 @@
 "add" = "Ajouter";
 "discount" = "Remise";
 "profile" = "Profil";
+"mamazu" = "Mamazu";
 "settings" = "Paramètres";
 "email_placeholder" = "Votre adresse email";
 "password_placeholder" = "Votre mot de passe";
@@ -95,6 +96,10 @@
 "profile_lost" = "Perdue";
 "profile_are_you_sure_logout" = "Êtes-vous sûr de vouloir vous déconnecter?";
 "profile_logout" = "Se déconnecter";
+"delete_account" = "Supprimer votre compte";
+"profile_are_you_sure_delete" = "Êtes-vous sûr de vouloir supprimer définitivement votre compte ? Cette action ne peut pas être annulée.";
+"profile_delete" = "Supprimer définitivement!";
+
 "profile_not_shared_help_points" = "Vous n'avez partagé aucun point d'aide";
 "profile_never_reported_loss" = "Vous n'avez jamais signalé de perte";
 "profile_add_new_entry" = "Ajouter une nouvelle entrée";

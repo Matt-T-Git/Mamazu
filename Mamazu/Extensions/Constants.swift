@@ -8,7 +8,7 @@
 
 import Foundation
 
-let BASE_URL = "https://mamazu.herokuapp.com/"
+let BASE_URL = "https://mamazuserver.herokuapp.com/"
 //let BASE_URL = "http://127.0.0.1:3000/"
 
 let PROFILE_IMG_URL = ""
@@ -30,3 +30,4 @@ let LOST_LOCATION_URL = "\(BASE_URL)api/v1/lost/"
 let CURRENT_USER_LOST_ANIMAL_URL = "\(BASE_URL)api/v1/lost/culostanimal"
 let ADD_LOST_ANIMAL = "\(BASE_URL)api/v1/lost/add"
 let FOUND_URL = "\(BASE_URL)api/v1/lost/found/"
+let DELETE_USER_URL = "\(BASE_URL)api/v1/user/remove/"

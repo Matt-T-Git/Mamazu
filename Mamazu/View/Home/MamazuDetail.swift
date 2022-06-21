@@ -12,6 +12,8 @@ import MapKit
 struct MamazuDetail: View {
     var size = UIScreen.main.bounds
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    
     @StateObject var locationManager = LocationManager()
     
     var mamazuData: MamazuResults
@@ -72,7 +74,7 @@ struct MamazuDetail: View {
                         Image("Close")
                     })
                     .padding(.trailing, 20)
-                    .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top)
+                    .padding(.top, safeAreaInsets.top)
                     ,alignment: .topTrailing
                 )
                 .frame(maxWidth: size.width)

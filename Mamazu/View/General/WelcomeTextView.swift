@@ -29,10 +29,10 @@ struct WelcomeTextView: View {
                 .foregroundColor(Color.mamazuWelcomeSubtitle)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.leading, 25)
-        .padding(.bottom, 40)
-        .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 10)
-        //.padding(.top, size.height / 9)
+        .padding(.leading, 0)
+        .padding(.bottom, 10)
+        //.padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 10)
+        .padding(.top, 25)
     }
 }
 
@@ -44,3 +44,6 @@ struct WelcomeTextView_Previews: PreviewProvider {
                         colors: [Color.mamazuNeonCarrot, Color.mamazuWildStrawberry])
     }
 }
+
+
+

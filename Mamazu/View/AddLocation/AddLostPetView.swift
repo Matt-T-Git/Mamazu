@@ -19,6 +19,7 @@ struct AddLostPetView: View {
     
     @State private var showingSheet = false
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @StateObject var viewModel = AddLostLocationVM()
     @StateObject var locationManager = LocationManager()
@@ -130,11 +131,11 @@ struct AddLostPetView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                                      startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+                            Text(LocalizedString.AddLocation.saveLocationButtonTitle).font(.system(size: 14, weight: .bold, design: .rounded)).foregroundColor(.white)
                         }
                         .shadow(color: Color.mamazuCardGradientLeft.opacity(0.3), radius: 5, x: 0, y: 5)
                         .frame(height: 52)
-                        .padding(.bottom, UIApplication.shared.windows.first!.safeAreaInsets.bottom + 60)
+                        .padding(.bottom, safeAreaInsets.bottom + 60)
                         .onTapGesture {
                             viewModel.image = selectedImage
                             viewModel.latitude = latitude
@@ -155,7 +156,7 @@ struct AddLostPetView: View {
                     .padding(.horizontal, 20)
                     
                 })
-                .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top + 30)
+                .padding(.top, safeAreaInsets.top + 30)
                 .frame(maxWidth: size.width, maxHeight: .infinity)
                 .padding(.bottom, keyboardHandler.keyboardHeight)
             }
