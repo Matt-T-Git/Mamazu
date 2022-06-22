@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import WeatherKit
 
 class UserViewModel: ObservableObject {
     
@@ -14,6 +15,7 @@ class UserViewModel: ObservableObject {
     @Published var imageUrl: String = ""
     @Published var errorMessage: String = ""
     @Published var userlele: UserModel?
+    @Published var weather: Weather?
     
     @Published var isError: Bool = false
     @Published var isFetched: Bool = false
@@ -24,8 +26,9 @@ class UserViewModel: ObservableObject {
     @AppStorage("userId") var userID = "0"
     
     private var userService = NetworkService()
-    
+    private let weatherService = WeatherService.shared
     private var cancellables = Set<AnyCancellable>()
+    @StateObject var locationManager: LocationManager = LocationManager()
     
     
     func getCombineUserInfo(){
@@ -54,6 +57,17 @@ class UserViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
-
     }
+    
+//    func weather() async throws {
+//        do {
+//            if let location = locationManager.lastLocation {
+//                try await weather = weatherService.weather(for: location)
+//                print(weather?.currentWeather.temperature.formatted())
+//            }
+//            
+//        } catch {
+//            print(error)
+//        }
+//    }
 }

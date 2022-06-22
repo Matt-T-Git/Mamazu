@@ -74,11 +74,13 @@ extension LocationManager: CLLocationManagerDelegate {
         self.lastLocation = location
         
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
-            guard let pm = placemarks?.first else { return }
-            let city = "\(pm.administrativeArea!) - \(pm.locality!)"
-            DispatchQueue.main.async {
-                self.city = city
-                self.isLocated = true
+            //guard let pm = placemarks?.first else { return }
+            if let pm = placemarks?.first {
+                let city = "\(pm.administrativeArea ?? "-") - \(pm.locality ?? "-")"
+                DispatchQueue.main.async {
+                    self.city = city
+                    self.isLocated = true
+                }
             }
         })
         

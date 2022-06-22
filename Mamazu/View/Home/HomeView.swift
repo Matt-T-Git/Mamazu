@@ -168,6 +168,10 @@ struct HomeView: View {
                 )
             })
             
+            .alert(isPresented: $mamazuViewModel.isError, content: {
+                Alert(title: Text("Mamazu"), message: Text(mamazuViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
+            })
+            
             .onChange(of: mamazuViewModel.isFetched, perform: { loading in
                 self.isLoading = !loading
             })

@@ -7,12 +7,16 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import WeatherKit
 
 struct ProfileHeaderView: View {
     
     @StateObject var userViewModel = UserViewModel()
     @StateObject var locationManager: LocationManager = LocationManager()
     @AppStorage("city") var city: String = "-"
+    
+    @State private var weather: Weather?
+    private let weatherService = WeatherService.shared
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -45,7 +49,7 @@ struct ProfileHeaderView: View {
                             .cornerRadius(27)
                     }
                         
-                    VStack(alignment: .leading, spacing: -2) {
+                    VStack(alignment: .leading, spacing: 0) {
                         Text(LocalizedString.welcome).font(.system(size: 12, weight: .regular)).foregroundColor(.mamazuTextColor)
                         Text(userViewModel.userName)
                             .font(.system(size: 14, weight: .bold))
@@ -55,14 +59,31 @@ struct ProfileHeaderView: View {
                         Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
                     }
                     Spacer()
-                    Image("ProfileHeaderLogo")
-                        .resizable()
-                        .frame(maxWidth: 44, maxHeight: 45)
+                    VStack(spacing: 3) {
+                        Image(systemName: weather?.currentWeather.symbolName ?? "")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 30, maxHeight: 30)
+                            .foregroundColor(Color.mamazuLoginGradientDark).opacity(0.8)
+                        Text(weather?.currentWeather.temperature.formatted() ?? "")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.mamazuTextColor)
+                        
+                    }
                 }
                 .padding(.horizontal, 10)
-                .padding(.trailing, 5)
+                .padding(.trailing, 15)
             }
         }
+        .task(id: locationManager.lastLocation, {
+            do {
+                if let location = locationManager.lastLocation {
+                    try await weather = weatherService.weather(for: location)
+                }
+            } catch {
+                print(error)
+            }
+        })
         .frame(maxWidth: size.width)
         .frame(height: 75)
         .onAppear(perform: {
