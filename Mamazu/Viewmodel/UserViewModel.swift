@@ -58,16 +58,4 @@ class UserViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-//    func weather() async throws {
-//        do {
-//            if let location = locationManager.lastLocation {
-//                try await weather = weatherService.weather(for: location)
-//                print(weather?.currentWeather.temperature.formatted())
-//            }
-//            
-//        } catch {
-//            print(error)
-//        }
-//    }
 }

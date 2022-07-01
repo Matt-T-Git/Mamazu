@@ -61,6 +61,11 @@ struct TutorialView: View {
         
         //Background
         .frame(maxWidth: size.width, maxHeight: size.height)
+        .background(Image("Onb_bg")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: size.width, maxHeight: size.height)
+            .opacity(0.5))
         .background(Color.mamazuBackground.opacity(0.8))
         .ignoresSafeArea()
         .opacity(isShowing ? 1 : 0)

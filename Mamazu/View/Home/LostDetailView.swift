@@ -58,7 +58,7 @@ struct LostDetailView: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                              startPoint: .leading, endPoint: .trailing))
                         .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], radius: 45))
-                        .frame(height: size.height / 2 + 7)
+                        .frame(height: size.height / 2 + 4)
                     
                     //MARK:- Lost Animal Image
                     AnimatedImage(url: URL(string: lostData.image)).indicator(SDWebImageActivityIndicator.medium)

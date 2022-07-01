@@ -50,39 +50,39 @@ struct ProfileHeaderView: View {
                     }
                         
                     VStack(alignment: .leading, spacing: 0) {
-                        Text(LocalizedString.welcome).font(.system(size: 12, weight: .regular)).foregroundColor(.mamazuTextColor)
+                        Text(LocalizedString.welcome).font(.system(size: 10, weight: .regular))
+                            .foregroundColor(.mamazuTextColor)
+                            .opacity(0.6)
                         Text(userViewModel.userName)
-                            .font(.system(size: 14, weight: .bold))
+                            .font(.system(size: 16, weight: .bold))
                             .foregroundColor(Color.mamazuTextColor)
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)
-                        Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
+                        Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.headerPurple).lineLimit(1).minimumScaleFactor(0.5)
                     }
                     Spacer()
-                    VStack(spacing: 3) {
+                    VStack(alignment: .trailing, spacing: 4) {
                         Image(systemName: weather?.currentWeather.symbolName ?? "")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 30, maxHeight: 30)
-                            .foregroundColor(Color.mamazuLoginGradientDark).opacity(0.8)
+                            .frame(maxWidth: 18, maxHeight: 18)
+                            .foregroundColor(Color.headerPurple)
                         Text(weather?.currentWeather.temperature.formatted() ?? "")
-                            .font(.system(size: 12, weight: .medium))
+                            .font(.system(size: 14, weight: .bold))
                             .foregroundColor(.mamazuTextColor)
-                        
+                            .opacity(0.5)
                     }
                 }
                 .padding(.horizontal, 10)
                 .padding(.trailing, 15)
             }
         }
-        .task(id: locationManager.lastLocation, {
+        .task(id: locationManager.isLocated, {
             do {
                 if let location = locationManager.lastLocation {
                     try await weather = weatherService.weather(for: location)
                 }
-            } catch {
-                print(error)
-            }
+            } catch { print(error.localizedDescription) }
         })
         .frame(maxWidth: size.width)
         .frame(height: 75)

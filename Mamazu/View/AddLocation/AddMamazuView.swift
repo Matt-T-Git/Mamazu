@@ -16,10 +16,13 @@ struct AddMamazuView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            Image("AddLocationBackground")
+            
+            Image("Onb_bg")
                 .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity, maxHeight: 220)
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: size.width, maxHeight: size.height)
+                .opacity(0.5)
+            
             ScrollView {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15, content: {
                     Image("LogoPurple")
