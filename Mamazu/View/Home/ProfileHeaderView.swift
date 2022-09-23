@@ -62,12 +62,12 @@ struct ProfileHeaderView: View {
                     }
                     Spacer()
                     VStack(alignment: .trailing, spacing: 4) {
-                        Image(systemName: weather?.currentWeather.symbolName ?? "")
+                        Image(systemName: weather?.currentWeather.symbolName ?? "-")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 18, maxHeight: 18)
                             .foregroundColor(Color.headerPurple)
-                        Text(weather?.currentWeather.temperature.formatted() ?? "")
+                        Text(weather?.currentWeather.temperature.formatted() ?? "-")
                             .font(.system(size: 14, weight: .bold))
                             .foregroundColor(.mamazuTextColor)
                             .opacity(0.5)
@@ -77,6 +77,7 @@ struct ProfileHeaderView: View {
                 .padding(.trailing, 15)
             }
         }
+        //MARK: WeatherKit
         .task(id: locationManager.isLocated, {
             do {
                 if let location = locationManager.lastLocation {

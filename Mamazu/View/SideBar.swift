@@ -38,11 +38,12 @@ struct SideBar: View {
             }
             .accentColor(.mamazuCardBackground)
             .background(Color.mamazuBackground)
-            .listStyle(SidebarListStyle())
+            .listStyle(.sidebar)
             .navigationTitle("Mamazu")
             
             HomeView()
         }
+        .navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 

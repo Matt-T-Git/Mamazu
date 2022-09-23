@@ -17,12 +17,6 @@ struct AddMamazuView: View {
     var body: some View {
         ZStack(alignment: .top) {
             
-            Image("Onb_bg")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: size.width, maxHeight: size.height)
-                .opacity(0.5)
-            
             ScrollView {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15, content: {
                     Image("LogoPurple")
@@ -55,6 +49,14 @@ struct AddMamazuView: View {
                 .frame(maxWidth: size.width, maxHeight: size.height)
                 .padding(.top, safeAreaInsets.top + 10)
             }
+            .background(
+                Image("Onb_bg")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: size.width, maxHeight: size.height)
+                    .opacity(0.5)
+                    .rotationEffect(Angle(degrees: 180), anchor: .center)
+            )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.mamazuBackground)

@@ -33,7 +33,7 @@ struct HomeView: View {
         ScrollView {
             ZStack(alignment: .top) {
                 
-                VStack {
+                VStack() {
                     //MARK:- Profile Header View
                     ProfileHeaderView()
                         .padding(.top, UIDevice.current.iPad ? 80 : safeAreaInsets.top + 10)
