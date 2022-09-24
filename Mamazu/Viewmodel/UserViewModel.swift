@@ -14,7 +14,6 @@ class UserViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var imageUrl: String = ""
     @Published var errorMessage: String = ""
-    @Published var userlele: UserModel?
     @Published var weather: Weather?
     
     @Published var isError: Bool = false
@@ -28,7 +27,6 @@ class UserViewModel: ObservableObject {
     private var userService = NetworkService()
     private let weatherService = WeatherService.shared
     private var cancellables = Set<AnyCancellable>()
-    @StateObject var locationManager: LocationManager = LocationManager()
     
     
     func getCombineUserInfo(){

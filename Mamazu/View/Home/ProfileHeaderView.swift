@@ -61,13 +61,14 @@ struct ProfileHeaderView: View {
                         Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.headerPurple).lineLimit(1).minimumScaleFactor(0.5)
                     }
                     Spacer()
+                    //MARK: Weahter View
                     VStack(alignment: .trailing, spacing: 4) {
-                        Image(systemName: weather?.currentWeather.symbolName ?? "-")
+                        Image(systemName: weather?.currentWeather.symbolName ?? "location.circle")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 18, maxHeight: 18)
                             .foregroundColor(Color.headerPurple)
-                        Text(weather?.currentWeather.temperature.formatted() ?? "-")
+                        Text(weather?.currentWeather.apparentTemperature.formatted() ?? "")
                             .font(.system(size: 14, weight: .bold))
                             .foregroundColor(.mamazuTextColor)
                             .opacity(0.5)
