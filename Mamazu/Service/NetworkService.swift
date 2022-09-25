@@ -25,7 +25,10 @@ struct NetworkService {
             return try decoder.decode(T.self, from: result.data)
             })
             .receive(on: RunLoop.main)
-            .mapError{$0 as! APIError}
+            .mapError { error in
+                if let error = error as? APIError { return error }
+                else { return APIError.errorWithMessage(error.localizedDescription) }
+            }
             .eraseToAnyPublisher()
     }
     

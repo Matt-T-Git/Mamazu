@@ -124,15 +124,14 @@ struct HomeView: View {
                             }
                         }
                         .padding(.horizontal, 10)
+                        .padding(.bottom, 90)
                         .onAppear(perform: {
                             if locationManager.isLocated{mamazuViewModel.fetchPosts()}
                         })
-
                         .fullScreenCover(item: $selectedMamazu) {
                             MamazuDetail(mamazuData: $0, isShow: $isMamazuDetailShow)
                         }
                     }
-                    
                 }
                 .opacity(isLoading ? 0 : 1)
                 .animation(.easeIn(duration: 0.6), value: isLoading)
@@ -168,6 +167,10 @@ struct HomeView: View {
                       }),
                       secondaryButton: .cancel()
                 )
+            })
+            
+            .alert(isPresented: $mamazuViewModel.isError, content: {
+                Alert(title: Text("Mamazu"), message: Text(mamazuViewModel.errorMessage), dismissButton: .default(Text(LocalizedString.ok)))
             })
             
             .onChange(of: mamazuViewModel.isFetched, perform: { loading in

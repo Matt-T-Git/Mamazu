@@ -7,12 +7,16 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import WeatherKit
 
 struct ProfileHeaderView: View {
     
     @StateObject var userViewModel = UserViewModel()
     @StateObject var locationManager: LocationManager = LocationManager()
     @AppStorage("city") var city: String = "-"
+    
+    @State private var weather: Weather?
+    private let weatherService = WeatherService.shared
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -45,24 +49,43 @@ struct ProfileHeaderView: View {
                             .cornerRadius(27)
                     }
                         
-                    VStack(alignment: .leading, spacing: -2) {
-                        Text(LocalizedString.welcome).font(.system(size: 12, weight: .regular)).foregroundColor(.mamazuTextColor)
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(LocalizedString.welcome).font(.system(size: 10, weight: .regular))
+                            .foregroundColor(.mamazuTextColor)
+                            .opacity(0.6)
                         Text(userViewModel.userName)
-                            .font(.system(size: 14, weight: .bold))
+                            .font(.system(size: 16, weight: .bold))
                             .foregroundColor(Color.mamazuTextColor)
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)
-                        Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.mamazuTextCaption).lineLimit(1).minimumScaleFactor(0.5)
+                        Text(city).font(.system(size: 10, weight: .medium)).foregroundColor(.headerPurple).lineLimit(1).minimumScaleFactor(0.5)
                     }
                     Spacer()
-                    Image("ProfileHeaderLogo")
-                        .resizable()
-                        .frame(maxWidth: 44, maxHeight: 45)
+                    //MARK: Weahter View
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Image(systemName: weather?.currentWeather.symbolName ?? "location.circle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 18, maxHeight: 18)
+                            .foregroundColor(Color.headerPurple)
+                        Text(weather?.currentWeather.apparentTemperature.formatted() ?? "")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.mamazuTextColor)
+                            .opacity(0.5)
+                    }
                 }
                 .padding(.horizontal, 10)
-                .padding(.trailing, 5)
+                .padding(.trailing, 15)
             }
         }
+        //MARK: WeatherKit
+        .task(id: locationManager.isLocated, {
+            do {
+                if let location = locationManager.lastLocation {
+                    try await weather = weatherService.weather(for: location)
+                }
+            } catch { print(error.localizedDescription) }
+        })
         .frame(maxWidth: size.width)
         .frame(height: 75)
         .onAppear(perform: {

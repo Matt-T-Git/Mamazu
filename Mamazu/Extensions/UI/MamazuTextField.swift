@@ -17,9 +17,7 @@ struct MamazuTextField: View {
     
     var height: CGFloat? = 48
     var radius: CGFloat? = 15
-    
     var image: String
-    
     var isPassword: Bool = false
     
     var body: some View {
@@ -48,7 +46,7 @@ struct MamazuTextField: View {
             .frame(width: 32, height: 32)
             .padding(.leading, 8)
             if !isPassword{
-                TextField(placeholder, text: $bindingText)
+                TextField(placeholder, text: $bindingText, axis: .vertical)
                     .frame(height: height)
                     .textFieldStyle(PlainTextFieldStyle())
                     .padding([.trailing, .leading], 5)
@@ -78,7 +76,7 @@ struct MamazuTextEditor: View {
     
     @Binding var bindingText: String
     var borderColor: Color
-    var height: CGFloat? = 120
+    var height: CGFloat? = 90
     var radius: CGFloat? = 20
     var image: String
     var placeholderText: String
@@ -89,12 +87,8 @@ struct MamazuTextEditor: View {
             ZStack {
                 Image(systemName: "circle.fill")
                     .resizable()
-                    .font(.system(size: 15))
-                    .angularGradientGlow(colors: [Color(#colorLiteral(red: 0, green: 0.4366608262, blue: 1, alpha: 1)),
-                                                  Color(#colorLiteral(red: 0, green: 0.9882656932, blue: 0.6276883483, alpha: 1)),
-                                                  Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)),
-                                                  Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
-                    //.frame(width: 50, height: 50)
+                    .font(.system(size: 12))
+                    .angularGradientGlow(colors: [Color(#colorLiteral(red: 0, green: 0.4366608262, blue: 1, alpha: 1)),Color(#colorLiteral(red: 0, green: 0.9882656932, blue: 0.6276883483, alpha: 1)),Color(#colorLiteral(red: 1, green: 0.9059918523, blue: 0.1592884958, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.2200134695, blue: 0.2417424321, alpha: 1))])
                     .blur(radius: 4)
                     .opacity(0.6)
                 RoundedRectangle(cornerRadius: 15, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
@@ -106,24 +100,15 @@ struct MamazuTextEditor: View {
             .padding(.leading, 8)
             .padding(.top, 8)
             
-            ZStack(alignment: .topLeading) {
-                if bindingText.isEmpty {
-                    Text(placeholderText)
-                        .foregroundColor(Color(UIColor.placeholderText))
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 13)
-                }
-                TextEditor(text: $bindingText)
-                    .frame(height: height)
-                    .padding([.trailing, .leading], 5)
-                    .foregroundColor(Color.mamazuTextColor)
-                    //.preferredColorScheme(.dark)
-            }
+            TextField(placeholderText, text: $bindingText, axis: .vertical)
+                .textFieldStyle(PlainTextFieldStyle())
+                .padding([.trailing, .leading], 5)
+                .padding(.top, 15)
+                .foregroundColor(Color.mamazuTextColor)
+                .lineLimit(5)
+            Color.clear.frame(width: 0, height: height)
         }
-        .onAppear(perform: {
-            UITextView.appearance().backgroundColor = .clear
-            
-        })
+        .frame(height: height)
         .background(Color.mamazuTextFieldColor)
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 3)
         .cornerRadius(radius!)
@@ -137,6 +122,7 @@ struct MamazuTextEditor: View {
 
 struct MamazuTextField_Previews: PreviewProvider {
     static var previews: some View {
-        MamazuTextField(bindingText: .constant(""), placeholder: "Placeholder", borderColor: .mamazuLostCardGradientRight, image: "location.fill")
+        //MamazuTextField(bindingText: .constant(""), placeholder: "Placeholder", borderColor: .mamazuLostCardGradientRight, image: "location.fill")
+        MamazuTextEditor(bindingText: .constant(""), borderColor: .red, image: "circle.fill", placeholderText: "Placeholder")
     }
 }

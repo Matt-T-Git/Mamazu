@@ -11,6 +11,7 @@ struct LoginView: View {
     
     var size = UIScreen.main.bounds
     
+    @State var selectedTab: Tab = .home
     @State var isRegistrationViewShow: Bool = false
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.safeAreaInsets) private var safeAreaInsets
@@ -116,6 +117,7 @@ struct LoginView: View {
                                 }
                                 
                             }
+                            .frame(maxWidth: 350)
                             .padding(.horizontal, 25)
                             .padding(.bottom, 20)
                             .background(
@@ -137,13 +139,16 @@ struct LoginView: View {
                             
                             .fullScreenCover(isPresented: $loginViewModel.isLoggedIn, content: {
                                 if UIDevice.current.iPad {
-                                    NavigationView {
-                                        SideBar()
-                                        //SideBar().hideNavigationBar().accentColor(Color.mamazuTitle)
-                                    }
+//                                    NavigationView {
+//                                        SideBar()
+//                                        //SideBar().hideNavigationBar().accentColor(Color.mamazuTitle)
+//                                    }
+                                    
+                                    SideBar()
+                                        .accentColor(.mamazuTextColor)
+                                    
                                 } else {
-                                    MamazuTabView()
-                                        .tabViewStyle(.automatic)
+                                    MamazuTab(selectedTab: $selectedTab)
                                 }
                             })
                             

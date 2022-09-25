@@ -7,13 +7,14 @@
 
 import SwiftUI
 import Combine
+import WeatherKit
 
 class UserViewModel: ObservableObject {
     
     @Published var userName: String = ""
     @Published var imageUrl: String = ""
     @Published var errorMessage: String = ""
-    @Published var userlele: UserModel?
+    @Published var weather: Weather?
     
     @Published var isError: Bool = false
     @Published var isFetched: Bool = false
@@ -24,7 +25,7 @@ class UserViewModel: ObservableObject {
     @AppStorage("userId") var userID = "0"
     
     private var userService = NetworkService()
-    
+    private let weatherService = WeatherService.shared
     private var cancellables = Set<AnyCancellable>()
     
     
@@ -54,6 +55,5 @@ class UserViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
-
     }
 }

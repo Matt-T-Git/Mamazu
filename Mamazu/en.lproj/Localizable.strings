@@ -80,7 +80,7 @@
 "choose_location" = "Please keep your finger pressed on map until adding new pin in the point that where you think your pet has disappeared.";
 
 /* Home */
-"home_lost_title" = "Lost Pet";
+"home_lost_title" = "Missing Pet";
 "home_no_missing_reports" = "There are no missing reports in your vicinity.";
 "home_no_help_points" = "There are no help locations near you.";
 "home_help_points" = "Stray Animal Locations";
