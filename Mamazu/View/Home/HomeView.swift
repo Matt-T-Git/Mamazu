@@ -28,12 +28,14 @@ struct HomeView: View {
     @State var isPermissionError: Bool = false
     @State var errorMessage: String = ""
     
+    //For scrollView Statusbar background Effect
+    @State private var contentoffset: CGFloat = 0
+    
     var body: some View {
         
         ScrollView {
             ZStack(alignment: .top) {
-                
-                VStack {
+                VStack() {
                     //MARK:- Profile Header View
                     ProfileHeaderView()
                         .padding(.top, UIDevice.current.iPad ? 80 : safeAreaInsets.top + 10)
