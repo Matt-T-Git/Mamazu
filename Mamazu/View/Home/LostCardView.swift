@@ -14,37 +14,25 @@ struct LostCardView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+            ContainerRelativeShape()
                 .background(LinearGradient(gradient: Gradient(colors: [.mamazuLostCardGradientLeft, .mamazuLostCardGradientRight]),
                                            startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.clear)
-                .clipShape(RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
             ZStack(alignment: .top) {
-                RoundedRectangle(cornerRadius: 35, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+                ContainerRelativeShape()
                     .frame(height: 230)
                     .foregroundColor(Color.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow.opacity(1), radius: 10, x: 0, y: 5)
                 VStack(alignment: .center) {
                     //Image("profile")
-                    ZStack {
-                        AnimatedImage(url: URL(string: lostAnimalData.image))
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 160, height: 150)
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(25)
-                            .blur(radius: 5)
-                            .scaleEffect(x: 0.95)
-                            .offset(y: 3)
-                            
-                        AnimatedImage(url: URL(string: lostAnimalData.image)).indicator(SDWebImageActivityIndicator.medium)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 160, height: 150)
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(25)
-                    }
-                    VStack(alignment: .leading, spacing: 0) {
+                    AnimatedImage(url: URL(string: lostAnimalData.image)).indicator(SDWebImageActivityIndicator.medium)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 160, height: 150)
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(ContainerRelativeShape())
+                    
+                    VStack(alignment: .leading, spacing: 3) {
                         Text(lostAnimalData.petName).font(.system(size: 13, weight: .heavy, design: .rounded))
                             .foregroundColor(.mamazuTextColor)
                         Text(lostAnimalData.description).font(.system(size: 11, weight: .medium, design: .rounded))
@@ -56,8 +44,9 @@ struct LostCardView: View {
                 .padding(10)
             }
         }
+        .containerShape(RoundedRectangle(cornerRadius: 25, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
         .frame(maxWidth: 180)
-        .frame(height: 232)
+        .frame(height: 233)
         .padding(.horizontal, 15)
     }
 }
