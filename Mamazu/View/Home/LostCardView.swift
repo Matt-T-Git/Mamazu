@@ -44,7 +44,7 @@ struct LostCardView: View {
                 .padding(10)
             }
         }
-        .containerShape(RoundedRectangle(cornerRadius: 25, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+        .containerShape(RoundedRectangle(cornerRadius: 28, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
         .frame(maxWidth: 180)
         .frame(height: 233)
         .padding(.horizontal, 15)

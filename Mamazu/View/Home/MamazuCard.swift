@@ -16,14 +16,13 @@ struct MamazuCard: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+            ContainerRelativeShape()
                 .background(LinearGradient(gradient: Gradient(colors: [.mamazuCardGradientLeft, .mamazuCardGradientRight]),
                                            startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.clear)
-                .clipShape(RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
                 .frame(height: 468)
             ZStack(alignment: .top) {
-                RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+                ContainerRelativeShape()
                     .foregroundColor(.mamazuCardBackground)
                     .shadow(color: Color.mamazuCardShadow, radius: 10, x: 0, y: 5)
                     .padding(.top, 6)
@@ -34,8 +33,7 @@ struct MamazuCard: View {
                         .aspectRatio(contentMode: .fill)
                         .layoutPriority(-1)
                         .frame(maxWidth: UIDevice.current.iPad ? size.width / 2 - 40 : size.width - 60, maxHeight: 390)
-                        .cornerRadius(40)
-                        .padding(.top,4)
+                        .clipShape(ContainerRelativeShape())
                     HStack(alignment: .center, spacing: 12) {
                         AnimatedImage(url: URL(string: mamazuData.user.profileImg)).indicator(SDWebImageActivityIndicator.medium)
                             .resizable()
@@ -51,10 +49,12 @@ struct MamazuCard: View {
                     }
                     .padding(.leading, 15)
                 }
+                .padding(.top,4)
                 .layoutPriority(1)
                 .padding(10)
             }
         }
+        .containerShape(RoundedRectangle(cornerRadius: 45, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
         .frame(maxWidth: UIDevice.current.iPad ? size.width / 2 - 20 : size.width - 60)
         .padding(.horizontal, 20)
         .frame(height: 470)
@@ -63,7 +63,7 @@ struct MamazuCard: View {
 
 struct MamazuCard_Previews: PreviewProvider {
     static var previews: some View {
-        let user = UserModel(id: "5edf2cfb1800575cd00e9109",
+        let user = UserModel(id: "5edf2cfb1",
                              name: "Sercan Burak AĞIR",
                              email: "sercanburak@gmail.com",
                              profileImg: "https://www.mamazuapp.com/profileImages/40e6d246-6101-4b9a-b7a6-39d66b5273df.png")
@@ -71,7 +71,7 @@ struct MamazuCard_Previews: PreviewProvider {
         let location = Location(type: "Point",
                                 coordinates: [36.85789856768421, 30.76025889471372])
         
-        let mamazu = MamazuResults(id: "5edf2cfb1800575cd00e9109",
+        let mamazu = MamazuResults(id: "5edf2cfb1800575",
                                    title: "A216 ve arkadaşları",
                                    description: "Fener park girişinde 3 - 4 arkadaş geziyorlar. Havalar artık ısınmaya başladı mamanın yanında su da çok önemli",
                                    image: "https://www.mamazuapp.com/mamazuImages/d81cb359-6303-4237-93b7-621675771f96.jpeg",
