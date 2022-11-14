@@ -7,16 +7,12 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
-import WeatherKit
 
 struct ProfileHeaderView: View {
     
     @StateObject var userViewModel = UserViewModel()
     @StateObject var locationManager: LocationManager = LocationManager()
     @AppStorage("city") var city: String = "-"
-    
-    @State private var weather: Weather?
-    private let weatherService = WeatherService.shared
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -63,29 +59,13 @@ struct ProfileHeaderView: View {
                     Spacer()
                     //MARK: Weahter View
                     VStack(alignment: .trailing, spacing: 4) {
-                        Image(systemName: weather?.currentWeather.symbolName ?? "location.circle")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 18, maxHeight: 18)
-                            .foregroundColor(Color.headerPurple)
-                        Text(weather?.currentWeather.apparentTemperature.formatted() ?? "")
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundColor(.mamazuTextColor)
-                            .opacity(0.5)
+                        
                     }
                 }
                 .padding(.horizontal, 10)
                 .padding(.trailing, 15)
             }
         }
-        //MARK: WeatherKit
-        .task(id: locationManager.isLocated, {
-            do {
-                if let location = locationManager.lastLocation {
-                    try await weather = weatherService.weather(for: location)
-                }
-            } catch { print(error.localizedDescription) }
-        })
         .frame(maxWidth: size.width)
         .frame(height: 75)
         .onAppear(perform: {

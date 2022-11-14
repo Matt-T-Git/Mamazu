@@ -4,10 +4,6 @@
 //
 //  Created by Sercan Burak AĞIR on 28.03.2021.
 //
-
-import SwiftUI
-import MapKit
-
 import SwiftUI
 import MapKit
 
@@ -28,7 +24,7 @@ struct DetailedMapView: UIViewRepresentable {
     }
     
     func updateUIView(_ view: MKMapView, context: Context) {
-        view.mapType = MKMapType.standard // (satellite)
+        view.mapType = MKMapType.standard
         view.showsUserLocation = true
         
         let closeButton = UIImage(imageLiteralResourceName: "Close")
