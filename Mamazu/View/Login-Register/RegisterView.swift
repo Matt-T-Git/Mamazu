@@ -22,7 +22,6 @@ struct RegisterView: View {
     
     @StateObject private var keyboardHandler = KeyboardHandler()
     @StateObject private var registerViewModel = RegisterViewModel()
-    @StateObject private var loginViewModel = LoginViewModel()
     
     var body: some View {
         ScrollView(.vertical) {
@@ -118,7 +117,7 @@ struct RegisterView: View {
                         .padding(.leading, 7)
                     }
                     //.preferredColorScheme(.dark)
-                    
+                    .frame(maxWidth: 350)
                     .padding(.horizontal, 25)
                     .padding(.vertical, 20)
                     .background(

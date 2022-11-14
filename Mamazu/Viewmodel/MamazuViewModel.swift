@@ -20,7 +20,6 @@ class MamazuViewModel: ObservableObject {
     
     @ObservedObject var locationService = LocationManager()
     private var mamazuService = NetworkService()
-    
     private var cancellables = Set<AnyCancellable>()
     
     func fetchPosts() {

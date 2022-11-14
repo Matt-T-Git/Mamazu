@@ -26,9 +26,9 @@ struct LocationCardView: View {
                     .shadow(color: Color.mamazuCardShadow.opacity(0.8), radius: 10, x: 0, y: 10)
                 
                 //MARK:- Gradient Text
-                GradientText(text: title, colors: gradient,
-                             font: .system(size: 18, weight: .bold, design: .rounded))
-                    .padding(.bottom, 7)
+                GradientText(text: title.uppercased(), colors: gradient,
+                             font: .system(size: 16, weight: .bold, design: .rounded))
+                    .padding(.bottom, 9)
             }
             
             //MARK:- Gradient Card
@@ -36,7 +36,7 @@ struct LocationCardView: View {
                 .fill(LinearGradient(gradient: Gradient(colors: gradient),
                                                   startPoint: .leading, endPoint: .trailing))
                 .clipShape(RoundedRectangle(cornerRadius: radius, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                .padding(.bottom, 38)
+                .padding(.bottom, 41)
                 //.height(size.height / 3 - 33)
             
             //MARK:- Big Image

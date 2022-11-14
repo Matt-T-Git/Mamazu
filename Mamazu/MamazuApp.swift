@@ -21,24 +21,7 @@ struct MamazuApp: App {
                     SideBar()
                         .accentColor(.mamazuTextColor)
                 } else {
-                    ZStack{
-                        Group {
-                            switch selectedTab {
-                            case .home:
-                                HomeView()
-                            case .add:
-                                AddMamazuView()
-                            case .discount:
-                                DiscountView()
-                            case .profile:
-                                ProfileView()
-                            }
-                        }
-                        MamazuTabBar(selectedTab: $selectedTab)
-                    }
-                    .safeAreaInset(edge: .bottom) {
-                        VStack {}.frame(height: 44)
-                    }
+                    MamazuTab(selectedTab: $selectedTab)
                 }
             }
         }

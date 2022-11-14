@@ -91,6 +91,30 @@ struct MamazuTabBar: View {
     }
 }
 
+struct MamazuTab: View {
+    @Binding var selectedTab: Tab
+    var body: some View {
+        ZStack{
+            Group {
+                switch selectedTab {
+                case .home:
+                    HomeView()
+                case .add:
+                    AddMamazuView()
+                case .discount:
+                    DiscountView()
+                case .profile:
+                    ProfileView()
+                }
+            }
+            MamazuTabBar(selectedTab: $selectedTab)
+        }
+        .safeAreaInset(edge: .bottom) {
+            VStack {}.frame(height: 44)
+        }
+    }
+}
+
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         MamazuTabBar(selectedTab: .constant(Tab.home))

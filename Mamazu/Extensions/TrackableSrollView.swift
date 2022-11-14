@@ -35,6 +35,5 @@ struct TrackableScrollView<Content: View>: View {
 
 private struct ScrollOffsetPreferanceKey: PreferenceKey {
     static var defaultValue: CGPoint = .zero
-    
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {}
 }

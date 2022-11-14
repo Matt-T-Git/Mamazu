@@ -20,7 +20,6 @@ class LostViewModel: ObservableObject {
     
     @ObservedObject var locationService = LocationManager()
     private var lostService = NetworkService()
-    
     private var cancellables = Set<AnyCancellable>()
     
     func fetchPosts() {
